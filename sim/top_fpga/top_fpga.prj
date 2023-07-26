@@ -12,6 +12,7 @@
 sv work ../../rtl/vga_pkg.sv \
         ../../rtl/vga_timing.sv \
         ../../rtl/draw_bg.sv \
+        ../../rtl/draw_start_bg.sv \
         ../../rtl/vga_if.sv \
         ../../rtl/draw_rect.sv \
         ../../rtl/top_vga.sv \
@@ -21,12 +22,15 @@ sv work ../../rtl/vga_pkg.sv \
         ../../fpga/rtl/top_vga_basys3.sv \
         ../common/tiff_writer.sv \
         ../../rtl/draw_rect_char.sv \
+        ../../rtl/draw_rect_char2.sv \
         ../../rtl/char_rom_16x16.sv \
+        ../../rtl/char_rom_16x16_2.sv \
         top_fpga_tb.sv
 
 verilog work ../../fpga/rtl/clk_wiz_0_clk_wiz.v \
              ../../fpga/rtl/clk_wiz_0.v \
              ../../rtl/font_rom.v \
+             ../../rtl/font_rom_2.v \
              
 
 vhdl work ../../rtl/MouseCtl.vhd  \

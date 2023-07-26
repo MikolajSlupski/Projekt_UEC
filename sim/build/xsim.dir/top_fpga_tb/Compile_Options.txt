@@ -1,1 +1,1 @@
-"work.top_fpga_tb" "work.glbl" -snapshot "top_fpga_tb" -prj "/student/mslupski/Projekt/projekt_main/sim/top_fpga/top_fpga.prj" -timescale "1ns/1ps" -L "unisims_ver" -standalone -runall 
+"work.top_fpga_tb" "work.glbl" -snapshot "top_fpga_tb" -prj "/student/wszczepka/UEC2/PROJECT/Projekt_UEC/sim/top_fpga/top_fpga.prj" -timescale "1ns/1ps" -L "unisims_ver" -standalone -runall 

@@ -34,9 +34,7 @@ module top_vga_basys3 (
  * Local variables and signals
  */
 
-wire clk_in, clk_fb, clk_ss, clk_out;
 wire locked;
-wire pclk;
 wire pclk_mirror;
 wire clk100MHz;
 wire clk40MHz;
