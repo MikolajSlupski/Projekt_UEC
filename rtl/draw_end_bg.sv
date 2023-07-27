@@ -10,7 +10,7 @@
 
  `timescale 1 ns / 1 ps
 
- module draw_start_bg (
+ module draw_end_bg (
     input  logic clk,
     input  logic rst,
 

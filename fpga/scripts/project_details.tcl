@@ -38,7 +38,7 @@ set sv_files {
     ../rtl/vga_timing.sv
     ../rtl/vga_if.sv
     ../rtl/top_vga.sv
-    ../rtl/draw_start_bg.sv
+    ../rtl/draw_end_bg.sv
     ../rtl/draw_mouse.sv
     ../rtl/draw_rect_char.sv
     ../rtl/char_rom_16x16.sv

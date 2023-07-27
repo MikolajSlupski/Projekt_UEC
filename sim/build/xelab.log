@@ -6,25 +6,21 @@ Determining compilation order of HDL files.
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_pkg.sv" into library work
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_timing.sv" into library work
 INFO: [VRFC 10-311] analyzing module vga_timing
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_bg.sv" into library work
-INFO: [VRFC 10-311] analyzing module draw_bg
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_start_bg.sv" into library work
-INFO: [VRFC 10-311] analyzing module draw_start_bg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_end_bg.sv" into library work
+INFO: [VRFC 10-311] analyzing module draw_end_bg
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_if.sv" into library work
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect.sv" into library work
-INFO: [VRFC 10-311] analyzing module draw_rect
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/top_vga.sv" into library work
 INFO: [VRFC 10-311] analyzing module top_vga
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_mouse.sv" into library work
 INFO: [VRFC 10-311] analyzing module draw_mouse
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_ctl.sv" into library work
-INFO: [VRFC 10-311] analyzing module draw_rect_ctl
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/image_rom.sv" into library work
-INFO: [VRFC 10-311] analyzing module image_rom
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/top_vga_basys3.sv" into library work
 INFO: [VRFC 10-311] analyzing module top_vga_basys3
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/sim/common/tiff_writer.sv" into library work
 INFO: [VRFC 10-311] analyzing module tiff_writer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char.sv" into library work
+INFO: [VRFC 10-311] analyzing module draw_char
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2.sv" into library work
+INFO: [VRFC 10-311] analyzing module draw_char_2
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char.sv" into library work
 INFO: [VRFC 10-311] analyzing module draw_rect_char
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char2.sv" into library work
@@ -55,8 +51,6 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/student/wszczepka/UEC2/PROJECT/Pr
 INFO: [VRFC 10-3107] analyzing entity 'Ps2Interface'
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'zpos' is not connected on this instance [/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/top_vga.sv:110]
-WARNING: [VRFC 10-3645] port 'value' remains unconnected for this instance [/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/top_vga.sv:110]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -77,7 +71,7 @@ Compiling module work.clk_wiz_0_clk_wiz
 Compiling module unisims_ver.ODDR
 Compiling module work.vga_if
 Compiling module work.vga_timing
-Compiling module work.draw_start_bg
+Compiling module work.draw_end_bg
 Compiling architecture behavioral of entity work.Ps2Interface [ps2interface_default]
 Compiling architecture behavioral of entity work.MouseCtl [mousectl_default]
 Compiling architecture behavioral of entity work.MouseDisplay [mousedisplay_default]
@@ -85,9 +79,11 @@ Compiling module work.draw_mouse
 Compiling module work.draw_rect_char
 Compiling module work.font_rom
 Compiling module work.char_rom_16x16
+Compiling module work.draw_char
 Compiling module work.draw_rect_char2
 Compiling module work.font_rom_2
 Compiling module work.char_rom_16x16_2
+Compiling module work.draw_char_2
 Compiling module work.top_vga
 Compiling module work.top_vga_basys3
 Compiling module work.tiff_writer
