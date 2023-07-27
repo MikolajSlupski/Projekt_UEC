@@ -17,17 +17,17 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/
 INFO: [VRFC 10-311] analyzing module top_vga_basys3
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/sim/common/tiff_writer.sv" into library work
 INFO: [VRFC 10-311] analyzing module tiff_writer
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/draw_char.sv" into library work
 INFO: [VRFC 10-311] analyzing module draw_char
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/draw_char_2.sv" into library work
 INFO: [VRFC 10-311] analyzing module draw_char_2
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/draw_rect_char.sv" into library work
 INFO: [VRFC 10-311] analyzing module draw_rect_char
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char2.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/draw_rect_char2.sv" into library work
 INFO: [VRFC 10-311] analyzing module draw_rect_char2
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/char_rom_16x16.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/char_rom_16x16.sv" into library work
 INFO: [VRFC 10-311] analyzing module char_rom_16x16
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/char_rom_16x16_2.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/char_rom_16x16_2.sv" into library work
 INFO: [VRFC 10-311] analyzing module char_rom_16x16_2
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/sim/top_fpga/top_fpga_tb.sv" into library work
 INFO: [VRFC 10-311] analyzing module top_fpga_tb
@@ -37,9 +37,9 @@ INFO: [VRFC 10-2458] undeclared symbol clk100MHz_clk_wiz_0_en_clk, assumed defau
 INFO: [VRFC 10-2458] undeclared symbol clk40MHz_clk_wiz_0_en_clk, assumed default net type wire [/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_0_clk_wiz.v:224]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_0.v" into library work
 INFO: [VRFC 10-311] analyzing module clk_wiz_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/font_rom.v" into library work
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/font_rom.v" into library work
 INFO: [VRFC 10-311] analyzing module font_rom
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/font_rom_2.v" into library work
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/font_rom_2.v" into library work
 INFO: [VRFC 10-311] analyzing module font_rom_2
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/sim/common/glbl.v" into library work
 INFO: [VRFC 10-311] analyzing module glbl

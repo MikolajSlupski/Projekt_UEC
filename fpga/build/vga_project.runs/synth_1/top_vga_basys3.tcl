@@ -85,12 +85,14 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_pkg.sv
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/char_rom_16x16.sv
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/char_rom_16x16_2.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/char_rom_16x16.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/char_rom_16x16_2.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/draw_char.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/draw_char_2.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_end_bg.sv
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_mouse.sv
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char.sv
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char2.sv
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_start_bg.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/draw_rect_char.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/draw_rect_char2.sv
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/top_vga.sv
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_if.sv
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_timing.sv
@@ -98,8 +100,8 @@ read_verilog -library xil_defaultlib -sv {
 }
 read_verilog -library xil_defaultlib {
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_0_clk_wiz.v
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/font_rom.v
-  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/font_rom_2.v
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char/font_rom.v
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_char_2/font_rom_2.v
 }
 read_vhdl -library xil_defaultlib {
   /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/MouseCtl.vhd

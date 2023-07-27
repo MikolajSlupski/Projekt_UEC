@@ -40,10 +40,12 @@ set sv_files {
     ../rtl/top_vga.sv
     ../rtl/draw_end_bg.sv
     ../rtl/draw_mouse.sv
-    ../rtl/draw_rect_char.sv
-    ../rtl/char_rom_16x16.sv
-    ../rtl/draw_rect_char2.sv
-    ../rtl/char_rom_16x16_2.sv
+    ../rtl/draw_char/draw_char.sv
+    ../rtl/draw_char_2/draw_char_2.sv
+    ../rtl/draw_char/draw_rect_char.sv
+    ../rtl/draw_char/char_rom_16x16.sv
+    ../rtl/draw_char_2/draw_rect_char2.sv
+    ../rtl/draw_char_2/char_rom_16x16_2.sv
     rtl/top_vga_basys3.sv
 }
 
@@ -51,8 +53,8 @@ set sv_files {
  set verilog_files {
     ../fpga/rtl/clk_wiz_0_clk_wiz.v
     ../fpga/rtl/clk_wiz_0.v 
-    ../rtl/font_rom.v 
-    ../rtl/font_rom_2.v 
+    ../rtl/draw_char/font_rom.v 
+    ../rtl/draw_char_2/font_rom_2.v 
      
  }
 
