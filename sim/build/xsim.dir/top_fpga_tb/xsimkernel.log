@@ -1,4 +1,4 @@
 Running: xsim.dir/top_fpga_tb/axsim top_fpga_tb -runall
 Design successfully loaded
 Design Loading Memory Usage: 33720 KB (Peak: 33720 KB)
-Design Loading CPU Usage: 4780 ms
+Design Loading CPU Usage: 4730 ms

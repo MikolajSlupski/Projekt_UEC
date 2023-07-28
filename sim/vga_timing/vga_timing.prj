@@ -13,12 +13,3 @@ sv work ../../rtl/vga_pkg.sv \
         ../../rtl/vga_timing.sv \
         ../../rtl/vga_if.sv \
         vga_timing_tb.sv
-
-verilog work ../../fpga/rtl/clk_wiz_0_clk_wiz.v \
-             ../../fpga/rtl/clk_wiz_0.v \
-             vga_timing_tb.sv
-
-vhdl work ../../rtl/MouseCtl.vhd  \
-          ../../rtl/MouseDisplay.vhd \
-          ../../rtl/MouseDisplay.vhd \
-          vga_timing_tb.sv

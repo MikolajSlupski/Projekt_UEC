@@ -9,11 +9,14 @@
 
 `timescale 1 ns / 1 ps
 
-module vga_timing_tb;
+module vga_timing_tb(
+
+    
+);
 
 import vga_pkg::*;
 
-vga_if top_timing_tb();
+vga_if timing_if_in();
 
 /**
  *  Local parameters
@@ -28,10 +31,6 @@ localparam CLK_PERIOD = 25;     // 40 MHz
 
 logic clk;
 logic rst;
-
-wire [10:0] vcount, hcount;
-wire        vsync,  hsync;
-wire        vblnk,  hblnk;
 
 
 /**
@@ -63,7 +62,7 @@ end
 vga_timing dut(
     .clk,
     .rst,
-    .tim_if_out(top_timing_tb)
+    .tim_if_out(timing_if_in)
 );
 
 /**
@@ -80,23 +79,23 @@ vga_timing dut(
 // Here you can declare concurrent assertions (assert property).
  
 //horizontal testing
- assert property (@(negedge clk) rst == 0 ##1 rst == 0 |-> hcount <= 1055) else 
- $error("hcount exceed it's max value! hcount value:", hcount);
-assert property (@(negedge clk) ((hcount >= 800) && (hcount <= 967) |-> (hblnk == 1))) else 
- $error("hblnk not active in hcount, vcount:", hcount, vcount);
+ assert property (@(negedge clk) rst == 0 ##1 rst == 0 |-> timing_if_in.hcount <= 1650) else 
+ $error("timing_if_in.hcount exceed it's max value! timing_if_in.hcount value:", timing_if_in.hcount);
+assert property (@(negedge clk) ((timing_if_in.hcount >= 1280) && (timing_if_in.hcount <= 1650) |-> (timing_if_in.hblnk == 1))) else 
+ $error("timing_if_in.hblnk not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
-assert property (@(posedge clk) ((hcount >= 840) && (hcount <= 967) |-> (hsync == 1))) else
- $error("hsync not active in hcount, vcount:", hcount, vcount);
+assert property (@(posedge clk) ((timing_if_in.hcount >= 1390) && (timing_if_in.hcount <= 1430) |-> (timing_if_in.hsync == 1))) else
+ $error("timing_if_in.hsync not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
 // vertical testing
-assert property (@(negedge clk) rst == 0 ## 1 rst == 0 |-> vcount <= 627) else
- $error("vcount exceed it's max value! vcount value:", vcount);    
+assert property (@(negedge clk) rst == 0 ## 1 rst == 0 |-> timing_if_in.vcount <= 750) else
+ $error("timing_if_in.vcount exceed it's max value! timing_if_in.vcount value:", timing_if_in.vcount);    
 
-assert property (@(posedge clk) ((vcount >= 600) && (vcount <= 627) |-> (vblnk == 1))) else
- $error("vblnk not active in hcount, vcount:", hcount, vcount);
+assert property (@(posedge clk) ((timing_if_in.vcount >= 720) && (timing_if_in.vcount <= 750) |-> (timing_if_in.vblnk == 1))) else
+ $error("timing_if_in.vblnk not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
-assert property (@(posedge clk) ((vcount >= 601) && (vcount <= 604) |-> (vsync == 1))) else
- $error("vsync not active in hcount, vcount:", hcount, vcount);
+assert property (@(posedge clk) ((timing_if_in.vcount >= 725) && (timing_if_in.vcount <= 730) |-> (timing_if_in.vsync == 1))) else
+ $error("timing_if_in.vsync not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
 /**
  * Main test
@@ -106,9 +105,9 @@ initial begin
     @(posedge rst);
     @(negedge rst);
 
-    wait (vsync == 1'b0);
-    @(negedge vsync)
-    @(negedge vsync)
+    wait (timing_if_in.vsync == 1'b0);
+    @(negedge timing_if_in.vsync)
+    @(negedge timing_if_in.vsync)
 
     $finish;
 end
