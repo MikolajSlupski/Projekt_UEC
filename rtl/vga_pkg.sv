@@ -9,7 +9,7 @@
 
 package vga_pkg;
 
-// Parameters for VGA Display 1024 x 768 @ 60fps using a 65 MHz clock;
+// Parameters for VGA Display 1280 x 720 @ using a 65 MHz clock;
 // Remember, Counting form zero !!!
 localparam HOR_PIXELS = 1280;//1024;//1280, 800;
 localparam VER_PIXELS = 720;//768;//720, 600;
