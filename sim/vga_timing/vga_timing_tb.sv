@@ -79,22 +79,22 @@ vga_timing dut(
 // Here you can declare concurrent assertions (assert property).
  
 //horizontal testing
- assert property (@(negedge clk) rst == 0 ##1 rst == 0 |-> timing_if_in.hcount <= 1650) else 
+ assert property (@(negedge clk) rst == 0 ##1 rst == 0 |-> timing_if_in.hcount <= 1344) else 
  $error("timing_if_in.hcount exceed it's max value! timing_if_in.hcount value:", timing_if_in.hcount);
-assert property (@(negedge clk) ((timing_if_in.hcount >= 1280) && (timing_if_in.hcount <= 1650) |-> (timing_if_in.hblnk == 1))) else 
+assert property (@(negedge clk) ((timing_if_in.hcount >= 1024) && (timing_if_in.hcount <= 1344) |-> (timing_if_in.hblnk == 1))) else 
  $error("timing_if_in.hblnk not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
-assert property (@(posedge clk) ((timing_if_in.hcount >= 1390) && (timing_if_in.hcount <= 1430) |-> (timing_if_in.hsync == 1))) else
+assert property (@(posedge clk) ((timing_if_in.hcount >= 1048) && (timing_if_in.hcount <= 1184) |-> (timing_if_in.hsync == 1))) else
  $error("timing_if_in.hsync not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
 // vertical testing
-assert property (@(negedge clk) rst == 0 ## 1 rst == 0 |-> timing_if_in.vcount <= 750) else
+assert property (@(negedge clk) rst == 0 ## 1 rst == 0 |-> timing_if_in.vcount <= 806) else
  $error("timing_if_in.vcount exceed it's max value! timing_if_in.vcount value:", timing_if_in.vcount);    
 
-assert property (@(posedge clk) ((timing_if_in.vcount >= 720) && (timing_if_in.vcount <= 750) |-> (timing_if_in.vblnk == 1))) else
+assert property (@(posedge clk) ((timing_if_in.vcount >= 768) && (timing_if_in.vcount <= 806) |-> (timing_if_in.vblnk == 1))) else
  $error("timing_if_in.vblnk not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
-assert property (@(posedge clk) ((timing_if_in.vcount >= 725) && (timing_if_in.vcount <= 730) |-> (timing_if_in.vsync == 1))) else
+assert property (@(posedge clk) ((timing_if_in.vcount >= 771) && (timing_if_in.vcount <= 777) |-> (timing_if_in.vsync == 1))) else
  $error("timing_if_in.vsync not active in timing_if_in.hcount, timing_if_in.vcount:", timing_if_in.hcount, timing_if_in.vcount);
 
 /**

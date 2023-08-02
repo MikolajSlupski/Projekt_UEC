@@ -99,6 +99,7 @@ read_verilog -library xil_defaultlib -sv {
   /home/student/mslupski/Projekt/projekt_main/fpga/rtl/top_vga_basys3.sv
 }
 read_verilog -library xil_defaultlib {
+  /home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_Projekt_65MHz_clk_wiz.v
   /home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_wiz_0_clk_wiz.v
   /home/student/mslupski/Projekt/projekt_main/rtl/font_rom.v
 }
@@ -124,6 +125,12 @@ set_property used_in_implementation false [get_files /home/student/mslupski/Proj
 
 read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0_late.xdc
 set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0_late.xdc]
+
+read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz.xdc
+set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz.xdc]
+
+read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz_late.xdc
+set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz_late.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

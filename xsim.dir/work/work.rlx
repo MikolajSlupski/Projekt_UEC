@@ -2,6 +2,10 @@
 2020.2
 Oct 19 2021
 02:56:52
+/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_108MHz_clk_wiz.v,1690897690,systemVerilog,,,,clk_108MHz_clk_wiz,,,,,,,,
+/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_130MHz_clk_wiz.v,1690899262,systemVerilog,,,,clk_130MHz_clk_wiz,,,,,,,,
+/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_Projekt_65MHz_clk_wiz.v,1690632976,systemVerilog,,,,clk_Projekt_65MHz_clk_wiz,,,,,,,,
 /home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_wiz_0.v,1680200247,systemVerilog,,,,clk_wiz_0,,,,,,,,
 /home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_wiz_0_clk_wiz.v,1680200247,systemVerilog,,,,clk_wiz_0_clk_wiz,,,,,,,,
-/home/student/mslupski/Projekt/projekt_main/rtl/font_rom.v,1683289122,systemVerilog,,,,font_rom,,,,,,,,
+/home/student/mslupski/Projekt/projekt_main/rtl/delay.v,1683055952,systemVerilog,,,,delay,,,,,,,,
+/home/student/mslupski/UEC2/lab1/Ok_Lab1/uec2_lab1_2023/rtl/font_rom.v,1683289122,systemVerilog,,,,font_rom,,,,,,,,

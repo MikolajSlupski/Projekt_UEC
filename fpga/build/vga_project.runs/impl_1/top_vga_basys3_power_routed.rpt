@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Wed Jul 26 13:21:03 2023
+| Date             : Wed Aug  2 14:25:34 2023
 | Host             : cadence28 running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command          : report_power -file top_vga_basys3_power_routed.rpt -pb top_vga_basys3_power_summary_routed.pb -rpx top_vga_basys3_power_routed.rpx
 | Design           : top_vga_basys3
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.193        |
+| Total On-Chip Power (W)  | 0.320        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.121        |
+| Dynamic (W)              | 0.247        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.0         |
-| Junction Temperature (C) | 26.0         |
+| Max Ambient (C)          | 83.4         |
+| Junction Temperature (C) | 26.6         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.004 |        6 |       --- |             --- |
-| Slice Logic             |     0.001 |     1550 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      579 |     20800 |            2.78 |
+| Clocks                  |     0.005 |        8 |       --- |             --- |
+| Slice Logic             |     0.002 |     1565 |       --- |             --- |
+|   LUT as Logic          |     0.002 |      588 |     20800 |            2.83 |
 |   CARRY4                |    <0.001 |       80 |      8150 |            0.98 |
-|   Register              |    <0.001 |      677 |     41600 |            1.63 |
+|   Register              |    <0.001 |      685 |     41600 |            1.65 |
 |   LUT as Shift Register |    <0.001 |        4 |      9600 |            0.04 |
-|   Others                |     0.000 |       27 |       --- |             --- |
-| Signals                 |     0.001 |     1193 |       --- |             --- |
-| Block RAM               |     0.002 |        2 |        50 |            4.00 |
-| MMCM                    |     0.106 |        1 |         5 |           20.00 |
-| I/O                     |     0.006 |       19 |       106 |           17.92 |
+|   Others                |     0.000 |       31 |       --- |             --- |
+| Signals                 |     0.002 |     1216 |       --- |             --- |
+| Block RAM               |     0.003 |        2 |        50 |            4.00 |
+| MMCM                    |     0.228 |        2 |         5 |           40.00 |
+| I/O                     |     0.008 |       19 |       106 |           17.92 |
 | Static Power            |     0.072 |          |           |                 |
-| Total                   |     0.193 |          |           |                 |
+| Total                   |     0.320 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,8 +74,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.019 |       0.009 |      0.010 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.139 |       0.127 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -127,14 +127,16 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+---------------------+-----------------------------------------+-----------------+
-| Clock               | Domain                                  | Constraint (ns) |
-+---------------------+-----------------------------------------+-----------------+
-| clk                 | clk                                     |            10.0 |
-| clk100MHz_clk_wiz_0 | u_clk_wiz_0_clk_wiz/clk100MHz_clk_wiz_0 |            10.0 |
-| clk40MHz_clk_wiz_0  | u_clk_wiz_0_clk_wiz/clk40MHz_clk_wiz_0  |            25.0 |
-| clkfbout_clk_wiz_0  | u_clk_wiz_0_clk_wiz/clkfbout_clk_wiz_0  |            10.0 |
-+---------------------+-----------------------------------------+-----------------+
++-----------------------------+-----------------------------------------+-----------------+
+| Clock                       | Domain                                  | Constraint (ns) |
++-----------------------------+-----------------------------------------+-----------------+
+| clk                         | clk                                     |            10.0 |
+| clk100MHz_clk_wiz_0         | u_clk_wiz_0_clk_wiz/clk100MHz_clk_wiz_0 |            10.0 |
+| clk40MHz_clk_wiz_0          | u_clk_wiz_0_clk_wiz/clk40MHz_clk_wiz_0  |            25.0 |
+| clk_65MHz_clk_Projekt_65MHz | u_clk_65MHz/clk_65MHz_clk_Projekt_65MHz |            15.4 |
+| clkfbout_clk_Projekt_65MHz  | u_clk_65MHz/clkfbout_clk_Projekt_65MHz  |            50.0 |
+| clkfbout_clk_wiz_0          | u_clk_wiz_0_clk_wiz/clkfbout_clk_wiz_0  |            10.0 |
++-----------------------------+-----------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -143,15 +145,16 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------------+-----------+
-| Name                    | Power (W) |
-+-------------------------+-----------+
-| top_vga_basys3          |     0.121 |
-|   u_clk_wiz_0_clk_wiz   |     0.107 |
-|   u_top_vga             |     0.008 |
-|     u_MouseCtl          |     0.003 |
-|       Inst_Ps2Interface |     0.001 |
-|     u_image_rom         |     0.001 |
-+-------------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| top_vga_basys3        |     0.247 |
+|   u_clk_65MHz         |     0.122 |
+|   u_clk_wiz_0_clk_wiz |     0.107 |
+|   u_top_vga           |     0.010 |
+|     u_MouseCtl        |     0.003 |
+|     u_draw_rect_ctl   |     0.001 |
+|     u_image_rom       |     0.002 |
++-----------------------+-----------+
 
 

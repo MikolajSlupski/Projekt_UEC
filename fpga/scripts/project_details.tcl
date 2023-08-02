@@ -29,6 +29,8 @@ set xdc_files {
     constraints/top_vga_basys3.xdc
     constraints/clk_wiz_0.xdc
     constraints/clk_wiz_0_late.xdc
+    constraints/clk_Projekt_65MHz.xdc
+    constraints/clk_Projekt_65MHz_late.xdc
     
 }
 
@@ -51,7 +53,13 @@ set sv_files {
 # Specify Verilog design files location         -- EDIT
  set verilog_files {
     ../fpga/rtl/clk_wiz_0_clk_wiz.v
-    ../fpga/rtl/clk_wiz_0.v 
+    ../fpga/rtl/clk_wiz_0.v
+    ../fpga/rtl/clk_Projekt_65MHz.v
+    ../fpga/rtl/clk_Projekt_65MHz_clk_wiz.v 
+    ../fpga/rtl/clk_108MHz.v
+    ../fpga/rtl/clk_108MHz_clk_wiz.v
+    ../fpga/rtl/clk_130MHz.v
+    ../fpga/rtl/clk_130MHz_clk_wiz.v
     ../rtl/font_rom.v 
      
  }

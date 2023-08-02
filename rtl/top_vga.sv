@@ -18,6 +18,7 @@ module top_vga (
     input  logic clk,
     input  logic rst,
     input  logic clk100MHz,
+    input  logic clk65MHz,
 
     inout  logic ps2_clk,
     inout  logic ps2_data,
@@ -91,7 +92,7 @@ assign {r,g,b} = top_out.rgb;
  */
 
 vga_timing u_vga_timing (
-    .clk,
+    .clk(clk65MHz),
     .rst,
     .tim_if_out(top_bg_in)
 );

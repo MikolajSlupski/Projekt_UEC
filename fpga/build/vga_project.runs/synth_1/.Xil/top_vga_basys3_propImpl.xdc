@@ -1,5 +1,6 @@
 set_property SRC_FILE_INFO {cfile:/home/student/mslupski/Projekt/projekt_main/fpga/constraints/top_vga_basys3.xdc rfile:../../../../constraints/top_vga_basys3.xdc id:1} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0.xdc rfile:../../../../constraints/clk_wiz_0.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz.xdc rfile:../../../../constraints/clk_Projekt_65MHz.xdc id:3} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property src_info {type:XDC file:1 line:111 export:INPUT save:INPUT read:READ} [current_design]
@@ -40,3 +41,7 @@ set_property src_info {type:XDC file:1 line:277 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN B17 [get_ports PS2Data]
 set_property src_info {type:XDC file:2 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk]] 0.100
+set_property src_info {type:XDC file:3 line:56 export:INPUT save:INPUT read:READ} [current_design]
+create_clock -period 10.000 [get_ports clk_in100MHz]
+set_property src_info {type:XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter [get_clocks -of_objects [get_ports clk_in100MHz]] 0.100

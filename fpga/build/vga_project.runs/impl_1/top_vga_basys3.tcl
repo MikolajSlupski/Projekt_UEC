@@ -140,6 +140,8 @@ OPTRACE "read constraints: implementation" START { }
   read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/top_vga_basys3.xdc
   read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0.xdc
   read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0_late.xdc
+  read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz.xdc
+  read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz_late.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

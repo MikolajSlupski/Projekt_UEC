@@ -38,7 +38,7 @@ wire clk_in, clk_fb, clk_ss, clk_out;
 wire locked;
 wire pclk;
 wire pclk_mirror;
-wire clk100MHz;
+wire clk100MHz, clk65MHz, clk130MHz, clk108MHz;
 wire clk40MHz;
 
 (* KEEP = "TRUE" *)
@@ -67,6 +67,31 @@ clk_wiz_0_clk_wiz u_clk_wiz_0_clk_wiz (
 
 );
 
+clk_Projekt_65MHz_clk_wiz u_clk_65MHz (
+
+.clk_in100MHz(clk),
+.clk_65MHz(clk65MHz),
+.locked()
+
+);
+/*
+clk_108MHz_clk_wiz u_clk_108MHz (
+
+.clk_in1(clk),
+.clk_108MHz(clk108MHz),
+.reset()
+
+);
+
+
+clk_130MHz_clk_wiz u_clk_130MHz (
+
+.clk_in1(clk),
+.clk_130MHz(clk130MHz),
+.locked()
+
+);
+*/
 
 // Mirror pclk on a pin for use by the testbench;
 // not functionally required for this design to work.
@@ -87,7 +112,7 @@ ODDR pclk_oddr (
  */
 
 top_vga u_top_vga (
-    .clk(clk40MHz),
+    .clk(clk65MHz),
     .rst(btnC),
     .r(vgaRed),
     .g(vgaGreen),
@@ -96,7 +121,8 @@ top_vga u_top_vga (
     .vs(Vsync),
     .ps2_clk(PS2Clk),
     .ps2_data(PS2Data),
-    .clk100MHz(clk100MHz)
+    .clk100MHz(clk100MHz),
+    .clk65MHz(clk65MHz)
 );
 
 endmodule
