@@ -1,7 +1,7 @@
 # Copyright (C) 2023  AGH University of Science and Technology
 # MTM UEC2
 # Author: Piotr Kaczmarczyk
-#
+# Modified: Wojciech Szczepka
 # Description:
 # Project detiles required for generate_bitstream.tcl
 # Make sure that project_name, top_module and target are correct.
@@ -38,15 +38,14 @@ set xdc_files {
 set sv_files {
     ../rtl/vga_pkg.sv
     ../rtl/vga_timing.sv
-    ../rtl/draw_bg.sv
     ../rtl/vga_if.sv
-    ../rtl/draw_rect.sv
-    ../rtl/draw_rect_ctl.sv
     ../rtl/top_vga.sv
-    ../rtl/image_rom.sv
+    ../rtl/draw_start_bg.sv
     ../rtl/draw_mouse.sv
     ../rtl/draw_rect_char.sv
     ../rtl/char_rom_16x16.sv
+    ../rtl/draw_rect_char2.sv
+    ../rtl/char_rom_16x16_2.sv
     rtl/top_vga_basys3.sv
 }
 
@@ -61,6 +60,7 @@ set sv_files {
     ../fpga/rtl/clk_130MHz.v
     ../fpga/rtl/clk_130MHz_clk_wiz.v
     ../rtl/font_rom.v 
+    ../rtl/font_rom_2.v 
      
  }
 
@@ -74,6 +74,6 @@ set sv_files {
  }
 
 # Specify files for a memory initialization     -- EDIT
- set mem_files {
-    ../rtl/picture/image_rom.data
-}
+ #set mem_files {
+  #  ../rtl/picture/image_rom.data
+#}

@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-module draw_rect_char (
+module draw_rect_char2 (
     input  logic clk,
     input  logic rst,
      
@@ -45,7 +45,7 @@ end
          
 // rgb
 always_comb begin
-    if (in.vcount <= RECT_CHAR_Y + RECT_Y && in.vcount >= RECT_Y && in.hcount <= RECT_CHAR_X + RECT_X && in.hcount >= RECT_X) begin
+    if (in.vcount <= RECT_CHAR_Y + RECT_Y_2 && in.vcount >= RECT_Y_2 && in.hcount <= RECT_CHAR_X + RECT_X && in.hcount >= RECT_X) begin
         if (char_pixels[4'b1000-hcount_in_rect[2:0]]) 
             rgb_nxt3 = L_COLOR;
         else
@@ -59,7 +59,7 @@ end
 assign char_xy = {vcount_in_rect[7:4], hcount_in_rect[6:3]};
 assign char_line = vcount_in_rect[3:0];
       
-assign vcount_in_rect = in.vcount - RECT_Y;
+assign vcount_in_rect = in.vcount - RECT_Y_2;
 assign hcount_in_rect = in.hcount - RECT_X;
    
      

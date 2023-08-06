@@ -47,15 +47,13 @@ MouseDisplay u_MouseDispaly(
 
     .xpos(xpos),
     .ypos(ypos),
-
     .pixel_clk(clk),
-    
     .hcount(hcount_nxt),
     .vcount(vcount_nxt),
     .rgb_in(rgb_nxt),
     .blank(blnk_nxt),
-
-    .rgb_out(dmouse_if_out.rgb)
+    .rgb_out(dmouse_if_out.rgb),
+    .enable_mouse_display_out()
 
 );
 
