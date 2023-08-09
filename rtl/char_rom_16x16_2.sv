@@ -1,4 +1,11 @@
-
+/**
+ * Copyright (C) 2023  AGH University of Science and Technology
+ * MTM UEC2
+ * Modified: Wojciech Szczepka
+ *
+ * Description:
+ * Package with vga related constants.
+ */
 
 `timescale 1ns / 1ps
 
