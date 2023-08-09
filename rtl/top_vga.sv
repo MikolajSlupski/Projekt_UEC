@@ -79,7 +79,7 @@ vga_timing u_vga_timing (
     .tim_if_out(top_bg_in)
 );
 
-draw_end_bg u_draw_end_bg (
+draw_bg u_draw_bg (
     .clk,
     .rst,
     .bg_if_in(top_bg_in),
