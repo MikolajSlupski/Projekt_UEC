@@ -70,7 +70,7 @@ end
          // Add your code here.
          
         else if ( bg_if_in.hcount<=HOR_PIXELS-1 && bg_if_in.hcount>=HOR_PIXELS*2/3 && bg_if_in.vcount>= 1 && bg_if_in.vcount<= VER_PIXELS-1)
-             rgb_nxt = 12'hf_0_a;
+             rgb_nxt = 12'hd_5_a;
 
 
          else                                    // The rest of active display pixels:

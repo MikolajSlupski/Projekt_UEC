@@ -1,6 +1,6 @@
 Warnings, critical warnings and errors from synthesis and implementation
 
-Created: 2023-08-09 16:56:45
+Created: 2023-08-10 10:26:30
 
 ----SYNTHESIS----
 WARNING: [Synth 8-3848] Net tim_if_out\.rgb in module/entity vga_timing does not have driver. [rtl/vga_timing.sv:16]
@@ -72,6 +72,6 @@ CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-o
 WARNING: [Vivado 12-584] No ports matched 'clk_in100MHz'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
 WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_ports clk_in100MHz]'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
 CRITICAL WARNING: [Vivado 12-4739] set_input_jitter:No valid object(s) found for '-clock [get_clocks -of_objects [get_ports clk_in100MHz]]'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
-WARNING: [Route 35-468] The router encountered 32 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+WARNING: [Route 35-468] The router encountered 34 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
 WARNING: [Route 35-328] Router estimated timing not met.
 CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
