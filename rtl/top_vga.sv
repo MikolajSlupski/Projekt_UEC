@@ -28,9 +28,8 @@ module top_vga (
     output logic [3:0] g,
     output logic [3:0] b
 );
-
     vga_if top_bg_out();
-    vga_if top_bg_in();
+    vga_if_tim top_bg_in();
     vga_if top_dmouse_in();
     vga_if top_out();
 

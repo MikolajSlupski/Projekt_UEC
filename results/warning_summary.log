@@ -1,77 +1,23 @@
 Warnings, critical warnings and errors from synthesis and implementation
 
-Created: 2023-08-10 11:15:08
+Created: 2023-08-10 12:18:11
 
 ----SYNTHESIS----
-WARNING: [Synth 8-3848] Net tim_if_out\.rgb in module/entity vga_timing does not have driver. [rtl/vga_timing.sv:16]
 WARNING: [Synth 8-6014] Unused sequential element set_x.inc_reg was removed.  [rtl/MouseCtl.vhd:450]
 WARNING: [Synth 8-6014] Unused sequential element set_x.x_inter_reg was removed.  [rtl/MouseCtl.vhd:456]
 WARNING: [Synth 8-6014] Unused sequential element set_y.inc_reg was removed.  [rtl/MouseCtl.vhd:514]
 WARNING: [Synth 8-6014] Unused sequential element set_y.y_inter_reg was removed.  [rtl/MouseCtl.vhd:520]
-WARNING: [Synth 8-3848] Net dmouse_if_out\.vcount in module/entity draw_mouse does not have driver. [rtl/draw_mouse.sv:13]
-WARNING: [Synth 8-3848] Net dmouse_if_out\.hcount in module/entity draw_mouse does not have driver. [rtl/draw_mouse.sv:13]
 WARNING: [Synth 8-3848] Net dmouse_if_out\.hblnk in module/entity draw_mouse does not have driver. [rtl/draw_mouse.sv:13]
 WARNING: [Synth 8-3848] Net dmouse_if_out\.vblnk in module/entity draw_mouse does not have driver. [rtl/draw_mouse.sv:13]
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[10] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[9] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[8] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[7] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[6] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[5] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[4] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[3] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[2] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[1] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.vcount[0] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[10] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[9] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[8] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[7] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[6] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[5] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[4] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[3] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[2] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[1] in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[0] in module draw_mouse is either unconnected or has no load
+WARNING: [Synth 8-3848] Net hcount_nxt in module/entity draw_mouse does not have driver. [rtl/draw_mouse.sv:50]
+WARNING: [Synth 8-3848] Net vcount_nxt in module/entity draw_mouse does not have driver. [rtl/draw_mouse.sv:51]
 WARNING: [Synth 8-7129] Port dmouse_if_out\.hblnk in module draw_mouse is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dmouse_if_out\.vblnk in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[11] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[10] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[9] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[8] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[7] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[6] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[5] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[4] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[3] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[2] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[1] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[0] in module draw_end_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[11] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[10] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[9] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[8] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[7] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[6] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[5] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[4] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[3] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[2] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[1] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[0] in module vga_timing is either unconnected or has no load
-WARNING: [Vivado 12-584] No ports matched 'clk_in100MHz'. [fpga/constraints/clk_Projekt_65MHz.xdc:56]
-CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in100MHz]'. [fpga/constraints/clk_Projekt_65MHz.xdc:56]
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 CRITICAL WARNING: [Shape Builder 18-119] Failed to create I/OLOGIC Route Through shape for instance u_clk_wiz_0_clk_wiz/clkin1_ibufg. Found overlapping instances within the shape: u_clk_65MHz/clkin1_ibufg and u_clk_wiz_0_clk_wiz/clkin1_ibufg.
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 
 ----IMPLEMENTATION----
-WARNING: [Vivado 12-584] No ports matched 'clk_in100MHz'. [fpga/constraints/clk_Projekt_65MHz.xdc:56]
-CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in100MHz]'. [fpga/constraints/clk_Projekt_65MHz.xdc:56]
-WARNING: [Vivado 12-584] No ports matched 'clk_in100MHz'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
-WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_ports clk_in100MHz]'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
-CRITICAL WARNING: [Vivado 12-4739] set_input_jitter:No valid object(s) found for '-clock [get_clocks -of_objects [get_ports clk_in100MHz]]'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
-WARNING: [Route 35-468] The router encountered 31 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+WARNING: [Route 35-468] The router encountered 9 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
 WARNING: [Route 35-328] Router estimated timing not met.
 CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.

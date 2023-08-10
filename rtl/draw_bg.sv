@@ -14,7 +14,7 @@
     input  logic clk,
     input  logic rst,
 
-    vga_if.in bg_if_in,
+    vga_if_tim.in bg_if_in,
     vga_if.out bg_if_out
 );
 

@@ -14,8 +14,7 @@ module draw_mouse(
 
 );
 
-logic [10:0] hcount_nxt;
-logic [10:0] vcount_nxt;
+
 logic blnk_nxt;
 //logic hsync_nxt;
 //logic vsync_nxt;
@@ -24,16 +23,16 @@ logic [11:0] rgb_nxt;
 always_ff @(posedge clk)begin
 
     if(rst) begin
-        hcount_nxt <= 0;
-        vcount_nxt <= 0;
+        dmouse_if_out.hcount <= 0;
+        dmouse_if_out.vcount <= 0;
         dmouse_if_out.hsync  <= 0;  
         dmouse_if_out.vsync  <= 0;
         blnk_nxt   <= 0;
         rgb_nxt    <= 0;
 
     end else begin
-        hcount_nxt <= dmouse_if_in.hcount;
-        vcount_nxt <= dmouse_if_in.vcount;
+        dmouse_if_out.hcount <= dmouse_if_in.hcount;
+        dmouse_if_out.vcount <= dmouse_if_in.vcount;
         dmouse_if_out.hsync  <= dmouse_if_in.hsync;  
         dmouse_if_out.vsync  <= dmouse_if_in.vsync;
         blnk_nxt   <= (dmouse_if_in.hblnk || dmouse_if_in.vblnk);
