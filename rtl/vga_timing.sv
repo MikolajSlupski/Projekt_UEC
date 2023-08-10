@@ -16,6 +16,7 @@ module vga_timing (
     vga_if.out tim_if_out
 );
 
+
 import vga_pkg::*;
 
 

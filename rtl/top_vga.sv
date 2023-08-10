@@ -29,12 +29,11 @@ module top_vga (
     output logic [3:0] b
 );
 
-    vga_if top_rect_in();
+    vga_if top_bg_out();
     vga_if top_bg_in();
     vga_if top_dmouse_in();
     vga_if top_out();
-    vga_if top_drect_char_in();
-    vga_if top_drect_char_in_2();
+
 
 /**
  * Local variables and signals
@@ -79,13 +78,12 @@ vga_timing u_vga_timing (
     .tim_if_out(top_bg_in)
 );
 
-draw_end_bg u_draw_end_bg (
+draw_bg u_draw_bg (
     .clk,
     .rst,
     .bg_if_in(top_bg_in),
-    .bg_if_out(top_rect_in)
+    .bg_if_out(top_bg_out)
 );
-
 
 MouseCtl u_MouseCtl (
     .clk(clk100MHz),
@@ -112,25 +110,10 @@ draw_mouse u_draw_mouse(
     .rst(rst),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
-    .dmouse_if_in(top_drect_char_in_2),
+    .dmouse_if_in(top_bg_out),
     .dmouse_if_out(top_out)
 );
 
-
-draw_char u_draw_char(
-    .clk(clk),
-    .rst(rst),
-    .in(top_rect_in),
-    .out(top_drect_char_in)
-);
-
-
-draw_char_2 u_draw_char_2(
-    .clk(clk),
-    .rst(rst),
-    .in(top_drect_char_in),
-    .out(top_drect_char_in_2)
-);
 
 
 endmodule

@@ -29,6 +29,8 @@ set xdc_files {
     constraints/top_vga_basys3.xdc
     constraints/clk_wiz_0.xdc
     constraints/clk_wiz_0_late.xdc
+    constraints/clk_Projekt_65MHz.xdc
+    constraints/clk_Projekt_65MHz_late.xdc
     
 }
 
@@ -39,6 +41,7 @@ set sv_files {
     ../rtl/vga_if.sv
     ../rtl/top_vga.sv
     ../rtl/draw_end_bg.sv
+    ../rtl/draw_bg.sv
     ../rtl/draw_mouse.sv
     ../rtl/draw_char/draw_char.sv
     ../rtl/draw_char_2/draw_char_2.sv
@@ -53,6 +56,8 @@ set sv_files {
  set verilog_files {
     ../fpga/rtl/clk_wiz_0_clk_wiz.v
     ../fpga/rtl/clk_wiz_0.v 
+    ../fpga/rtl/clk_Projekt_65MHz.v
+    ../fpga/rtl/clk_Projekt_65MHz_clk_wiz.v     
     ../rtl/draw_char/font_rom.v 
     ../rtl/draw_char_2/font_rom_2.v 
      
