@@ -1,9 +1,8 @@
 Warnings, critical warnings and errors from synthesis and implementation
 
-Created: 2023-08-10 10:26:30
+Created: 2023-08-10 19:35:36
 
 ----SYNTHESIS----
-WARNING: [Synth 8-3848] Net tim_if_out\.rgb in module/entity vga_timing does not have driver. [rtl/vga_timing.sv:16]
 WARNING: [Synth 8-6014] Unused sequential element set_x.inc_reg was removed.  [rtl/MouseCtl.vhd:450]
 WARNING: [Synth 8-6014] Unused sequential element set_x.x_inter_reg was removed.  [rtl/MouseCtl.vhd:456]
 WARNING: [Synth 8-6014] Unused sequential element set_y.inc_reg was removed.  [rtl/MouseCtl.vhd:514]
@@ -36,30 +35,6 @@ WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[1] in module draw_mouse is ei
 WARNING: [Synth 8-7129] Port dmouse_if_out\.hcount[0] in module draw_mouse is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dmouse_if_out\.hblnk in module draw_mouse is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dmouse_if_out\.vblnk in module draw_mouse is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[11] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[10] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[9] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[8] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[7] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[6] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[5] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[4] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[3] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[2] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[1] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bg_if_in\.rgb[0] in module draw_bg is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[11] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[10] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[9] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[8] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[7] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[6] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[5] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[4] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[3] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[2] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[1] in module vga_timing is either unconnected or has no load
-WARNING: [Synth 8-7129] Port tim_if_out\.rgb[0] in module vga_timing is either unconnected or has no load
 WARNING: [Vivado 12-584] No ports matched 'clk_in100MHz'. [fpga/constraints/clk_Projekt_65MHz.xdc:56]
 CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in100MHz]'. [fpga/constraints/clk_Projekt_65MHz.xdc:56]
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
@@ -72,6 +47,6 @@ CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-o
 WARNING: [Vivado 12-584] No ports matched 'clk_in100MHz'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
 WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_ports clk_in100MHz]'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
 CRITICAL WARNING: [Vivado 12-4739] set_input_jitter:No valid object(s) found for '-clock [get_clocks -of_objects [get_ports clk_in100MHz]]'. [fpga/constraints/clk_Projekt_65MHz.xdc:57]
-WARNING: [Route 35-468] The router encountered 34 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+WARNING: [Route 35-468] The router encountered 32 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
 WARNING: [Route 35-328] Router estimated timing not met.
 CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
