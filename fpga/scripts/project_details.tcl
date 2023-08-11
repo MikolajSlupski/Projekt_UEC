@@ -44,12 +44,12 @@ set sv_files {
     ../rtl/draw_bg.sv
     ../rtl/draw_gra_bg.sv
     ../rtl/draw_mouse.sv
-    ../rtl/draw_char/draw_char.sv
-    ../rtl/draw_char_2/draw_char_2.sv
-    ../rtl/draw_char/draw_rect_char.sv
-    ../rtl/draw_char/char_rom_16x16.sv
-    ../rtl/draw_char_2/draw_rect_char2.sv
-    ../rtl/draw_char_2/char_rom_16x16_2.sv
+    ../rtl/draw_char_gra/draw_char_gra.sv
+    ../rtl/draw_char_gra2/draw_char_gra2.sv
+    ../rtl/draw_char_gra/draw_rect_char_gra.sv
+    ../rtl/draw_char_gra/char_rom_16x16_gra.sv
+    ../rtl/draw_char_gra2/draw_rect_char_gra2.sv
+    ../rtl/draw_char_gra2/char_rom_16x16_gra2.sv
     rtl/top_vga_basys3.sv
 }
 
@@ -59,8 +59,8 @@ set sv_files {
     ../fpga/rtl/clk_wiz_0.v 
     ../fpga/rtl/clk_Projekt_65MHz.v
     ../fpga/rtl/clk_Projekt_65MHz_clk_wiz.v 
-    ../rtl/draw_char/font_rom.v 
-    ../rtl/draw_char_2/font_rom_2.v 
+    ../rtl/draw_char_gra/font_rom.v 
+    ../rtl/draw_char_gra2/font_rom_2.v 
      
  }
 
