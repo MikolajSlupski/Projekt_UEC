@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-module draw_rect_char2 (
+module draw_rect_char_gra (
     input  logic clk,
     input  logic rst,
      
@@ -18,8 +18,6 @@ module draw_rect_char2 (
 import vga_pkg::*;
 
 logic [10:0]  hcount_in_rect, vcount_in_rect;
-     
-  
      
 logic hsync_nxt, vsync_nxt, hblnk_nxt, vblnk_nxt;
 logic hsync_nxt2, vsync_nxt2, hblnk_nxt2, vblnk_nxt2;
@@ -45,7 +43,7 @@ end
          
 // rgb
 always_comb begin
-    if (in.vcount <= RECT_CHAR_Y + RECT_Y_2 && in.vcount >= RECT_Y_2 && in.hcount <= RECT_CHAR_X + RECT_X && in.hcount >= RECT_X) begin
+    if (in.vcount <= RECT_CHAR_Y + RECT_Y && in.vcount >= RECT_Y && in.hcount <= RECT_CHAR_X + RECT_X && in.hcount >= RECT_X) begin
         if (char_pixels[4'b1000-hcount_in_rect[2:0]]) 
             rgb_nxt3 = L_COLOR;
         else
@@ -59,7 +57,7 @@ end
 assign char_xy = {vcount_in_rect[7:4], hcount_in_rect[6:3]};
 assign char_line = vcount_in_rect[3:0];
       
-assign vcount_in_rect = in.vcount - RECT_Y_2;
+assign vcount_in_rect = in.vcount - RECT_Y;
 assign hcount_in_rect = in.hcount - RECT_X;
    
      

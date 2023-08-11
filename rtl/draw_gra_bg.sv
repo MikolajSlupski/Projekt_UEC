@@ -33,7 +33,7 @@ draw_bg u_draw_bg (
 );
 
 
-draw_char u_draw_char(
+draw_char_gra u_draw_char(
     .clk(clk),
     .rst(rst),
     .in(top_rect_in),
@@ -41,7 +41,7 @@ draw_char u_draw_char(
 );
 
 
-draw_char_2 u_draw_char_2(
+draw_char_gra2 u_draw_char_2(
     .clk(clk),
     .rst(rst),
     .in(top_drect_char_in),
