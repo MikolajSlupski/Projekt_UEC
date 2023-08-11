@@ -36,7 +36,7 @@ module top_vga_basys3 (
 
 wire locked;
 wire pclk_mirror;
-wire clk100MHz, clk65MHz, clk130MHz, clk108MHz;
+wire clk100MHz, clk65MHz;
 wire clk40MHz;
 
 (* KEEP = "TRUE" *)
@@ -64,7 +64,6 @@ clk_wiz_0_clk_wiz u_clk_wiz_0_clk_wiz (
     .clk(clk)
 
 );
-
 clk_Projekt_65MHz_clk_wiz u_clk_65MHz (
 
 .clk_in100MHz(clk),
@@ -72,24 +71,6 @@ clk_Projekt_65MHz_clk_wiz u_clk_65MHz (
 .locked()
 
 );
-/*
-clk_108MHz_clk_wiz u_clk_108MHz (
-
-.clk_in1(clk),
-.clk_108MHz(clk108MHz),
-.reset()
-
-);
-
-
-clk_130MHz_clk_wiz u_clk_130MHz (
-
-.clk_in1(clk),
-.clk_130MHz(clk130MHz),
-.locked()
-
-);
-*/
 
 // Mirror pclk on a pin for use by the testbench;
 // not functionally required for this design to work.

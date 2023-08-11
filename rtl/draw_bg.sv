@@ -10,11 +10,11 @@
 
  `timescale 1 ns / 1 ps
 
- module draw_start_bg (
+ module draw_bg (
     input  logic clk,
     input  logic rst,
 
-    vga_if.in bg_if_in,
+    vga_if_tim.in bg_if_in,
     vga_if.out bg_if_out
 );
 
@@ -69,6 +69,10 @@ end
  
          // Add your code here.
          
+        else if ( bg_if_in.hcount<=HOR_PIXELS-1 && bg_if_in.hcount>=HOR_PIXELS*2/3 && bg_if_in.vcount>= 1 && bg_if_in.vcount<= VER_PIXELS-1)
+             rgb_nxt = 12'hd_5_a;
+
+
          else                                    // The rest of active display pixels:
              rgb_nxt = 12'h8_8_f;                // - fill with gray.
      end

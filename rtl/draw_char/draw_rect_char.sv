@@ -27,8 +27,6 @@ import vga_pkg::*;
 
 logic [10:0]  hcount_in_rect, vcount_in_rect;
      
-  
-     
 logic hsync_nxt, vsync_nxt, hblnk_nxt, vblnk_nxt;
 logic hsync_nxt2, vsync_nxt2, hblnk_nxt2, vblnk_nxt2;
 logic [10:0] hcount_nxt, vcount_nxt;

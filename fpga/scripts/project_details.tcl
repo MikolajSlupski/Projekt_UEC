@@ -39,28 +39,28 @@ set sv_files {
     ../rtl/vga_pkg.sv
     ../rtl/vga_timing.sv
     ../rtl/vga_if.sv
+    ../rtl/vga_if_tim.sv
     ../rtl/top_vga.sv
-    ../rtl/draw_start_bg.sv
+    ../rtl/draw_bg.sv
+    ../rtl/draw_gra_bg.sv
     ../rtl/draw_mouse.sv
-    ../rtl/draw_rect_char.sv
-    ../rtl/char_rom_16x16.sv
-    ../rtl/draw_rect_char2.sv
-    ../rtl/char_rom_16x16_2.sv
+    ../rtl/draw_char/draw_char.sv
+    ../rtl/draw_char_2/draw_char_2.sv
+    ../rtl/draw_char/draw_rect_char.sv
+    ../rtl/draw_char/char_rom_16x16.sv
+    ../rtl/draw_char_2/draw_rect_char2.sv
+    ../rtl/draw_char_2/char_rom_16x16_2.sv
     rtl/top_vga_basys3.sv
 }
 
 # Specify Verilog design files location         -- EDIT
  set verilog_files {
     ../fpga/rtl/clk_wiz_0_clk_wiz.v
-    ../fpga/rtl/clk_wiz_0.v
+    ../fpga/rtl/clk_wiz_0.v 
     ../fpga/rtl/clk_Projekt_65MHz.v
     ../fpga/rtl/clk_Projekt_65MHz_clk_wiz.v 
-    ../fpga/rtl/clk_108MHz.v
-    ../fpga/rtl/clk_108MHz_clk_wiz.v
-    ../fpga/rtl/clk_130MHz.v
-    ../fpga/rtl/clk_130MHz_clk_wiz.v
-    ../rtl/font_rom.v 
-    ../rtl/font_rom_2.v 
+    ../rtl/draw_char/font_rom.v 
+    ../rtl/draw_char_2/font_rom_2.v 
      
  }
 

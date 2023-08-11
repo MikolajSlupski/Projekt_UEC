@@ -10,7 +10,7 @@
 `timescale 1ns / 1ps
 
 
-module char_rom_16x16(
+module char_rom_16x16_2(
   input logic [7:0] char_xy,
     output logic [6:0] char_code 
     );
@@ -24,13 +24,13 @@ module char_rom_16x16(
                 8'h02: char_code = Spc; 
                 8'h03: char_code = Spc; 
                 8'h04: char_code = Spc;
-                8'h05: char_code = G; 
-                8'h06: char_code = R; 
-                8'h07: char_code = A;
-                8'h08: char_code = C;
-                8'h09: char_code = Z;
+                8'h05: char_code = Spc; 
+                8'h06: char_code = Spc; 
+                8'h07: char_code = E;
+                8'h08: char_code = N;
+                8'h09: char_code = D;
                 8'h0a: char_code = Spc;
-                8'h0b: char_code = JEDEN;
+                8'h0b: char_code = Spc;
                 8'h0c: char_code = Spc;
                 8'h0d: char_code = Spc;
                 8'h0e: char_code = Spc;

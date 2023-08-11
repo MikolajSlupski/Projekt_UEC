@@ -17,10 +17,12 @@ sv work ../../rtl/vga_pkg.sv \
         ../../rtl/draw_mouse.sv \
         ../../fpga/rtl/top_vga_basys3.sv \
         ../common/tiff_writer.sv \
-        ../../rtl/draw_rect_char.sv \
-        ../../rtl/draw_rect_char2.sv \
-        ../../rtl/char_rom_16x16.sv \
-        ../../rtl/char_rom_16x16_2.sv \
+        ../../rtl/draw_char/draw_char.sv \
+        ../../rtl/draw_char_2/draw_char_2.sv \
+        ../../rtl/draw_char/draw_rect_char.sv \
+        ../../rtl/draw_char_2/draw_rect_char2.sv \
+        ../../rtl/draw_char/char_rom_16x16.sv \
+        ../../rtl/draw_char_2/char_rom_16x16_2.sv \
         top_fpga_tb.sv
 
 verilog work ../../fpga/rtl/clk_wiz_0_clk_wiz.v \
