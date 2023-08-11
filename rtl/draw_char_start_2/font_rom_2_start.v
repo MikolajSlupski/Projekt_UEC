@@ -6,11 +6,8 @@
 //  - ROM size: 512-by-8 (2^11-by-8) bits
 //              16K bits: 1 BRAM
 
-<<<<<<<< HEAD:rtl/draw_char_2_koniec/font_rom_2_koniec.v
-module font_rom_2_koniec
-========
+
 module font_rom_2_start
->>>>>>>> Ekran_Startowy:rtl/draw_char_start_2/font_rom_2_start.v
     (
         input  wire        clk,
         input  wire [10:0] addr,            // {char_code[6:0], char_line[3:0]}
