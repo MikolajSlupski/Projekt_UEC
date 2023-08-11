@@ -10,7 +10,7 @@
 
  `timescale 1 ns / 1 ps
 
- module draw_bg (
+ module draw_koniec (
     input  logic clk,
     input  logic rst,
 
@@ -24,7 +24,7 @@ import vga_pkg::*;
     vga_if top_drect_char_in();
 
 
-draw_end_bg u_draw_end_bg (
+draw_koniec_bg u_draw_koniec_bg (
     .clk,
     .rst,
     .bg_if_in(bg_if_in),
@@ -32,7 +32,7 @@ draw_end_bg u_draw_end_bg (
 );
 
 
-draw_char u_draw_char(
+draw_char_koniec u_draw_char_koniec(
     .clk(clk),
     .rst(rst),
     .in(top_rect_in),
@@ -40,7 +40,7 @@ draw_char u_draw_char(
 );
 
 
-draw_char_2 u_draw_char_2(
+draw_char_2_koniec u_draw_char_2_koniec(
     .clk(clk),
     .rst(rst),
     .in(top_drect_char_in),
