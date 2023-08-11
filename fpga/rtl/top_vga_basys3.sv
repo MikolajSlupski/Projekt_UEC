@@ -64,7 +64,6 @@ clk_wiz_0_clk_wiz u_clk_wiz_0_clk_wiz (
     .clk(clk)
 
 );
-
 clk_Projekt_65MHz_clk_wiz u_clk_65MHz (
 
 .clk_in100MHz(clk),
