@@ -6,7 +6,7 @@
 //  - ROM size: 512-by-8 (2^11-by-8) bits
 //              16K bits: 1 BRAM
 
-module font_rom
+module font_rom_2
     (
         input  wire        clk,
         input  wire [10:0] addr,            // {char_code[6:0], char_line[3:0]}
@@ -2164,7 +2164,6 @@ module font_rom
             11'h7dd: data = 8'b00000000; //
             11'h7de: data = 8'b00000000; //
             11'h7df: data = 8'b00000000; //
-            /*
             //code x7e
             11'h7e0: data = 8'b00000000; //
             11'h7e1: data = 8'b00000000; //
@@ -2178,25 +2177,6 @@ module font_rom
             11'h7e9: data = 8'b00000000; //
             11'h7ea: data = 8'b00000000; //
             11'h7eb: data = 8'b00000000; //
-            11'h7ec: data = 8'b00000000; //
-            11'h7ed: data = 8'b00000000; //
-            11'h7ee: data = 8'b00000000; //
-            11'h7ef: data = 8'b00000000; //
-            */
-
-            //code x7e
-            11'h7e0: data = 8'b00000110; //      **
-            11'h7e1: data = 8'b00001100; //     **
-            11'h7e2: data = 8'b00111100; //   ****
-            11'h7e3: data = 8'b01100110; //  **  **
-            11'h7e4: data = 8'b11000010; // **    *
-            11'h7e5: data = 8'b11000000; // **
-            11'h7e6: data = 8'b11000000; // **
-            11'h7e7: data = 8'b11000000; // **
-            11'h7e8: data = 8'b11000000; // **
-            11'h7e9: data = 8'b11000010; // **    *
-            11'h7ea: data = 8'b01100110; //  **  **
-            11'h7eb: data = 8'b00111100; //   ****
             11'h7ec: data = 8'b00000000; //
             11'h7ed: data = 8'b00000000; //
             11'h7ee: data = 8'b00000000; //

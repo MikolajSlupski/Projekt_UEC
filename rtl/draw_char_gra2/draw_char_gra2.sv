@@ -1,7 +1,7 @@
+
 `timescale 1 ns / 1 ps
 
-
-module draw_char_gra (
+module draw_char_gra2 (
 
     input logic   clk,
     input logic   rst,
@@ -15,8 +15,7 @@ wire [7:0] char_xy;
 wire [3:0] char_line;
 wire [6:0] char_code;
 
-
-draw_rect_char_gra u_draw_rect_char_gra(
+draw_rect_char_gra2 u_draw_rect_char_gra2(
     .clk(clk),
     .rst(rst),
     .in(in),
@@ -27,16 +26,17 @@ draw_rect_char_gra u_draw_rect_char_gra(
     .char_line
 );
 
-font_rom u_font_rom(
+font_rom_2 u_font_rom_2(
     .clk(clk),
     .addr({char_code,char_line}),
     .char_line_pixels(char_line_pixels)
 );
 
-char_rom_16x16_gra u_char_rom_16x16_gra(
+char_rom_16x16_gra2 u_char_rom_16x16_gra2(
 
     .char_xy(char_xy),
     .char_code
 );
+
 
 endmodule
