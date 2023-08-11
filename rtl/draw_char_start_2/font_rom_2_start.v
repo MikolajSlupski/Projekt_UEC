@@ -6,7 +6,7 @@
 //  - ROM size: 512-by-8 (2^11-by-8) bits
 //              16K bits: 1 BRAM
 
-module font_rom_2
+module font_rom_2_start
     (
         input  wire        clk,
         input  wire [10:0] addr,            // {char_code[6:0], char_line[3:0]}

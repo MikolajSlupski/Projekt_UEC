@@ -29,12 +29,11 @@ module top_vga (
     output logic [3:0] b
 );
 
-    vga_if top_rect_in();
-    vga_if top_bg_in();
+    
+    vga_if_tim top_bg_in();
     vga_if top_dmouse_in();
     vga_if top_out();
-    vga_if top_drect_char_in();
-    vga_if top_drect_char_in_2();
+    vga_if top_bg_out();
 
 /**
  * Local variables and signals
@@ -97,15 +96,6 @@ vga_timing u_vga_timing (
     .tim_if_out(top_bg_in)
 );
 
-draw_start_bg u_draw_start_bg (
-    .clk,
-    .rst,
-
-    .bg_if_in(top_bg_in),
-
-    .bg_if_out(top_rect_in)
-);
-
 
 MouseCtl u_MouseCtl (
     .clk(clk100MHz),
@@ -134,54 +124,19 @@ draw_mouse u_draw_mouse(
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
     
-    .dmouse_if_in(top_drect_char_in_2),
+    .dmouse_if_in(top_bg_out),
 
     .dmouse_if_out(top_out)
 );
 
 
-draw_rect_char u_draw_rect_char(
-    .clk(clk),
-    .rst(rst),
-    .in(top_rect_in),
-    .out(top_drect_char_in),
-
-    .char_pixels(char_line_pixels),
-    .char_xy(char_xy),
-    .char_line
+top_draw_start u_top_draw_start (
+    .clk,
+    .rst,
+    .bg_if_in(top_bg_in),
+    .bg_if_out(top_bg_out)
 );
 
-font_rom u_font_rom(
-    .clk(clk),
-    .addr({char_code,char_line}),
-    .char_line_pixels(char_line_pixels)
-);
-
-char_rom_16x16 u_char_rom_16x16(
-    .char_xy(char_xy),
-    .char_code
-);
-
-draw_rect_char2 u_draw_rect_char2(
-    .clk(clk),
-    .rst(rst),
-    .in(top_drect_char_in),
-    .out(top_drect_char_in_2),
-    .char_pixels(char_line_pixels2),
-    .char_xy(char_xy2),
-    .char_line(char_line2)
-);
-
-font_rom_2 u_font_rom_2(
-    .clk(clk),
-    .addr({char_code2,char_line2}),
-    .char_line_pixels(char_line_pixels2)
-);
-
-char_rom_16x16_2 u_char_rom_16x16_2(
-    .char_xy(char_xy2),
-    .char_code(char_code2)
-);
 
 
 endmodule
