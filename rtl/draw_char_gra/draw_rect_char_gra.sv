@@ -9,7 +9,7 @@
 
 `timescale 1 ns / 1 ps
 
-module draw_rect_char (
+module draw_rect_char_gra (
     input  logic clk,
     input  logic rst,
      

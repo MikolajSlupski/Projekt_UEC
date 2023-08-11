@@ -16,16 +16,16 @@
     input logic MouseLeft,
     input logic MouseRight,
     input logic xpos,
-    input logic ypos,
+    input logic ypos
 
  );
 
 
  enum logic[3:0]{
 
-    EkaranStartowy = 4'b0001,
+    EkranStartowy = 4'b0001,
     EkranGry = 4'b0010,
-    EkranKoncowy = 4'b0100,
+    EkranKoncowy = 4'b0100
 
  }state;
 

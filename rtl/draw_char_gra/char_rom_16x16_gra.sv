@@ -10,7 +10,7 @@
 `timescale 1ns / 1ps
 
 
-module char_rom_16x16(
+module char_rom_16x16_gra(
   input logic [7:0] char_xy,
     output logic [6:0] char_code 
     );
