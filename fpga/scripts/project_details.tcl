@@ -41,9 +41,17 @@ set sv_files {
     ../rtl/vga_if.sv
     ../rtl/vga_if_tim.sv
     ../rtl/top_vga.sv
+    ../rtl/top_draw_start.sv
+    ../rtl/draw_char_start/draw_char_start.sv
+    ../rtl/draw_char_start_2/draw_char_2_start.sv
+    ../rtl/draw_start_bg.sv
     ../rtl/draw_koniec_bg.sv
     ../rtl/draw_koniec.sv
     ../rtl/draw_mouse.sv
+    ../rtl/draw_char_start/draw_rect_char_start.sv
+    ../rtl/draw_char_start/char_rom_16x16_start.sv
+    ../rtl/draw_char_start_2/draw_rect_char_2_start.sv
+    ../rtl/draw_char_start_2/char_rom_16x16_2_start.sv
     ../rtl/draw_char_koniec/draw_char_koniec.sv
     ../rtl/draw_char_2_koniec/draw_char_2_koniec.sv
     ../rtl/draw_char_koniec/draw_rect_char_koniec.sv
@@ -61,6 +69,8 @@ set sv_files {
     ../fpga/rtl/clk_Projekt_65MHz_clk_wiz.v     
     ../rtl/draw_char_koniec/font_rom_koniec.v 
     ../rtl/draw_char_2_koniec/font_rom_2_koniec.v 
+    ../rtl/draw_char_start/font_rom_start.v 
+    ../rtl/draw_char_start_2/font_rom_2_start.v 
      
  }
 

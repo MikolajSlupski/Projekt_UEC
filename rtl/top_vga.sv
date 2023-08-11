@@ -32,7 +32,7 @@ module top_vga (
     vga_if_tim top_bg_in();
     vga_if top_dmouse_in();
     vga_if top_out();
-
+    vga_if top_bg_out();
 
 /**
  * Local variables and signals
@@ -109,8 +109,18 @@ draw_mouse u_draw_mouse(
     .rst(rst),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
+    
     .dmouse_if_in(top_bg_out),
+
     .dmouse_if_out(top_out)
+);
+
+
+top_draw_start u_top_draw_start (
+    .clk,
+    .rst,
+    .bg_if_in(top_bg_in),
+    .bg_if_out(top_bg_out)
 );
 
 
