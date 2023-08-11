@@ -23,7 +23,7 @@ import vga_pkg::*;
 vga_if top_rect_in();
 vga_if top_drect_char_in();
 
-draw_start_bg u_draw_start_bg(
+draw_bg u_draw_start_bg(
     .clk,
     .rst,
     .bg_if_in(bg_if_in),
