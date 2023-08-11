@@ -1,13 +1,8 @@
 
 `timescale 1 ns / 1 ps
 
-<<<<<<<< HEAD:rtl/draw_char_start_2/draw_rect_char_2_start.sv
-
-module draw_rect_char_2_start (
-
-========
 module draw_rect_char_gra2 (
->>>>>>>> Ekran_Gry:rtl/draw_char_gra2/draw_rect_char_gra2.sv
+
     input  logic clk,
     input  logic rst,
      

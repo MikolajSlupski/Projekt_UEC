@@ -10,11 +10,7 @@
 
  `timescale 1 ns / 1 ps
 
-<<<<<<<< HEAD:rtl/draw_koniec_bg.sv
- module draw_koniec_bg (
-========
  module draw_bg (
->>>>>>>> Ekran_Gry:rtl/draw_bg.sv
     input  logic clk,
     input  logic rst,
 

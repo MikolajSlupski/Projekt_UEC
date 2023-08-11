@@ -3,13 +3,9 @@
 `timescale 1ns / 1ps
 
 
-<<<<<<<< HEAD:rtl/draw_char_koniec/char_rom_16x16_koniec.sv
 
-module char_rom_16x16_koniec(
-
-========
 module char_rom_16x16_gra(
->>>>>>>> Ekran_Gry:rtl/draw_char_gra/char_rom_16x16_gra.sv
+
   input logic [7:0] char_xy,
     output logic [6:0] char_code 
     );

@@ -28,19 +28,12 @@ module top_vga (
     output logic [3:0] g,
     output logic [3:0] b
 );
-<<<<<<< HEAD
-=======
 
->>>>>>> Ekran_Gry
     vga_if top_bg_out();
     vga_if_tim top_bg_in();
     vga_if top_dmouse_in();
     vga_if top_out();
-<<<<<<< HEAD
-    vga_if top_bg_out();
-=======
 
->>>>>>> Ekran_Gry
 
 /**
  * Local variables and signals
@@ -85,11 +78,7 @@ vga_timing u_vga_timing (
     .tim_if_out(top_bg_in)
 );
 
-<<<<<<< HEAD
 draw_koniec u_draw_koniec (
-=======
-draw_gra_bg u_draw_gra_bg (
->>>>>>> Ekran_Gry
     .clk,
     .rst,
     .bg_if_in(top_bg_in),
@@ -121,18 +110,13 @@ draw_mouse u_draw_mouse(
     .rst(rst),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
-<<<<<<< HEAD
     
     .dmouse_if_in(top_bg_out),
 
-=======
-    .dmouse_if_in(top_bg_out),
->>>>>>> Ekran_Gry
     .dmouse_if_out(top_out)
 );
 
 
-<<<<<<< HEAD
 top_draw_start u_top_draw_start (
     .clk,
     .rst,
@@ -142,6 +126,4 @@ top_draw_start u_top_draw_start (
 
 
 
-=======
->>>>>>> Ekran_Gry
 endmodule

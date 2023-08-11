@@ -2,17 +2,11 @@
 
 `timescale 1ns / 1ps
 
-
-<<<<<<<< HEAD:rtl/draw_char_start/char_rom_16x16_start.sv
-
 module char_rom_16x16_start(
 
-========
-module char_rom_16x16_gra2(
->>>>>>>> Ekran_Gry:rtl/draw_char_gra2/char_rom_16x16_gra2.sv
   input logic [7:0] char_xy,
-    output logic [6:0] char_code 
-    );
+  output logic [6:0] char_code 
+);
 
   import vga_pkg::*;
      
