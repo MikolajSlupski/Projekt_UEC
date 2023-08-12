@@ -42,13 +42,12 @@ set sv_files {
     ../rtl/vga_if_tim.sv
     ../rtl/top_vga.sv
     ../rtl/draw_bg.sv
-    ../rtl/draw_gra_bg.sv
+    ../rtl/top_draw_gra.sv
     ../rtl/top_draw_start.sv
     ../rtl/draw_char_start/draw_char_start.sv
     ../rtl/draw_char_start_2/draw_char_2_start.sv
-    ../rtl/draw_start_bg.sv
     ../rtl/draw_koniec_bg.sv
-    ../rtl/draw_koniec.sv
+    ../rtl/top_draw_koniec.sv
     ../rtl/draw_mouse.sv
     ../rtl/draw_char_gra/draw_char_gra.sv
     ../rtl/draw_char_gra2/draw_char_gra2.sv
@@ -66,6 +65,8 @@ set sv_files {
     ../rtl/draw_char_koniec/char_rom_16x16_koniec.sv
     ../rtl/draw_char_2_koniec/draw_rect_char2_koniec.sv
     ../rtl/draw_char_2_koniec/char_rom_16x16_2_koniec.sv
+    ../fpga/rtl/main_State_Machine.sv
+    ../rtl/select_bg.sv
     rtl/top_vga_basys3.sv
 }
 

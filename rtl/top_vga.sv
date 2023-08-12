@@ -40,20 +40,12 @@ module top_vga (
  * Local variables and signals
  */
 
-// VGA signals from timing
-//wire [10:0] vcount_tim, hcount_tim;
-//wire vsync_tim, hsync_tim;
-//wire vblnk_tim, hblnk_tim;
-
-// VGA signals from background
-//wire [10:0] vcount_bg, hcount_bg;
-//wire vsync_bg, hsync_bg;
-//wire vblnk_bg, hblnk_bg;
-//wire [11:0] rgb_bg;
-
 // VGA signals from rectangle
 wire [11:0] mouse_xpos;
 wire [11:0] mouse_ypos;
+
+logic MouseLeft, MouseRight;
+logic [3:0] state_bin;
 
 /**
  * Signals assignments
@@ -79,13 +71,6 @@ vga_timing u_vga_timing (
     .tim_if_out(top_bg_in)
 );
 
-draw_koniec u_draw_koniec (
-    .clk,
-    .rst,
-    .bg_if_in(top_bg_in),
-    .bg_if_out(top_bg_out)
-);
-
 MouseCtl u_MouseCtl (
     .clk(clk100MHz),
     .rst(rst),
@@ -93,7 +78,7 @@ MouseCtl u_MouseCtl (
     .ps2_data(ps2_data),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
-    .left(),
+    .left(MouseLeft),
     .value(),
     .setx(),
     .sety(),
@@ -102,7 +87,7 @@ MouseCtl u_MouseCtl (
     .zpos(),
     .middle(),
     .new_event(),
-    .right()
+    .right(MouseRight)
 
 );
 
@@ -118,13 +103,23 @@ draw_mouse u_draw_mouse(
 );
 
 
-top_draw_start u_top_draw_start (
-    .clk,
-    .rst,
+select_bg u_select_bg(
     .bg_if_in(top_bg_in),
-    .bg_if_out(top_bg_out)
+    .bg_if_out(top_bg_out),
+    .clk(clk65MHz),
+    .rst(rst),
+    .state_bin(state_bin)
 );
 
+main_State_Machine u_main_State_Machine(
+    .clk(clk100MHz),
+    .rst(rst),
+    .MouseLeft(MouseLeft),
+    .MouseRight(MouseRight),
+    .xpos(mouse_xpos),
+    .ypos(mouse_ypos),
+    .state_bin(state_bin)
+);
 
 
 endmodule

@@ -51,6 +51,8 @@ localparam L_COLOR = 12'he_f_f, BG_COLOR = 12'h6_0_d;
 localparam RECT_CHAR_X = 128, RECT_CHAR_Y = 16;
 localparam RECT_X = HOR_PIXELS*5/6 - (RECT_CHAR_X/2), RECT_Y = VER_PIXELS/2 - RECT_CHAR_Y*2, RECT_Y_2 = VER_PIXELS/2 + RECT_CHAR_Y*2;
 
+localparam RECT_X_MIDDLE = HOR_PIXELS/2 - (RECT_CHAR_X/2); 
+
 
 localparam A = 7'h41, B=7'h42, C=7'h43, D=7'h44, E=7'h45, F=7'h46, G=7'h47, H=7'h48, I=7'h49, J=7'h4a, K=7'h4b, L=7'h4c, M=7'h4d,
  N=7'h4e, O=7'h4f, P=7'h50, Q=8'h51, R=7'h52, S=7'h53, T=7'h54, U=7'h55, V=7'h56, W=7'h57, X=7'h58, Y=7'h59, Z=7'h5a, Ci=7'h7e;

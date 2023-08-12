@@ -102,6 +102,6 @@ top_vga u_top_vga (
     .ps2_data(PS2Data),
     .clk100MHz(clk100MHz),
     .clk65MHz(clk65MHz)
-);
+); 
 
 endmodule

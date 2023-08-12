@@ -15,11 +15,14 @@
     input logic rst,
     input logic MouseLeft,
     input logic MouseRight,
-    input logic xpos,
-    input logic ypos
+    input logic [11:0] xpos,
+    input logic [11:0] ypos,
+
+    output logic [3:0] state_bin
 
  );
 
+ import vga_pkg::*;
 
  enum logic[3:0]{
 
@@ -33,32 +36,40 @@
  always_ff@(posedge clk) begin
     if(rst)begin
         state <= EkranStartowy;
+        state_bin <= state;
     end else begin
 
         case(state)
             EkranStartowy: begin
-                if(xpos<=640 && xpos>=0 && ypos<=720 && ypos>=0 && MouseLeft==1)begin
+                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)||(xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2) && MouseLeft==1)begin
                     state <= EkranGry;
+                    state_bin <= state;
                 end else begin
                     state <= EkranStartowy;
+                    state_bin <= state;
                 end
             end
             
             EkranGry: begin
                 if(MouseRight==1)begin
                     state <= EkranKoncowy;
+                    state_bin <= state;
                 end else begin
                     state <= EkranGry;
+                    state_bin <= state;
                 end
             end
 
             EkranKoncowy: begin
-                if(xpos<=1280 && xpos>=640 && ypos<=720 && ypos>=0 && MouseLeft==1) begin
+                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin
                     state <= EkranStartowy;
-                end else if(xpos<=640 && xpos>=0 && ypos<=720 && ypos>=0 && MouseLeft==1) begin
+                    state_bin <= state;
+                end else if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)&& MouseLeft==1) begin
                     state <= EkranGry;
+                    state_bin <= state;
                 end else begin
                     state <= EkranKoncowy;
+                    state_bin <= state;
                 end
             end
         endcase

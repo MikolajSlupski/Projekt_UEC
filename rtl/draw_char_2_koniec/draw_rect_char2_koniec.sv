@@ -47,7 +47,7 @@ end
          
 // rgb
 always_comb begin
-    if (in.vcount <= RECT_CHAR_Y + RECT_Y_2 && in.vcount >= RECT_Y_2 && in.hcount <= RECT_CHAR_X + RECT_X && in.hcount >= RECT_X) begin
+    if (in.vcount <= RECT_CHAR_Y + RECT_Y_2 && in.vcount >= RECT_Y_2 && in.hcount <= RECT_CHAR_X + RECT_X_MIDDLE && in.hcount >= RECT_X_MIDDLE) begin
         if (char_pixels[4'b1000-hcount_in_rect[2:0]]) 
             rgb_nxt3 = L_COLOR;
         else

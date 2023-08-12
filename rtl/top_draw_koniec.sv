@@ -4,13 +4,13 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Top module to draw bagground
+ * Top module to draw bg
  */
 
 
  `timescale 1 ns / 1 ps
 
- module draw_gra_bg (
+ module top_draw_koniec (
     input  logic clk,
     input  logic rst,
 
@@ -20,12 +20,11 @@
 
 import vga_pkg::*;
 
-vga_if top_rect_in();
-vga_if top_drect_char_in();
+    vga_if top_rect_in();
+    vga_if top_drect_char_in();
 
 
-
-draw_bg u_draw_bg (
+draw_koniec_bg u_draw_koniec_bg (
     .clk,
     .rst,
     .bg_if_in(bg_if_in),
@@ -33,7 +32,7 @@ draw_bg u_draw_bg (
 );
 
 
-draw_char_gra u_draw_char(
+draw_char_koniec u_draw_char_koniec(
     .clk(clk),
     .rst(rst),
     .in(top_rect_in),
@@ -41,10 +40,12 @@ draw_char_gra u_draw_char(
 );
 
 
-draw_char_gra2 u_draw_char_2(
+draw_char_2_koniec u_draw_char_2_koniec(
     .clk(clk),
     .rst(rst),
     .in(top_drect_char_in),
     .out(bg_if_out)
 );
+
+
  endmodule
