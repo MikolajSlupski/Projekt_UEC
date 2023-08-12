@@ -61,7 +61,7 @@ assign char_xy = {vcount_in_rect[7:4], hcount_in_rect[6:3]};
 assign char_line = vcount_in_rect[3:0];
       
 assign vcount_in_rect = in.vcount - RECT_Y_2;
-assign hcount_in_rect = in.hcount - RECT_X;
+assign hcount_in_rect = in.hcount - RECT_X_MIDDLE;
    
      
  endmodule
