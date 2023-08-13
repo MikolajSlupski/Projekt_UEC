@@ -67,6 +67,8 @@ set sv_files {
     ../rtl/draw_char_2_koniec/char_rom_16x16_2_koniec.sv
     ../fpga/rtl/main_State_Machine.sv
     ../rtl/select_bg.sv
+    ../rtl/draw_image/draw_image.sv
+    ../rtl/draw_image/image_rom.sv
     rtl/top_vga_basys3.sv
 }
 
@@ -95,6 +97,6 @@ set sv_files {
  }
 
 # Specify files for a memory initialization     -- EDIT
- #set mem_files {
-  #  ../rtl/picture/image_rom.data
-#}
+ set mem_files {
+  ../rtl/draw_image/image/image_rom.data
+}

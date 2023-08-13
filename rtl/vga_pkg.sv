@@ -66,4 +66,9 @@ localparam DOT = 7'h2e;
 localparam ZERO = 7'h30, JEDEN = 7'h31, DWA = 7'h32, TRZY = 7'h33, CZTERY = 7'h34, PIEC = 7'h35, SZESC = 7'h36, SIEDEM = 7'h37, OSIEM = 7'h38, DZIEWIEC = 7'h39;
 
 localparam Spc =7'h20;
+
+// Image parameters
+localparam A_side = 49;
+localparam B_side = 63;
+
 endpackage

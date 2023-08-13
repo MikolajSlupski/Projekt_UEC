@@ -22,8 +22,9 @@ import vga_pkg::*;
 
 vga_if top_rect_in();
 vga_if top_drect_char_in();
+vga_if top_image_out();
 
-
+wire [11:0] address, rgb_pixel;
 
 draw_bg u_draw_bg (
     .clk,
@@ -32,11 +33,25 @@ draw_bg u_draw_bg (
     .bg_if_out(top_rect_in)
 );
 
+draw_image u_draw_image(
+    .clk,
+    .rst,
+    .pixel_addr(address),
+    .rgb_pixel(rgb_pixel),
+    .in(top_rect_in),
+    .out(top_image_out)
+);
+
+image_rom u_image_rom(
+    .clk,
+    .address(address),
+    .rgb(rgb_pixel)
+);
 
 draw_char_gra u_draw_char(
     .clk(clk),
     .rst(rst),
-    .in(top_rect_in),
+    .in(top_image_out),
     .out(top_drect_char_in)
 );
 
