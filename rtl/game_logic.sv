@@ -24,42 +24,55 @@
     inout logic [7:0] leftDOWN_Pmod,
     inout logic [7:0] rightDOWN_Pmod,
 
-    output logic [2:0] resoult
+    output logic [1:0] resoult
  );
 
  import vga_pkg::*;
 
- logic [2:0] resoult_nxt;
+ logic [1:0] resoult_nxt;
  logic [3:0] selected_person;
+ logic [3:0] Pmod_OUT_nxt;
 
- always_comb begin
-    if(rightDOWN_Pmod[4]==1)begin
-        rightUP_Pmod[4]=your_person[0];
-        rightUP_Pmod[5]=your_person[1];
-        rightUP_Pmod[6]=your_person[2];
-        rightUP_Pmod[7]=your_person[3];
+ assign rightUP_Pmod[7:4]=Pmod_OUT_nxt[3:0];
+ assign leftUP_Pmod[3:0]=Pmod_OUT_nxt[3:0];
+ assign rightDOWN_Pmod[6:5]=resoult_nxt[1:0];
+ assign leftDOWN_Pmod[2:1]=resoult_nxt[1:0];
+
+ always_ff@(posedge clk)begin
+    if(rst) begin
+        resoult <= 2'b00;
+    end else begin
+        resoult <= resoult_nxt;
     end
-
  end
 
  always_comb begin
-    if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    if(1)begin
+        Pmod_OUT_nxt[0]=your_person[0];
+        Pmod_OUT_nxt[1]=your_person[1];
+        Pmod_OUT_nxt[2]=your_person[2];
+        Pmod_OUT_nxt[3]=your_person[3];
+    end
+ end
+
+ always_comb begin
+    if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0001;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0010;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0011;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0100;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0101;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0110;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b0111;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b1000;
-    end else if(xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
         selected_person = 4'b1001;
     end else begin
         selected_person = 4'b0000;
@@ -67,10 +80,22 @@
  end
 
  always_comb begin
-    if(rightDOWN_Pmod[4]==1 && state_bin==4'b0010 && rightUP_Pmod[0]==selected_person[0] && rightUP_Pmod[1]==selected_person[1] && rightUP_Pmod[2]==selected_person[2] && rightUP_Pmod[3]==selected_person[3]) begin
+    if(rightDOWN_Pmod[4]==1 && state_bin==4'b0010 && rightUP_Pmod[3:0]==selected_person[3:0]) begin
         resoult_nxt = 2'b10;
-    end else if(leftDOWN_Pmod[4]==1 && state_bin==4'b0010 && leftUP_Pmod[4]==selected_person[0] && leftUP_Pmod[5]==selected_person[1] && leftUP_Pmod[6]==selected_person[2] && leftUP_Pmod[7]==selected_person[3]) begin
+    end else if(leftDOWN_Pmod[4]==1 && state_bin==4'b0010 && leftUP_Pmod[7:4]==selected_person[3:0]) begin
         resoult_nxt = 2'b10;
+    end else if(rightDOWN_Pmod[4]==1 && state_bin==4'b0010 && rightUP_Pmod[3:0]!=selected_person[3:0]) begin
+        resoult_nxt = 2'b01;
+    end else if(leftDOWN_Pmod[4]==1 && state_bin==4'b0010 && leftUP_Pmod[7:4]!=selected_person[3:0]) begin
+        resoult_nxt = 2'b01;
+    end else if(rightDOWN_Pmod[4]==1 && rightDOWN_Pmod[2:1]==2'b01) begin
+        resoult_nxt = 2'b10;
+    end else if(rightDOWN_Pmod[4]==1 && rightDOWN_Pmod[2:1]==2'b10) begin
+        resoult_nxt = 2'b01;
+    end else if(rightDOWN_Pmod[4]==1 && leftDOWN_Pmod[6:5]==2'b01) begin
+        resoult_nxt = 2'b10;
+    end else if(rightDOWN_Pmod[4]==1 && leftDOWN_Pmod[6:5]==2'b10) begin
+        resoult_nxt = 2'b01;
     end else begin 
         resoult_nxt = 2'b00;
     end
