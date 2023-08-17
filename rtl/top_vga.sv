@@ -22,6 +22,10 @@ module top_vga (
 
     inout  logic ps2_clk,
     inout  logic ps2_data,
+    inout  logic [7:0] leftUP_Pmod,
+    inout  logic [7:0] rightUP_Pmod,
+    inout  logic [7:0] leftDOWN_Pmod,
+    inout  logic [7:0] rightDOWN_Pmod,
 
     output logic vs,
     output logic hs,
