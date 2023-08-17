@@ -68,7 +68,7 @@ localparam ZERO = 7'h30, JEDEN = 7'h31, DWA = 7'h32, TRZY = 7'h33, CZTERY = 7'h3
 localparam Spc =7'h20;
 
 // Image parameters
-localparam A_side = 49;
-localparam B_side = 63;
+localparam A_side = 155;
+localparam B_side = 193;
 
 endpackage

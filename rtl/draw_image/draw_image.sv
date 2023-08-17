@@ -1,10 +1,10 @@
 /**
  * Copyright (C) 2023  AGH University of Science and Technology
  * MTM UEC2
- *
+ * Author: Wojciech Szczepka
  *
  * Description:
- * Draw ractangle
+ * Draw image
  */
 
 
@@ -14,7 +14,7 @@ module draw_image (
     input  logic clk,
     input  logic rst,
     input  logic [11:0] rgb_pixel,
-    output logic [11:0] pixel_addr,
+    output logic [14:0] pixel_addr,
 
     vga_if.in in,
     vga_if.out out
@@ -27,9 +27,10 @@ import vga_pkg::*;
 /**
  * Local variables and signals
  */
-
+logic [14:0] pixel_addr_nxt;
 logic [11:0] rgb_nxt, rgb, rgb2;
-logic [5:0] addrx, addry;
+logic [7:0] addrx;
+logic [7:0] addry;
 logic [10:0] hcount, vcount;
 logic hsync, hblnk, vsync, vblnk;
 
@@ -103,7 +104,7 @@ always_ff @(posedge clk) begin
         out.hsync  <= hsync2;
         out.hblnk  <= hblnk2;
         out.rgb    <= rgb_nxt;
-        pixel_addr <= {addry, addrx};
+        pixel_addr <= pixel_addr_nxt;
     end
 end
 
@@ -119,6 +120,7 @@ end
 always_comb begin
     addry = in.vcount - 50;
     addrx = in.hcount - 50;
+    pixel_addr_nxt = addry*156 + addrx;
 end
 
 endmodule

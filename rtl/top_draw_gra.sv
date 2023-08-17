@@ -24,7 +24,8 @@ vga_if top_rect_in();
 vga_if top_drect_char_in();
 vga_if top_image_out();
 
-wire [11:0] address, rgb_pixel;
+wire [14:0] address;
+wire [11:0] rgb_pixel;
 
 draw_bg u_draw_bg (
     .clk,

@@ -98,5 +98,5 @@ set sv_files {
 
 # Specify files for a memory initialization     -- EDIT
  set mem_files {
-  ../rtl/draw_image/image/image_rom.data
+  ../rtl/draw_image/image/13.dat
 }
