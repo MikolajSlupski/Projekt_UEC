@@ -67,8 +67,23 @@ set sv_files {
     ../rtl/draw_char_2_koniec/char_rom_16x16_2_koniec.sv
     ../fpga/rtl/main_State_Machine.sv
     ../rtl/select_bg.sv
-    ../rtl/draw_image/draw_image.sv
-    ../rtl/draw_image/image_rom.sv
+    ../rtl/top_draw_image.sv
+    ../rtl/draw_image/draw_image_1.sv
+
+ 
+    ../rtl/draw_image/top_draw_image_1.sv
+   
+
+    ../rtl/draw_image/image_rom_1.sv
+    ../rtl/draw_image/image_rom_2.sv
+    ../rtl/draw_image/image_rom_3.sv
+    ../rtl/draw_image/image_rom_4.sv
+    ../rtl/draw_image/image_rom_5.sv
+    ../rtl/draw_image/image_rom_6.sv
+    ../rtl/draw_image/image_rom_7.sv
+    ../rtl/draw_image/image_rom_8.sv
+    ../rtl/draw_image/image_rom_9.sv
+
     rtl/top_vga_basys3.sv
 }
 
@@ -98,5 +113,14 @@ set sv_files {
 
 # Specify files for a memory initialization     -- EDIT
  set mem_files {
-  ../rtl/draw_image/image/13.dat
+    ../rtl/image/1.dat
+    ../rtl/image/2.dat
+    ../rtl/image/3.dat
+    ../rtl/image/4.dat
+    ../rtl/image/5.dat
+    ../rtl/image/6.dat
+    ../rtl/image/7.dat
+    ../rtl/image/8.dat
+    ../rtl/image/9.dat
+
 }

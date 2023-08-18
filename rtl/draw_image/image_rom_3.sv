@@ -13,7 +13,7 @@
  * red, green and blue color values (4-bit each)
  */
 
-module image_rom (
+module image_rom_3 (
     input  logic clk ,
     input  logic [14:0] address,  // address = {addry[5:0], addrx[5:0]}
     output logic [11:0] rgb
@@ -32,7 +32,7 @@ reg [14:0] rom [0:32767];
  */
 
 /* Relative path from the simulation or synthesis working directory */
-initial $readmemh("../../rtl/draw_image/image/13.dat", rom);
+initial $readmemh("../../rtl/image/3.dat", rom);
 
 
 /**

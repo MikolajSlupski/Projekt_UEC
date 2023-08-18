@@ -34,6 +34,7 @@ module top_vga (
     vga_if_tim top_bg_in();
     vga_if top_dmouse_in();
     vga_if top_out();
+    vga_if top_draw_image();
 
 
 /**
@@ -97,7 +98,7 @@ draw_mouse u_draw_mouse(
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
     
-    .dmouse_if_in(top_bg_out),
+    .dmouse_if_in(top_draw_image),
 
     .dmouse_if_out(top_out)
 );
@@ -121,5 +122,11 @@ main_State_Machine u_main_State_Machine(
     .state_bin(state_bin)
 );
 
+top_draw_image_1 u_top_draw_image_1(
+    .clk(clk65MHz),
+    .rst,
+    .in(top_bg_out),
+    .out(top_draw_image)
+);
 
 endmodule
