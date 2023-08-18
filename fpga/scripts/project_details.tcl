@@ -67,7 +67,6 @@ set sv_files {
     ../rtl/draw_char_2_koniec/char_rom_16x16_2_koniec.sv
     ../fpga/rtl/main_State_Machine.sv
     ../rtl/select_bg.sv
-    ../rtl/top_draw_image.sv
     ../rtl/draw_image/draw_image_1.sv
 
  
@@ -83,6 +82,8 @@ set sv_files {
     ../rtl/draw_image/image_rom_7.sv
     ../rtl/draw_image/image_rom_8.sv
     ../rtl/draw_image/image_rom_9.sv
+    ../rtl/draw_image/image_rom_revers.sv
+    ../rtl/picture_logic.sv
 
     rtl/top_vga_basys3.sv
 }
@@ -122,5 +123,6 @@ set sv_files {
     ../rtl/image/7.dat
     ../rtl/image/8.dat
     ../rtl/image/9.dat
+    ../rtl/image/10.dat
 
 }

@@ -125,6 +125,9 @@ main_State_Machine u_main_State_Machine(
 top_draw_image_1 u_top_draw_image_1(
     .clk(clk65MHz),
     .rst,
+    .MouseLeft(MouseLeft),
+    .xpos(mouse_xpos),
+    .ypos(mouse_ypos),
     .in(top_bg_out),
     .out(top_draw_image)
 );

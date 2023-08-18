@@ -15,11 +15,16 @@ module draw_image_1 (
     input  logic rst,
     input  logic [11:0] rgb_pixel1,
     input  logic [11:0] rgb_pixel2,
+
     input  logic [11:0] rgb_pixel3,
     input  logic [11:0] rgb_pixel4,
     input  logic [11:0] rgb_pixel5,
     input  logic [11:0] rgb_pixel6,
-    output logic [14:0] pixel_addr,
+    input  logic [11:0] rgb_pixel7,
+    input  logic [11:0] rgb_pixel8,
+    input  logic [11:0] rgb_pixel9,
+
+    output logic [13:0] pixel_addr,
 
     vga_if.in in,
     vga_if.out out
@@ -32,7 +37,7 @@ import vga_pkg::*;
 /**
  * Local variables and signals
  */
-logic [14:0] pixel_addr_nxt;
+logic [13:0] pixel_addr_nxt;
 logic [11:0] rgb_nxt, rgb, rgb2;
 logic [7:0] addrx;
 logic [7:0] addry;
@@ -111,41 +116,59 @@ end
 
 
 always_comb begin 
-        if((in.hcount >= 50) && (in.hcount <= 50 + A_side) && (in.vcount >= 50) && (in.vcount <= 50 + B_side))begin 
+        if((in.hcount >= X_1_DIM) && (in.hcount <= X_1_DIM + A_side) && (in.vcount >= Y_1_DIM) && (in.vcount <= Y_1_DIM + B_side))begin 
             rgb_nxt = rgb_pixel1;
-            addry = in.vcount - 50;
-            addrx = in.hcount - 50;
-            pixel_addr_nxt = addry*156 + addrx;    
+            addry = in.vcount - Y_1_DIM;
+            addrx = in.hcount - X_1_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
         end 
-        else if((in.hcount >= 250) && (in.hcount <= 250 + A_side) && (in.vcount >= 50) && (in.vcount <= 50 + B_side))begin 
+        else if((in.hcount >= X_2_DIM) && (in.hcount <= X_2_DIM + A_side) && (in.vcount >= Y_1_DIM) && (in.vcount <= Y_1_DIM + B_side))begin 
             rgb_nxt = rgb_pixel2;
             addry = in.vcount - 50;
-            addrx = in.hcount - 250;
-            pixel_addr_nxt = addry*156 + addrx;    
+            addrx = in.hcount - X_2_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
         end 
-        else if((in.hcount >= 450) && (in.hcount <= 450 + A_side) && (in.vcount >= 50) && (in.vcount <= 50 + B_side))begin 
+        else if((in.hcount >= X_3_DIM) && (in.hcount <= X_3_DIM + A_side) && (in.vcount >= Y_1_DIM) && (in.vcount <= Y_1_DIM + B_side))begin 
             rgb_nxt = rgb_pixel3;
-            addry = in.vcount - 50;
-            addrx = in.hcount - 450;
-            pixel_addr_nxt = addry*156 + addrx;    
+            addry = in.vcount - Y_1_DIM;
+            addrx = in.hcount - X_3_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
         end 
-        else if((in.hcount >= 50) && (in.hcount <= 50 + A_side) && (in.vcount >= 270) && (in.vcount <= 270 + B_side))begin 
+        else if((in.hcount >= X_1_DIM) && (in.hcount <= X_1_DIM + A_side) && (in.vcount >= Y_2_DIM) && (in.vcount <= Y_2_DIM + B_side))begin 
             rgb_nxt = rgb_pixel4;
-            addry = in.vcount - 270;
-            addrx = in.hcount - 50;
-            pixel_addr_nxt = addry*156 + addrx;    
+            addry = in.vcount - Y_2_DIM;
+            addrx = in.hcount - X_1_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
         end 
-        else if((in.hcount >= 250) && (in.hcount <= 250 + A_side) && (in.vcount >= 270) && (in.vcount <= 270 + B_side))begin 
+        else if((in.hcount >= X_2_DIM) && (in.hcount <= X_2_DIM + A_side) && (in.vcount >= Y_2_DIM) && (in.vcount <= Y_2_DIM + B_side))begin 
             rgb_nxt = rgb_pixel5;
-            addry = in.vcount - 270;
-            addrx = in.hcount - 250;
-            pixel_addr_nxt = addry*156 + addrx;    
+            addry = in.vcount - Y_2_DIM;
+            addrx = in.hcount - X_2_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
         end 
-        else if((in.hcount >= 450) && (in.hcount <= 450 + A_side) && (in.vcount >= 270) && (in.vcount <= 270 + B_side))begin 
+        else if((in.hcount >= X_3_DIM) && (in.hcount <= X_3_DIM + A_side) && (in.vcount >= Y_2_DIM) && (in.vcount <= Y_2_DIM + B_side))begin 
             rgb_nxt = rgb_pixel6;
-            addry = in.vcount - 270;
-            addrx = in.hcount - 450;
-            pixel_addr_nxt = addry*156 + addrx;    
+            addry = in.vcount - Y_2_DIM;
+            addrx = in.hcount - X_3_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
+        end 
+        else if((in.hcount >= X_1_DIM) && (in.hcount <= X_1_DIM + A_side) && (in.vcount >= Y_3_DIM) && (in.vcount <= Y_3_DIM + B_side))begin 
+            rgb_nxt = rgb_pixel7;
+            addry = in.vcount - Y_3_DIM;
+            addrx = in.hcount - X_1_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
+        end 
+        else if((in.hcount >= X_2_DIM) && (in.hcount <= X_2_DIM + A_side) && (in.vcount >= Y_3_DIM) && (in.vcount <= Y_3_DIM + B_side))begin 
+            rgb_nxt = rgb_pixel8;
+            addry = in.vcount - Y_3_DIM;
+            addrx = in.hcount - X_2_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
+        end 
+        else if((in.hcount >= X_3_DIM) && (in.hcount <= X_3_DIM + A_side) && (in.vcount >= Y_3_DIM) && (in.vcount <= Y_3_DIM + B_side))begin 
+            rgb_nxt = rgb_pixel9;
+            addry = in.vcount - Y_3_DIM;
+            addrx = in.hcount - X_3_DIM;
+            pixel_addr_nxt = addry*128 + addrx;    
         end 
         else begin                                 
             rgb_nxt = rgb2;  

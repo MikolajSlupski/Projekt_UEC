@@ -28,7 +28,8 @@
 
     EkranStartowy = 4'b0001,
     EkranGry = 4'b0010,
-    EkranKoncowy = 4'b0100
+    EkranKoncowy = 4'b0100,
+    Step = 4'b1000
 
  }state;
 
@@ -62,13 +63,23 @@
 
             EkranKoncowy: begin
                 if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin
-                    state <= EkranStartowy;
+                    state <= Step;
                     state_bin <= state;
                 end else if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)&& MouseLeft==1) begin
                     state <= EkranGry;
                     state_bin <= state;
                 end else begin
                     state <= EkranKoncowy;
+                    state_bin <= state;
+                end
+            end
+            Step: begin
+                if(MouseLeft ==0) begin
+                    state <= EkranStartowy;
+                    state_bin <= state;
+                end
+                else begin
+                    state <= Step;
                     state_bin <= state;
                 end
             end

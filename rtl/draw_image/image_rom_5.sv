@@ -15,7 +15,7 @@
 
 module image_rom_5 (
     input  logic clk ,
-    input  logic [14:0] address,  // address = {addry[5:0], addrx[5:0]}
+    input  logic [13:0] address,  // address = {addry[5:0], addrx[5:0]}
     output logic [11:0] rgb
 );
 
@@ -24,7 +24,7 @@ module image_rom_5 (
  * Local variables and signals
  */
 
-reg [14:0] rom [0:32767];
+reg [13:0] rom [0:16383];
 
 
 /**
