@@ -10,12 +10,11 @@
 
  `timescale 1 ns / 1 ps
 
-module picture_logic(
+module picture_logic9(
 
     input logic clk,
     input logic rst,
     input logic MouseLeft,
-    //input logic MouseRight,
     input logic [11:0] xpos,
     input logic [11:0] ypos,
     input logic [11:0] rgb_in1,
@@ -40,7 +39,7 @@ always_ff@(posedge clk) begin
     end else begin
         case(state1)
             Obraz: begin
-                if((xpos >= X_1_DIM) && (xpos <= X_1_DIM + A_side) && (ypos >= Y_1_DIM) && (ypos <= Y_1_DIM + B_side) && MouseLeft==1)begin
+                if((xpos >= X_3_DIM) && (xpos <= X_3_DIM + A_side) && (ypos >= Y_3_DIM) && (ypos <= Y_3_DIM + B_side) && MouseLeft==1)begin
                     state1 <= Step1;   
                 end else begin
                     state1 <= Obraz;
@@ -56,7 +55,7 @@ always_ff@(posedge clk) begin
                 end
             end
             Tlo: begin
-                if ((xpos >= X_1_DIM) && (xpos <= X_1_DIM + A_side) && (ypos >= Y_1_DIM) && (ypos <= Y_1_DIM + B_side) && MouseLeft==1)begin
+                if ((xpos >= X_3_DIM) && (xpos <= X_3_DIM + A_side) && (ypos >= Y_3_DIM) && (ypos <= Y_3_DIM + B_side) && MouseLeft==1)begin
                     state1 <=Step2;
                 end
                 else begin

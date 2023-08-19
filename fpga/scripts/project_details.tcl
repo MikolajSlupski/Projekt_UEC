@@ -68,11 +68,7 @@ set sv_files {
     ../fpga/rtl/main_State_Machine.sv
     ../rtl/select_bg.sv
     ../rtl/draw_image/draw_image_1.sv
-
- 
     ../rtl/draw_image/top_draw_image_1.sv
-   
-
     ../rtl/draw_image/image_rom_1.sv
     ../rtl/draw_image/image_rom_2.sv
     ../rtl/draw_image/image_rom_3.sv
@@ -83,7 +79,15 @@ set sv_files {
     ../rtl/draw_image/image_rom_8.sv
     ../rtl/draw_image/image_rom_9.sv
     ../rtl/draw_image/image_rom_revers.sv
-    ../rtl/picture_logic.sv
+    ../rtl/draw_image/picture_logic1.sv
+    ../rtl/draw_image/picture_logic2.sv
+    ../rtl/draw_image/picture_logic3.sv
+    ../rtl/draw_image/picture_logic4.sv
+    ../rtl/draw_image/picture_logic5.sv
+    ../rtl/draw_image/picture_logic6.sv
+    ../rtl/draw_image/picture_logic7.sv
+    ../rtl/draw_image/picture_logic8.sv
+    ../rtl/draw_image/picture_logic9.sv
 
     rtl/top_vga_basys3.sv
 }
