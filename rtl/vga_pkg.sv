@@ -71,7 +71,7 @@ localparam Spc =7'h20;
 localparam A_side = 127;
 localparam B_side = 127;
 
-localparam X_1_DIM = 50, X_2_DIM = 280, X_3_DIM= 510;
-localparam Y_1_DIM = 50, Y_2_DIM = 280, Y_3_DIM = 510;
+localparam X_1_DIM = 50, X_2_DIM = 280, X_3_DIM= 510, X_4_DIM=HOR_PIXELS*5/6 - (A_side/2);
+localparam Y_1_DIM = 50, Y_2_DIM = 280, Y_3_DIM = 510, Y_4_DIM = 100;
 
 endpackage

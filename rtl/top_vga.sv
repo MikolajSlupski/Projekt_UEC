@@ -50,7 +50,8 @@ wire [11:0] mouse_xpos;
 wire [11:0] mouse_ypos;
 
 logic MouseLeft, MouseRight;
-logic [3:0] state_bin;
+logic [5:0] state_bin;
+reg rst_sys, Rst;
 
 /**
  * Signals assignments
@@ -64,6 +65,9 @@ assign {r,g,b} = top_out.rgb;
 
 //assign addr = (u_char_rom_16x16.char_code << 4 | u_draw_rect_char.char_line);
 
+always_comb begin
+    Rst = rst || rst_sys;
+end
 
 
 /**
@@ -123,15 +127,18 @@ main_State_Machine u_main_State_Machine(
     .MouseRight(MouseRight),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
-    .state_bin(state_bin)
+    .state_bin(state_bin),
+    .rst_sys(rst_sys)
 );
 
 top_draw_image_1 u_top_draw_image_1(
     .clk(clk65MHz),
-    .rst,
+    .rst(Rst),
     .MouseLeft(MouseLeft),
+    .MouseRight(MouseRight),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
+    .state_bin(state_bin),
     .in(top_bg_out),
     .out(top_draw_image)
 );

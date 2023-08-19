@@ -14,8 +14,10 @@
      input  logic clk,
      input  logic rst,
      input  logic MouseLeft,
+     input  logic MouseRight,
      input  logic [11:0] xpos,
      input  logic [11:0] ypos,
+     input  logic [5:0] state_bin,
  
      vga_if.in in,
      vga_if.out out
@@ -23,10 +25,33 @@
  );
  
  import vga_pkg::*;
- 
+ vga_if image_out();
+
 wire [13:0] address;
-wire [11:0] rgb_pixel1, rgb_pixel2, rgb_pixel3, rgb_pixel4, rgb_pixel5, rgb_pixel6, rgb_pixel7, rgb_pixel8, rgb_pixel9, rgb_pixel10;
+wire [11:0] rgb_pixel1, rgb_pixel2, rgb_pixel3, rgb_pixel4, rgb_pixel5, rgb_pixel6, rgb_pixel7, rgb_pixel8, rgb_pixel9, rgb_pixel10, rgb_person;
 wire [11:0] rgb_out1, rgb_out2, rgb_out3, rgb_out4, rgb_out5, rgb_out6, rgb_out7, rgb_out8, rgb_out9;
+wire [4:0] your_person;
+
+always_comb begin
+    if(state_bin == 6'b0010 || state_bin == 6'b10000 || state_bin == 6'b100000) begin
+        out.vcount = image_out.vcount;
+        out.hcount = image_out.hcount;
+        out.hsync  = image_out.hsync;
+        out.vsync  = image_out.vsync;
+        out.hblnk  = image_out.hblnk;
+        out.vblnk  = image_out.vblnk;
+        out.rgb    = image_out.rgb;
+    end else begin
+        out.vcount = in.vcount;
+        out.hcount = in.hcount;
+        out.hsync  = in.hsync;
+        out.vsync  = in.vsync;
+        out.hblnk  = in.hblnk;
+        out.vblnk  = in.vblnk;
+        out.rgb    = in.rgb;
+    end
+end
+
 
  draw_image_1 u_draw_image_1(
     .clk,
@@ -41,8 +66,35 @@ wire [11:0] rgb_out1, rgb_out2, rgb_out3, rgb_out4, rgb_out5, rgb_out6, rgb_out7
     .rgb_pixel7(rgb_out7),
     .rgb_pixel8(rgb_out8),
     .rgb_pixel9(rgb_out9),
+    .rgb_person(rgb_person),
     .in(in),
-    .out(out)
+    .out(image_out)
+);
+
+your_person u_your_person(
+    .clk,
+    .rst,
+    .MouseRight(MouseRight),
+    .xpos(xpos),
+    .ypos(ypos),
+    .your_person(your_person)
+);
+
+draw_your_person u_draw_your_person(
+    .clk,
+    .rst,
+    .rgb_pixel1(rgb_pixel1),
+    .rgb_pixel2(rgb_pixel2),
+    .rgb_pixel3(rgb_pixel3),
+    .rgb_pixel4(rgb_pixel4),
+    .rgb_pixel5(rgb_pixel5),
+    .rgb_pixel6(rgb_pixel6),
+    .rgb_pixel7(rgb_pixel7),
+    .rgb_pixel8(rgb_pixel8),
+    .rgb_pixel9(rgb_pixel9),
+    .rgb_pixel10(rgb_pixel10),
+    .your_person(your_person),
+    .rgb_out(rgb_person)
 );
 
 picture_logic1 u_picture_logic1(

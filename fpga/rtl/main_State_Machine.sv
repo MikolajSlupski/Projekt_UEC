@@ -18,18 +18,21 @@
     input logic [11:0] xpos,
     input logic [11:0] ypos,
 
-    output logic [3:0] state_bin
+    output logic [5:0] state_bin,
+    output logic rst_sys
 
  );
 
  import vga_pkg::*;
 
- enum logic[3:0]{
+ enum logic[5:0]{
 
-    EkranStartowy = 4'b0001,
-    EkranGry = 4'b0010,
-    EkranKoncowy = 4'b0100,
-    Step = 4'b1000
+    EkranStartowy = 6'b00001,
+    EkranGry = 6'b00010,
+    EkranKoncowy = 6'b00100,
+    Step = 6'b01000,
+    EkranWyboru =6'b10000,
+    Step2 = 6'b100000
 
  }state;
 
@@ -43,11 +46,12 @@
         case(state)
             EkranStartowy: begin
                 if(((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)||(xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)) && MouseLeft==1)begin
-                    state <= EkranGry;
+                    state <= EkranWyboru;
                     state_bin <= state;
                 end else begin
                     state <= EkranStartowy;
                     state_bin <= state;
+                    rst_sys <= 1'b0;
                 end
             end
             
@@ -63,10 +67,11 @@
 
             EkranKoncowy: begin
                 if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin
-                    state <= Step;
+                    state <= EkranWyboru;
                     state_bin <= state;
+                    rst_sys <= 1'b1;
                 end else if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)&& MouseLeft==1) begin
-                    state <= EkranGry;
+                    state <= Step;
                     state_bin <= state;
                 end else begin
                     state <= EkranKoncowy;
@@ -80,6 +85,27 @@
                 end
                 else begin
                     state <= Step;
+                    state_bin <= state;
+                    rst_sys <= 1'b1;
+                end
+            end
+            EkranWyboru: begin
+                if(MouseRight==1) begin
+                    state <= Step2;
+                    state_bin <= state;
+                end else begin
+                    state <= EkranWyboru;
+                    state_bin <= state;
+                    rst_sys <= 1'b0;
+                end
+            end
+            Step2: begin
+                if(MouseRight ==0) begin
+                    state <= EkranGry;
+                    state_bin <= state;
+                end
+                else begin
+                    state <= Step2;
                     state_bin <= state;
                 end
             end

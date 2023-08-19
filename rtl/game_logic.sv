@@ -64,23 +64,23 @@
 
  //zgadywanie osoby wg koordynatow
  always_comb begin
-    if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    if(state_bin==4'b0010 && xpos<= X_1_DIM + A_side && xpos>=X_1_DIM && ypos<= Y_1_DIM + B_side && ypos>=Y_1_DIM && MouseRight==1) begin
         selected_person = 4'b0001;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_2_DIM + A_side && xpos>=X_2_DIM && ypos<=Y_1_DIM + B_side && ypos>=Y_1_DIM && MouseRight==1) begin
         selected_person = 4'b0010;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_3_DIM + A_side && xpos>=X_3_DIM && ypos<=Y_1_DIM + B_side && ypos>=Y_1_DIM && MouseRight==1) begin
         selected_person = 4'b0011;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_1_DIM + A_side && xpos>=X_1_DIM && ypos<=Y_2_DIM + B_side  && ypos>=Y_2_DIM && MouseRight==1) begin
         selected_person = 4'b0100;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_2_DIM + A_side && xpos>=X_2_DIM && ypos<=Y_2_DIM + B_side  && ypos>=Y_2_DIM && MouseRight==1) begin
         selected_person = 4'b0101;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_3_DIM + A_side && xpos>=X_3_DIM && ypos<=Y_2_DIM + B_side  && ypos>=Y_2_DIM && MouseRight==1) begin
         selected_person = 4'b0110;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_1_DIM + A_side && xpos>=X_1_DIM && ypos<=Y_3_DIM + B_side  && ypos>=Y_3_DIM && MouseRight==1) begin
         selected_person = 4'b0111;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_2_DIM + A_side && xpos>=X_2_DIM && ypos<=Y_3_DIM + B_side && ypos>=Y_3_DIM && MouseRight==1) begin
         selected_person = 4'b1000;
-    end else if(state_bin==4'b0010 && xpos<="wsp" && xpos>="wsp" && ypos<="wsp" && ypos>="wsp" && MouseRight==1) begin
+    end else if(state_bin==4'b0010 && xpos<=X_3_DIM + A_side && xpos>=X_3_DIM && ypos<=Y_3_DIM + B_side && ypos>=Y_3_DIM && MouseRight==1) begin
         selected_person = 4'b1001;
     end else begin
         selected_person = 4'b0000;

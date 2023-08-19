@@ -15,7 +15,6 @@ module draw_image_1 (
     input  logic rst,
     input  logic [11:0] rgb_pixel1,
     input  logic [11:0] rgb_pixel2,
-
     input  logic [11:0] rgb_pixel3,
     input  logic [11:0] rgb_pixel4,
     input  logic [11:0] rgb_pixel5,
@@ -23,6 +22,7 @@ module draw_image_1 (
     input  logic [11:0] rgb_pixel7,
     input  logic [11:0] rgb_pixel8,
     input  logic [11:0] rgb_pixel9,
+    input  logic [11:0] rgb_person,
 
     output logic [13:0] pixel_addr,
 
@@ -114,7 +114,6 @@ always_ff @(posedge clk) begin
     end
 end
 
-
 always_comb begin 
         if((in.hcount >= X_1_DIM) && (in.hcount <= X_1_DIM + A_side) && (in.vcount >= Y_1_DIM) && (in.vcount <= Y_1_DIM + B_side))begin 
             rgb_nxt = rgb_pixel1;
@@ -170,10 +169,17 @@ always_comb begin
             addrx = in.hcount - X_3_DIM;
             pixel_addr_nxt = addry*128 + addrx;    
         end 
+        else if((in.hcount >= X_4_DIM) && (in.hcount <= X_4_DIM + A_side) && (in.vcount >= Y_4_DIM) && (in.vcount <= Y_4_DIM + B_side))begin 
+            rgb_nxt = rgb_person;
+            addry = in.vcount - Y_4_DIM;
+            addrx = in.hcount - X_4_DIM;
+            pixel_addr_nxt = addry*128 + addrx; 
+        end
         else begin                                 
             rgb_nxt = rgb2;  
         end       
 end
+
 
 
 endmodule

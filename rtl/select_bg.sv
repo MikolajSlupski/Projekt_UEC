@@ -11,7 +11,7 @@
 
  module select_bg(
 
-    input logic [3:0] state_bin,
+    input logic [5:0] state_bin,
     input logic clk,
     input logic rst,
 
@@ -72,7 +72,7 @@ always_ff@(posedge clk)begin
 end
 
 always_comb begin
-   if(state_bin == 4'b0001)begin
+   if(state_bin == 6'b0001)begin
       top_bg_nxt.vcount = top_bg_start.vcount;
       top_bg_nxt.hcount = top_bg_start.hcount;
       top_bg_nxt.hsync  = top_bg_start.hsync;
@@ -80,7 +80,7 @@ always_comb begin
       top_bg_nxt.hblnk  = top_bg_start.hblnk;
       top_bg_nxt.vblnk  = top_bg_start.vblnk;
       top_bg_nxt.rgb    = top_bg_start.rgb;
-   end else if(state_bin == 4'b0010) begin
+   end else if(state_bin == 6'b0010 || state_bin == 6'b10000 || state_bin == 6'b100000) begin
       top_bg_nxt.vcount = top_bg_gra.vcount;
       top_bg_nxt.hcount = top_bg_gra.hcount;
       top_bg_nxt.hsync  = top_bg_gra.hsync;
@@ -88,7 +88,7 @@ always_comb begin
       top_bg_nxt.hblnk  = top_bg_gra.hblnk;
       top_bg_nxt.vblnk  = top_bg_gra.vblnk;
       top_bg_nxt.rgb    = top_bg_gra.rgb;
-   end else if(state_bin == 4'b0100) begin
+   end else if(state_bin == 6'b0100) begin
       top_bg_nxt.vcount = top_bg_koniec.vcount;
       top_bg_nxt.hcount = top_bg_koniec.hcount;
       top_bg_nxt.hsync  = top_bg_koniec.hsync;

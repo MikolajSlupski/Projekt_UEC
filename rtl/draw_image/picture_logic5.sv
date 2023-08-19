@@ -26,10 +26,10 @@ import vga_pkg::*;
 
 enum logic[3:0]{
 
-   Obraz = 4'b0001,
-   Tlo = 4'b0010,
-   Step1 = 4'b0100,
-   Step2 = 4'b1000
+    Obraz = 4'b0001,
+    Step1 = 4'b0010,
+    Tlo = 4'b0100,
+    Step2 = 4'b1000
 
 }state1;
 

@@ -53,7 +53,7 @@ logic [7:0] safe_start = 0;
  * Signals assignments
  */
 
-assign JA1 = pclk_mirror;
+
 
 
 /**

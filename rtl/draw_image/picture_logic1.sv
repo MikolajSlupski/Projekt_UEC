@@ -26,10 +26,10 @@ import vga_pkg::*;
 
 enum logic[3:0]{
 
-   Obraz = 4'b0001,
-   Tlo = 4'b0010,
-   Step1 = 4'b0100,
-   Step2 = 4'b1000
+    Obraz = 4'b0001,
+    Step1 = 4'b0010,
+    Tlo = 4'b0100,
+    Step2 = 4'b1000
 
 }state1;
 
@@ -41,7 +41,8 @@ always_ff@(posedge clk) begin
             Obraz: begin
                 if((xpos >= X_1_DIM) && (xpos <= X_1_DIM + A_side) && (ypos >= Y_1_DIM) && (ypos <= Y_1_DIM + B_side) && MouseLeft==1)begin
                     state1 <= Step1;   
-                end else begin
+                end 
+                else begin
                     state1 <= Obraz;
                     rgb_out <= rgb_in1;
                 end

@@ -88,6 +88,8 @@ set sv_files {
     ../rtl/draw_image/picture_logic7.sv
     ../rtl/draw_image/picture_logic8.sv
     ../rtl/draw_image/picture_logic9.sv
+    ../rtl/draw_image/your_person.sv
+    ../rtl/draw_image/draw_your_person.sv
 
     rtl/top_vga_basys3.sv
 }
