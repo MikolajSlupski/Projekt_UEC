@@ -50,11 +50,8 @@ set sv_files {
     ../rtl/top_draw_koniec.sv
     ../rtl/draw_mouse.sv
     ../rtl/draw_char_gra/draw_char_gra.sv
-    ../rtl/draw_char_gra2/draw_char_gra2.sv
     ../rtl/draw_char_gra/draw_rect_char_gra.sv
     ../rtl/draw_char_gra/char_rom_16x16_gra.sv
-    ../rtl/draw_char_gra2/draw_rect_char_gra2.sv
-    ../rtl/draw_char_gra2/char_rom_16x16_gra2.sv
     ../rtl/draw_char_start/draw_rect_char_start.sv
     ../rtl/draw_char_start/char_rom_16x16_start.sv
     ../rtl/draw_char_start_2/draw_rect_char_2_start.sv
@@ -90,6 +87,7 @@ set sv_files {
     ../rtl/draw_image/picture_logic9.sv
     ../rtl/draw_image/your_person.sv
     ../rtl/draw_image/draw_your_person.sv
+    ../rtl/game_logic.sv
 
     rtl/top_vga_basys3.sv
 }
@@ -100,8 +98,7 @@ set sv_files {
     ../fpga/rtl/clk_wiz_0.v 
     ../fpga/rtl/clk_Projekt_65MHz.v
     ../fpga/rtl/clk_Projekt_65MHz_clk_wiz.v 
-    ../rtl/draw_char_gra/font_rom.v 
-    ../rtl/draw_char_gra2/font_rom_2.v     
+    ../rtl/draw_char_gra/font_rom.v     
     ../rtl/draw_char_koniec/font_rom_koniec.v 
     ../rtl/draw_char_2_koniec/font_rom_2_koniec.v 
     ../rtl/draw_char_start/font_rom_start.v 

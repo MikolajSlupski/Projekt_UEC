@@ -13,6 +13,7 @@
  module top_draw_koniec (
     input  logic clk,
     input  logic rst,
+    input  logic [1:0] resoult,
 
     vga_if_tim.in bg_if_in,
     vga_if.out bg_if_out
@@ -27,6 +28,7 @@ import vga_pkg::*;
 draw_koniec_bg u_draw_koniec_bg (
     .clk,
     .rst,
+    .resoult(resoult),
     .bg_if_in(bg_if_in),
     .bg_if_out(top_rect_in)
 );

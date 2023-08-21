@@ -26,6 +26,7 @@ vga_if top_drect_char_in();
 draw_koniec_bg u_draw_start_bg(
     .clk,
     .rst,
+    .resoult(),
     .bg_if_in(bg_if_in),
     .bg_if_out(top_rect_in)
 );

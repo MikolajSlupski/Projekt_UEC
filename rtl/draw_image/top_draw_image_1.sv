@@ -18,6 +18,8 @@
      input  logic [11:0] xpos,
      input  logic [11:0] ypos,
      input  logic [5:0] state_bin,
+
+     output logic [3:0] your_person,
  
      vga_if.in in,
      vga_if.out out
@@ -30,7 +32,6 @@
 wire [13:0] address;
 wire [11:0] rgb_pixel1, rgb_pixel2, rgb_pixel3, rgb_pixel4, rgb_pixel5, rgb_pixel6, rgb_pixel7, rgb_pixel8, rgb_pixel9, rgb_pixel10, rgb_person;
 wire [11:0] rgb_out1, rgb_out2, rgb_out3, rgb_out4, rgb_out5, rgb_out6, rgb_out7, rgb_out8, rgb_out9;
-wire [4:0] your_person;
 
 always_comb begin
     if(state_bin == 6'b0010 || state_bin == 6'b10000 || state_bin == 6'b100000) begin

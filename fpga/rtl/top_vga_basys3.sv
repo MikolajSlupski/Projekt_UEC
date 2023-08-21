@@ -94,7 +94,6 @@ ODDR pclk_oddr (
  */
 
 top_vga u_top_vga (
-    .clk(clk65MHz),
     .rst(btnC),
     .r(vgaRed),
     .g(vgaGreen),

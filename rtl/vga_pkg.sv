@@ -68,10 +68,10 @@ localparam ZERO = 7'h30, JEDEN = 7'h31, DWA = 7'h32, TRZY = 7'h33, CZTERY = 7'h3
 localparam Spc =7'h20;
 
 // Image parameters
-localparam A_side = 127;
-localparam B_side = 127;
+localparam A_side = 128;
+localparam B_side = 128;
 
-localparam X_1_DIM = 50, X_2_DIM = 280, X_3_DIM= 510, X_4_DIM=HOR_PIXELS*5/6 - (A_side/2);
-localparam Y_1_DIM = 50, Y_2_DIM = 280, Y_3_DIM = 510, Y_4_DIM = 100;
+localparam X_1_DIM = 60, X_2_DIM = 260, X_3_DIM= 460, X_4_DIM=HOR_PIXELS*5/6 - (A_side/2);
+localparam Y_1_DIM = 60, Y_2_DIM = 260, Y_3_DIM = 460, Y_4_DIM = 170;
 
 endpackage

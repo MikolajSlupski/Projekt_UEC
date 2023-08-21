@@ -123,7 +123,7 @@ always_comb begin
         end 
         else if((in.hcount >= X_2_DIM) && (in.hcount <= X_2_DIM + A_side) && (in.vcount >= Y_1_DIM) && (in.vcount <= Y_1_DIM + B_side))begin 
             rgb_nxt = rgb_pixel2;
-            addry = in.vcount - 50;
+            addry = in.vcount - Y_1_DIM;
             addrx = in.hcount - X_2_DIM;
             pixel_addr_nxt = addry*128 + addrx;    
         end 

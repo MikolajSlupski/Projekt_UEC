@@ -17,16 +17,16 @@ module your_person(
     input logic [11:0] xpos,
     input logic [11:0] ypos,
 
-    output logic [4:0] your_person
+    output logic [3:0] your_person
 );
 
 import vga_pkg::*;
 
-logic [4:0] your_person_nxt;
+logic [3:0] your_person_nxt;
 
 always_ff@(posedge clk)begin
     if(rst) begin
-        your_person <= 5'b00000;
+        your_person <= 4'b0000;
     end else begin
         your_person <= your_person_nxt;
     end
@@ -35,23 +35,23 @@ always_ff@(posedge clk)begin
 
 always_comb begin
     if((xpos >= X_1_DIM) && (xpos <= X_1_DIM + A_side) && (ypos >= Y_1_DIM) && (ypos <= Y_1_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b00001;
+        your_person_nxt= 4'b0001;
     end else if((xpos >= X_2_DIM) && (xpos <= X_2_DIM + A_side) && (ypos >= Y_1_DIM) && (ypos <= Y_1_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b00011;
+        your_person_nxt= 4'b0010;
     end else if((xpos >= X_3_DIM) && (xpos <= X_3_DIM + A_side) && (ypos >= Y_1_DIM) && (ypos <= Y_1_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b00111;
+        your_person_nxt= 4'b0011;
     end else if((xpos >= X_1_DIM) && (xpos <= X_1_DIM + A_side) && (ypos >= Y_2_DIM) && (ypos <= Y_2_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b01111;
+        your_person_nxt= 4'b0100;
     end else if((xpos >= X_2_DIM) && (xpos <= X_2_DIM + A_side) && (ypos >= Y_2_DIM) && (ypos <= Y_2_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b11111;
+        your_person_nxt= 4'b0101;
     end else if((xpos >= X_3_DIM) && (xpos <= X_3_DIM + A_side) && (ypos >= Y_2_DIM) && (ypos <= Y_2_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b11110;
+        your_person_nxt= 4'b0110;
     end else if((xpos >= X_1_DIM) && (xpos <= X_1_DIM + A_side) && (ypos >= Y_3_DIM) && (ypos <= Y_3_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b11100;
+        your_person_nxt= 4'b0111;
     end else if((xpos >= X_2_DIM) && (xpos <= X_2_DIM + A_side) && (ypos >= Y_3_DIM) && (ypos <= Y_3_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b11000;
+        your_person_nxt= 4'b1000;
     end else if((xpos >= X_3_DIM) && (xpos <= X_3_DIM + A_side) && (ypos >= Y_3_DIM) && (ypos <= Y_3_DIM + B_side) && MouseRight==1)begin
-        your_person_nxt= 5'b10000;
+        your_person_nxt= 4'b1001;
     end
     else begin
         your_person_nxt = your_person;

@@ -12,6 +12,7 @@
  module select_bg(
 
     input logic [5:0] state_bin,
+    input logic [1:0] resoult,
     input logic clk,
     input logic rst,
 
@@ -33,6 +34,7 @@ vga_if top_bg_nxt();
 top_draw_koniec u_top_draw_koniec (
    .clk,
    .rst,
+   .resoult(resoult),
    .bg_if_in(bg_if_in),
    .bg_if_out(top_bg_koniec)
 );

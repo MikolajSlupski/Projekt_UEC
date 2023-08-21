@@ -15,7 +15,6 @@
 `timescale 1 ns / 1 ps
 
 module top_vga (
-    input  logic clk,
     input  logic rst,
     input  logic clk100MHz,
     input  logic clk65MHz,
@@ -52,6 +51,8 @@ wire [11:0] mouse_ypos;
 logic MouseLeft, MouseRight;
 logic [5:0] state_bin;
 reg rst_sys, Rst;
+logic [3:0] your_person;
+logic [1:0] resoult;
 
 /**
  * Signals assignments
@@ -66,7 +67,7 @@ assign {r,g,b} = top_out.rgb;
 //assign addr = (u_char_rom_16x16.char_code << 4 | u_draw_rect_char.char_line);
 
 always_comb begin
-    Rst = rst || rst_sys;
+    Rst = rst || rst_sys || leftDOWN_Pmod[3] || rightDOWN_Pmod[3];
 end
 
 
@@ -117,7 +118,8 @@ select_bg u_select_bg(
     .bg_if_out(top_bg_out),
     .clk(clk65MHz),
     .rst(rst),
-    .state_bin(state_bin)
+    .state_bin(state_bin),
+    .resoult(resoult)
 );
 
 main_State_Machine u_main_State_Machine(
@@ -128,6 +130,7 @@ main_State_Machine u_main_State_Machine(
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
     .state_bin(state_bin),
+    .resoult(resoult),
     .rst_sys(rst_sys)
 );
 
@@ -139,8 +142,25 @@ top_draw_image_1 u_top_draw_image_1(
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
     .state_bin(state_bin),
+    .your_person(your_person),
     .in(top_bg_out),
     .out(top_draw_image)
+);
+
+game_logic u_game_logic(
+    .clk(clk65MHz),
+    .rst,
+    .MouseRight(MouseRight),
+    .xpos(mouse_xpos),
+    .ypos(mouse_ypos),
+    .your_person(your_person),
+    .state_bin(state_bin),
+    .leftUP_Pmod(leftUP_Pmod),
+    .rightUP_Pmod(rightUP_Pmod),
+    .leftDOWN_Pmod(leftDOWN_Pmod),
+    .rightDOWN_Pmod(rightDOWN_Pmod),
+    .resoult(resoult),
+    .rst_sys(Rst)
 );
 
 endmodule

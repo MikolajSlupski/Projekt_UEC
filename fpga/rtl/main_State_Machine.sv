@@ -17,6 +17,7 @@
     input logic MouseRight,
     input logic [11:0] xpos,
     input logic [11:0] ypos,
+    input logic [1:0] resoult,
 
     output logic [5:0] state_bin,
     output logic rst_sys
@@ -56,7 +57,7 @@
             end
             
             EkranGry: begin
-                if(MouseRight==1)begin
+                if(MouseRight==1 || resoult == 2'b01 || resoult == 2'b10)begin
                     state <= EkranKoncowy;
                     state_bin <= state;
                 end else begin

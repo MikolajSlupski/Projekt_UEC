@@ -23,7 +23,7 @@
      input  logic [11:0] rgb_pixel8,
      input  logic [11:0] rgb_pixel9,
      input  logic [11:0] rgb_pixel10,
-     input  logic [4:0] your_person,
+     input  logic [3:0] your_person,
 
      output logic [11:0] rgb_out
  
@@ -45,23 +45,23 @@ end
 
 
 always_comb begin
-    if(your_person==5'b00001) begin
+    if(your_person==4'b0001) begin
         rgb_out_nxt = rgb_pixel1;
-    end else if(your_person==5'b00011) begin
+    end else if(your_person==4'b0010) begin
         rgb_out_nxt = rgb_pixel2;
-    end else if(your_person==5'b00111) begin
+    end else if(your_person==4'b0011) begin
         rgb_out_nxt = rgb_pixel3;
-    end else if(your_person==5'b01111) begin
+    end else if(your_person==4'b0100) begin
         rgb_out_nxt = rgb_pixel4;
-    end else if(your_person==5'b11111) begin
+    end else if(your_person==4'b0101) begin
         rgb_out_nxt = rgb_pixel5;
-    end else if(your_person==5'b11110) begin
+    end else if(your_person==4'b0110) begin
         rgb_out_nxt = rgb_pixel6;
-    end else if(your_person==5'b11100) begin
+    end else if(your_person==4'b0111) begin
         rgb_out_nxt = rgb_pixel7;
-    end else if(your_person==5'b11000) begin
+    end else if(your_person==4'b1000) begin
         rgb_out_nxt = rgb_pixel8;
-    end else if(your_person==5'b10000) begin
+    end else if(your_person==4'b1001) begin
         rgb_out_nxt = rgb_pixel9;
     end else begin
         rgb_out_nxt = rgb_pixel10;

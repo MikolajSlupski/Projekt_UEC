@@ -14,6 +14,7 @@
 
     input  logic clk,
     input  logic rst,
+    input  logic [1:0] resoult,
 
     vga_if_tim.in bg_if_in,
     vga_if.out bg_if_out
@@ -70,7 +71,12 @@ end
  
          // Add your code here.
 
-
+         else if (resoult== 2'b10) begin
+            rgb_nxt = 12'h0_f_0;
+         end
+         else if (resoult==2'b01) begin
+            rgb_nxt = 12'hf_0_0;
+         end
          else                                    // The rest of active display pixels:
              rgb_nxt = 12'h8_8_f;                // - fill with gray.
      end
