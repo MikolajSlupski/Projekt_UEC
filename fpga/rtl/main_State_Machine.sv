@@ -46,7 +46,7 @@
 
         case(state)
             EkranStartowy: begin
-                if(((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)||(xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)) && MouseLeft==1)begin
+                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y) && MouseLeft==1)begin
                     state <= EkranWyboru;
                     state_bin <= state;
                 end else begin
@@ -65,7 +65,6 @@
                     state_bin <= state;
                 end
             end
-
             EkranKoncowy: begin
                 if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin
                     state <= EkranWyboru;

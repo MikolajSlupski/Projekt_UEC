@@ -25,7 +25,8 @@
     inout logic [7:0] leftDOWN_Pmod,
     inout logic [7:0] rightDOWN_Pmod,
 
-    output logic [1:0] resoult
+    output logic [1:0] resoult,
+    output logic reset
  );
 
  import vga_pkg::*;
@@ -33,6 +34,7 @@
  logic [1:0] resoult_nxt;
  logic [3:0] selected_person, selected_person_nxt;
  logic [3:0] Pmod_OUT_nxt;
+ logic reset_nxt;
 
  //przypisanie portow wyjsciowych zawierajacych informacje o wybranej/ktora zgadujesz ocsobie i wyniku/czy wygrales czy przegrales
  assign rightUP_Pmod[7:4]=Pmod_OUT_nxt[3:0];
@@ -53,9 +55,11 @@
 //przesylanie wyniku zgadywania do wewnatrz programu
  always_ff@(posedge clk)begin
     if(rst || rst_sys) begin
+        reset <= 'b0;
         resoult <= 2'b00;
         selected_person <= 4'b0000; 
     end else begin
+        reset <= reset_nxt;
         resoult <= resoult_nxt;
         selected_person <= selected_person_nxt;
     end
@@ -119,5 +123,15 @@
     end
 
  end
+
+ // logika do resetowania modułów obu płytek naraz  
+ always_comb begin
+    if(leftDOWN_Pmod[4]==0) begin
+        reset_nxt = leftDOWN_Pmod[3];
+    end else if (rightDOWN_Pmod[4]==0) begin
+        reset_nxt = rightDOWN_Pmod[3];
+    end
+end
+
 
  endmodule

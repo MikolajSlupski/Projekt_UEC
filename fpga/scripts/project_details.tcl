@@ -45,7 +45,6 @@ set sv_files {
     ../rtl/top_draw_gra.sv
     ../rtl/top_draw_start.sv
     ../rtl/draw_char_start/draw_char_start.sv
-    ../rtl/draw_char_start_2/draw_char_2_start.sv
     ../rtl/draw_koniec_bg.sv
     ../rtl/top_draw_koniec.sv
     ../rtl/draw_mouse.sv
@@ -54,8 +53,6 @@ set sv_files {
     ../rtl/draw_char_gra/char_rom_16x16_gra.sv
     ../rtl/draw_char_start/draw_rect_char_start.sv
     ../rtl/draw_char_start/char_rom_16x16_start.sv
-    ../rtl/draw_char_start_2/draw_rect_char_2_start.sv
-    ../rtl/draw_char_start_2/char_rom_16x16_2_start.sv
     ../rtl/draw_char_koniec/draw_char_koniec.sv
     ../rtl/draw_char_2_koniec/draw_char_2_koniec.sv
     ../rtl/draw_char_koniec/draw_rect_char_koniec.sv
@@ -102,7 +99,6 @@ set sv_files {
     ../rtl/draw_char_koniec/font_rom_koniec.v 
     ../rtl/draw_char_2_koniec/font_rom_2_koniec.v 
     ../rtl/draw_char_start/font_rom_start.v 
-    ../rtl/draw_char_start_2/font_rom_2_start.v 
      
  }
 

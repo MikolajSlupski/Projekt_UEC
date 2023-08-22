@@ -18,7 +18,7 @@ module top_vga (
     input  logic rst,
     input  logic clk100MHz,
     input  logic clk65MHz,
-    output   logic [13:0] led,
+    output logic [14:0] led,
 
     inout  logic ps2_clk,
     inout  logic ps2_data,
@@ -51,9 +51,11 @@ wire [11:0] mouse_ypos;
 
 logic MouseLeft, MouseRight;
 logic [5:0] state_bin;
-reg rst_sys, Rst;
+logic rst_sys;
+logic Rst;
 logic [3:0] your_person;
 logic [1:0] resoult;
+logic reset;
 
 /**
  * Signals assignments
@@ -70,15 +72,17 @@ assign led[8] = rightDOWN_Pmod[4];
 assign led[9] = leftDOWN_Pmod[4];
 assign led[10]=leftDOWN_Pmod[0];
 assign led[11] =rightDOWN_Pmod[0];
-assign led [13:12] = 0;
+assign led[12] =rightDOWN_Pmod[3];
+assign led[13] =leftDOWN_Pmod[3];
+assign led [14] = 0;
 
 
 //assign addr = (u_char_rom_16x16.char_code << 4 | u_draw_rect_char.char_line);
 
 always_comb begin
-    Rst = rst || rst_sys;
+    Rst = rst || rst_sys || reset;
 end
-//|| leftDOWN_Pmod[3] || rightDOWN_Pmod[3]
+
 
 /**
  * Submodules instances
@@ -133,7 +137,7 @@ select_bg u_select_bg(
 
 main_State_Machine u_main_State_Machine(
     .clk(clk100MHz),
-    .rst(rst),
+    .rst(Rst),
     .MouseLeft(MouseLeft),
     .MouseRight(MouseRight),
     .xpos(mouse_xpos),
@@ -169,7 +173,8 @@ game_logic u_game_logic(
     .leftDOWN_Pmod(leftDOWN_Pmod),
     .rightDOWN_Pmod(rightDOWN_Pmod),
     .resoult(resoult),
-    .rst_sys(Rst)
+    .rst_sys(Rst),
+    .reset(reset)
 );
 
 endmodule

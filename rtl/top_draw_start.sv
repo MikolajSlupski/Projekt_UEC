@@ -21,7 +21,6 @@
 import vga_pkg::*;
 
 vga_if top_rect_in();
-vga_if top_drect_char_in();
 
 draw_koniec_bg u_draw_start_bg(
     .clk,
@@ -35,16 +34,10 @@ draw_char_start u_draw_char_start(
     .clk,
     .rst,
     .in(top_rect_in),
-    .out(top_drect_char_in)
-
-);
-
-draw_char_2_start u_draw_char_2_start(
-    .clk,
-    .rst,
-    .in(top_drect_char_in),
     .out(bg_if_out)
+
 );
+
 
 
  endmodule

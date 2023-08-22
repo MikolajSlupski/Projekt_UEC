@@ -17,7 +17,7 @@
 module top_vga_basys3 (
     input  wire clk,
     input  wire btnC,
-    output  logic [13:0] led,
+    output  logic [14:0] led,
 
     inout wire PS2Clk,
     inout wire PS2Data,
