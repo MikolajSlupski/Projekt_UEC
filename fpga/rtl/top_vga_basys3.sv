@@ -17,6 +17,7 @@
 module top_vga_basys3 (
     input  wire clk,
     input  wire btnC,
+    output  logic [13:0] led,
 
     inout wire PS2Clk,
     inout wire PS2Data,
@@ -107,7 +108,8 @@ top_vga u_top_vga (
     .leftUP_Pmod(JA),
     .rightUP_Pmod(JB),
     .leftDOWN_Pmod(JXADC),
-    .rightDOWN_Pmod(JC)
+    .rightDOWN_Pmod(JC),
+    .led(led)
 ); 
 
 endmodule

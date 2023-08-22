@@ -18,6 +18,7 @@ module top_vga (
     input  logic rst,
     input  logic clk100MHz,
     input  logic clk65MHz,
+    output   logic [13:0] led,
 
     inout  logic ps2_clk,
     inout  logic ps2_data,
@@ -61,15 +62,23 @@ logic [1:0] resoult;
 assign vs = top_out.vsync;
 assign hs = top_out.hsync;
 assign {r,g,b} = top_out.rgb;
-
+assign led [1:0] =rightDOWN_Pmod[6:5];
+assign led[3:2] = rightDOWN_Pmod[2:1];
+assign led[5:4] = leftDOWN_Pmod[6:5];
+assign led[7:6] = leftDOWN_Pmod[2:1];
+assign led[8] = rightDOWN_Pmod[4];
+assign led[9] = leftDOWN_Pmod[4];
+assign led[10]=leftDOWN_Pmod[0];
+assign led[11] =rightDOWN_Pmod[0];
+assign led [13:12] = 0;
 
 
 //assign addr = (u_char_rom_16x16.char_code << 4 | u_draw_rect_char.char_line);
 
 always_comb begin
-    Rst = rst || rst_sys || leftDOWN_Pmod[3] || rightDOWN_Pmod[3];
+    Rst = rst || rst_sys;
 end
-
+//|| leftDOWN_Pmod[3] || rightDOWN_Pmod[3]
 
 /**
  * Submodules instances

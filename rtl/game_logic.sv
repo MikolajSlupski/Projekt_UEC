@@ -37,13 +37,14 @@
  //przypisanie portow wyjsciowych zawierajacych informacje o wybranej/ktora zgadujesz ocsobie i wyniku/czy wygrales czy przegrales
  assign rightUP_Pmod[7:4]=Pmod_OUT_nxt[3:0];
  assign leftUP_Pmod[3:0]=Pmod_OUT_nxt[3:0];
- assign rightDOWN_Pmod[6:5]=resoult_nxt[1:0];
- assign leftDOWN_Pmod[2:1]=resoult_nxt[1:0];
- 
+ assign rightDOWN_Pmod[6]=resoult[0];
+ assign rightDOWN_Pmod[5]=resoult[1];
+ assign leftDOWN_Pmod[2]=resoult[0];
+ assign leftDOWN_Pmod[1]=resoult[1];
 
  //wystawieni stalej 1 na 7 port, aby wiedziec z ktorej strony jest plytka podpieta
- assign leftDOWN_Pmod[7] =1;
- assign rightDOWN_Pmod[7]=1;
+ assign leftDOWN_Pmod[7] =0;
+ assign rightDOWN_Pmod[7]=0;
  
  //przesłanie resetu do drugiej płytki
  assign leftDOWN_Pmod[0] = rst_sys;
@@ -97,24 +98,24 @@
 
  //porownywanie osoby zgadnietej z informacja z drugiej plytki 2'b10 - wygrana, 2'b01 - przegrana
  always_comb begin
-    if(rightDOWN_Pmod[4]==1 && state_bin==4'b00100 && rightUP_Pmod[3:0]==selected_person[3:0]) begin
+    if(rightDOWN_Pmod[4]==0 && state_bin==4'b00100 && rightUP_Pmod[3:0]==selected_person[3:0]) begin
         resoult_nxt = 2'b10;
-    end else if(leftDOWN_Pmod[4]==1 && state_bin==4'b00100 && leftUP_Pmod[7:4]==selected_person[3:0]) begin
+    end else if(leftDOWN_Pmod[4]==0 && state_bin==4'b00100 && leftUP_Pmod[7:4]==selected_person[3:0]) begin
         resoult_nxt = 2'b10;
-    end else if(rightDOWN_Pmod[4]==1 && state_bin==4'b00100 && rightUP_Pmod[3:0]!=selected_person[3:0]) begin
+    end else if(rightDOWN_Pmod[4]==0 && state_bin==4'b00100 && rightUP_Pmod[3:0]!=selected_person[3:0]) begin
         resoult_nxt = 2'b01;
-    end else if(leftDOWN_Pmod[4]==1 && state_bin==4'b00100 && leftUP_Pmod[7:4]!=selected_person[3:0]) begin
+    end else if(leftDOWN_Pmod[4]==0 && state_bin==4'b00100 && leftUP_Pmod[7:4]!=selected_person[3:0]) begin
         resoult_nxt = 2'b01;
-    end else if(rightDOWN_Pmod[4]==1 && rightDOWN_Pmod[2:1]==2'b01) begin
+    end else if(rightDOWN_Pmod[4]==0 && rightDOWN_Pmod[2:1]==2'b01) begin
         resoult_nxt = 2'b10;
-    end else if(rightDOWN_Pmod[4]==1 && rightDOWN_Pmod[2:1]==2'b10) begin
+    end else if(rightDOWN_Pmod[4]==0 && rightDOWN_Pmod[2:1]==2'b10) begin
         resoult_nxt = 2'b01;
-    end else if(leftDOWN_Pmod[4]==1 && leftDOWN_Pmod[6:5]==2'b01) begin
+    end else if(leftDOWN_Pmod[4]==0 && leftDOWN_Pmod[6:5]==2'b01) begin
         resoult_nxt = 2'b10;
-    end else if(leftDOWN_Pmod[4]==1 && leftDOWN_Pmod[6:5]==2'b10) begin
+    end else if(leftDOWN_Pmod[4]==0 && leftDOWN_Pmod[6:5]==2'b10) begin
         resoult_nxt = 2'b01;
     end else begin 
-        resoult_nxt = 2'b00;
+        resoult_nxt = resoult;
     end
 
  end
