@@ -20,10 +20,10 @@
     input logic [11:0] ypos,
     input logic MouseRight,
 
-    inout logic [7:0] leftUP_Pmod,
-    inout logic [7:0] rightUP_Pmod,
-    inout logic [7:0] leftDOWN_Pmod,
-    inout logic [7:0] rightDOWN_Pmod,
+    input logic [7:0] leftUP_Pmod,
+    output logic [7:0] rightUP_Pmod,
+    output logic [7:0] leftDOWN_Pmod,
+    input logic [7:0] rightDOWN_Pmod,
 
     output logic [1:0] resoult,
     output logic reset
@@ -34,23 +34,20 @@
  logic [1:0] resoult_nxt;
  logic [3:0] selected_person, selected_person_nxt;
  logic [3:0] Pmod_OUT_nxt;
- logic reset_nxt, RST_sys;
+ logic reset_nxt;
 
  //przypisanie portow wyjsciowych zawierajacych informacje o wybranej/ktora zgadujesz ocsobie i wyniku/czy wygrales czy przegrales
  assign rightUP_Pmod[7:4]=Pmod_OUT_nxt[3:0];
- assign leftUP_Pmod[3:0]=Pmod_OUT_nxt[3:0];
- assign rightDOWN_Pmod[6]=resoult[0];
- assign rightDOWN_Pmod[5]=resoult[1];
- assign leftDOWN_Pmod[2]=resoult[0];
- assign leftDOWN_Pmod[1]=resoult[1];
+ assign leftDOWN_Pmod[7:4]=Pmod_OUT_nxt[3:0];
+ assign rightUP_Pmod[3]=resoult[0];
+ assign rightUP_Pmod[2]=resoult[1];
+ assign leftDOWN_Pmod[1]=resoult[0];
+ assign leftDOWN_Pmod[0]=resoult[1];
 
  //wystawieni stalej 1 na 7 port, aby wiedziec z ktorej strony jest plytka podpieta
- assign leftDOWN_Pmod[7] =0;
- assign rightDOWN_Pmod[7]=0;
- 
- //przesłanie resetu do drugiej płytki
- //assign leftDOWN_Pmod[0] = rst_sys;
- //assign rightDOWN_Pmod[0]= rst_sys;
+ assign leftDOWN_Pmod[3] =0;
+ assign rightUP_Pmod[0]=0;
+
 
 //przesylanie wyniku zgadywania do wewnatrz programu
  always_ff@(posedge clk)begin
@@ -58,20 +55,18 @@
         reset <= 'b0;
         resoult <= 2'b00;
         selected_person <= 4'b0000; 
-        leftDOWN_Pmod[0] <= 'b0;
-        rightDOWN_Pmod[0] <= 'b0;
     end else begin
         reset <= reset_nxt;
         resoult <= resoult_nxt;
         selected_person <= selected_person_nxt;
-        leftDOWN_Pmod[0] <= RST_sys;
-        rightDOWN_Pmod[0] <= RST_sys;
     end
  end
 
- always_comb begin
-    RST_sys = rst_sys;
- end
+//przesłanie resetu do drugiej płytki
+always_comb begin
+    rightUP_Pmod[1]= rst_sys;
+    leftDOWN_Pmod[2] = rst_sys;
+end
 
  //przypisywanie twojej osoby do zmiennej wewn
  always_comb begin
@@ -110,21 +105,21 @@
 
  //porownywanie osoby zgadnietej z informacja z drugiej plytki 2'b10 - wygrana, 2'b01 - przegrana
  always_comb begin
-    if(rightDOWN_Pmod[4]==0 && state_bin==4'b00100 && rightUP_Pmod[3:0]==selected_person[3:0]) begin
+    if(rightDOWN_Pmod[0]==0 && state_bin==4'b00100 && rightDOWN_Pmod[7:4]==selected_person[3:0]) begin
         resoult_nxt = 2'b10;
-    end else if(leftDOWN_Pmod[4]==0 && state_bin==4'b00100 && leftUP_Pmod[7:4]==selected_person[3:0]) begin
+    end else if(leftUP_Pmod[3]==0 && state_bin==4'b00100 && leftUP_Pmod[7:4]==selected_person[3:0]) begin
         resoult_nxt = 2'b10;
-    end else if(rightDOWN_Pmod[4]==0 && state_bin==4'b00100 && rightUP_Pmod[3:0]!=selected_person[3:0]) begin
+    end else if(rightDOWN_Pmod[0]==0 && state_bin==4'b00100 && rightDOWN_Pmod[7:4]!=selected_person[3:0]) begin
         resoult_nxt = 2'b01;
-    end else if(leftDOWN_Pmod[4]==0 && state_bin==4'b00100 && leftUP_Pmod[7:4]!=selected_person[3:0]) begin
+    end else if(leftUP_Pmod[3]==0 && state_bin==4'b00100 && leftUP_Pmod[7:4]!=selected_person[3:0]) begin
         resoult_nxt = 2'b01;
-    end else if(rightDOWN_Pmod[4]==0 && rightDOWN_Pmod[2:1]==2'b01) begin
+    end else if(rightDOWN_Pmod[0]==0 && rightDOWN_Pmod[3:2]==2'b01) begin
         resoult_nxt = 2'b10;
-    end else if(rightDOWN_Pmod[4]==0 && rightDOWN_Pmod[2:1]==2'b10) begin
+    end else if(rightDOWN_Pmod[0]==0 && rightDOWN_Pmod[3:2]==2'b10) begin
         resoult_nxt = 2'b01;
-    end else if(leftDOWN_Pmod[4]==0 && leftDOWN_Pmod[6:5]==2'b01) begin
+    end else if(leftUP_Pmod[3]==0 && leftUP_Pmod[1:0]==2'b01) begin
         resoult_nxt = 2'b10;
-    end else if(leftDOWN_Pmod[4]==0 && leftDOWN_Pmod[6:5]==2'b10) begin
+    end else if(leftUP_Pmod[3]==0 && leftUP_Pmod[1:0]==2'b10) begin
         resoult_nxt = 2'b01;
     end else begin 
         resoult_nxt = resoult;
@@ -134,10 +129,10 @@
 
  // logika do resetowania modułów obu płytek naraz  
  always_comb begin
-    if(leftDOWN_Pmod[4]==0) begin
-        reset_nxt = leftDOWN_Pmod[3];
-    end else if (rightDOWN_Pmod[4]==0) begin
-        reset_nxt = rightDOWN_Pmod[3];
+    if(leftUP_Pmod[3]==0) begin
+        reset_nxt = leftUP_Pmod[2];
+    end else if (rightDOWN_Pmod[0]==0) begin
+        reset_nxt = rightDOWN_Pmod[1];
     end
 end
 

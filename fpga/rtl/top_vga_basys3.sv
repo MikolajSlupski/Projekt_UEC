@@ -21,10 +21,10 @@ module top_vga_basys3 (
 
     inout wire PS2Clk,
     inout wire PS2Data,
-    inout logic [7:0] JA,
-    inout logic [7:0] JB,
-    inout logic [7:0] JC,
-    inout logic [7:0] JXADC,
+    input logic [7:0] JA,
+    output logic [7:0] JB,
+    input logic [7:0] JC,
+    output logic [7:0] JXADC,
 
     output wire Vsync,
     output wire Hsync,
@@ -60,20 +60,12 @@ logic [7:0] safe_start = 0;
 /**
  * FPGA submodules placement
  */
-clk_wiz_0_clk_wiz u_clk_wiz_0_clk_wiz (
-
-    .clk100MHz(clk100MHz),
-    .clk40MHz(clk40MHz),
-    .locked(),
+clk_wiz_1_clk_wiz u_clk_wiz_1 (
+    .clk_100MHz(clk100MHz),
+    .clk_65MHz(clk65MHz),
+    .clk_40MHz(clk40MHz),             
+    .locked(locked),
     .clk(clk)
-
-);
-clk_Projekt_65MHz_clk_wiz u_clk_65MHz (
-
-.clk_in100MHz(clk),
-.clk_65MHz(clk65MHz),
-.locked()
-
 );
 
 // Mirror pclk on a pin for use by the testbench;

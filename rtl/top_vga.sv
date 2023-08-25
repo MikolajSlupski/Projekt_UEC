@@ -22,10 +22,12 @@ module top_vga (
 
     inout  logic ps2_clk,
     inout  logic ps2_data,
-    inout  logic [7:0] leftUP_Pmod,
-    inout  logic [7:0] rightUP_Pmod,
-    inout  logic [7:0] leftDOWN_Pmod,
-    inout  logic [7:0] rightDOWN_Pmod,
+    input  logic [7:0] leftUP_Pmod,
+    output  logic [7:0] rightUP_Pmod,
+    output  logic [7:0] leftDOWN_Pmod,
+    input  logic [7:0] rightDOWN_Pmod,
+
+
 
     output logic vs,
     output logic hs,
@@ -64,17 +66,13 @@ logic reset;
 assign vs = top_out.vsync;
 assign hs = top_out.hsync;
 assign {r,g,b} = top_out.rgb;
-assign led [1:0] =rightDOWN_Pmod[6:5];
-assign led[3:2] = rightDOWN_Pmod[2:1];
-assign led[5:4] = leftDOWN_Pmod[6:5];
-assign led[7:6] = leftDOWN_Pmod[2:1];
-assign led[8] = rightDOWN_Pmod[4];
-assign led[9] = leftDOWN_Pmod[4];
-assign led[10]=leftDOWN_Pmod[0];
-assign led[11] =rightDOWN_Pmod[0];
-assign led[12] =rightDOWN_Pmod[3];
-assign led[13] =leftDOWN_Pmod[3];
-assign led [14] = 0;
+assign led [0] =rightDOWN_Pmod[0];
+assign led[1] = rightDOWN_Pmod[1];
+assign led[3:2] = rightDOWN_Pmod[3:2];
+assign led[4] = leftUP_Pmod[3];
+assign led[5] = leftUP_Pmod[2];
+assign led[7:6] = leftUP_Pmod[1:0];
+assign led[14:8]= 0;
 
 
 //assign addr = (u_char_rom_16x16.char_code << 4 | u_draw_rect_char.char_line);
