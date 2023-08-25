@@ -34,7 +34,7 @@
  logic [1:0] resoult_nxt;
  logic [3:0] selected_person, selected_person_nxt;
  logic [3:0] Pmod_OUT_nxt;
- logic reset_nxt;
+ logic reset_nxt, RST_sys;
 
  //przypisanie portow wyjsciowych zawierajacych informacje o wybranej/ktora zgadujesz ocsobie i wyniku/czy wygrales czy przegrales
  assign rightUP_Pmod[7:4]=Pmod_OUT_nxt[3:0];
@@ -49,8 +49,8 @@
  assign rightDOWN_Pmod[7]=0;
  
  //przesłanie resetu do drugiej płytki
- assign leftDOWN_Pmod[0] = rst_sys;
- assign rightDOWN_Pmod[0]= rst_sys;
+ //assign leftDOWN_Pmod[0] = rst_sys;
+ //assign rightDOWN_Pmod[0]= rst_sys;
 
 //przesylanie wyniku zgadywania do wewnatrz programu
  always_ff@(posedge clk)begin
@@ -58,11 +58,19 @@
         reset <= 'b0;
         resoult <= 2'b00;
         selected_person <= 4'b0000; 
+        leftDOWN_Pmod[0] <= 'b0;
+        rightDOWN_Pmod[0] <= 'b0;
     end else begin
         reset <= reset_nxt;
         resoult <= resoult_nxt;
         selected_person <= selected_person_nxt;
+        leftDOWN_Pmod[0] <= RST_sys;
+        rightDOWN_Pmod[0] <= RST_sys;
     end
+ end
+
+ always_comb begin
+    RST_sys = rst_sys;
  end
 
  //przypisywanie twojej osoby do zmiennej wewn
