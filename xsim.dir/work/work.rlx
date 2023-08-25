@@ -2,10 +2,11 @@
 2020.2
 Oct 19 2021
 02:56:52
-/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_108MHz_clk_wiz.v,1690897690,systemVerilog,,,,clk_108MHz_clk_wiz,,,,,,,,
-/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_130MHz_clk_wiz.v,1690899262,systemVerilog,,,,clk_130MHz_clk_wiz,,,,,,,,
-/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_Projekt_65MHz_clk_wiz.v,1690632976,systemVerilog,,,,clk_Projekt_65MHz_clk_wiz,,,,,,,,
-/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_wiz_0.v,1680200247,systemVerilog,,,,clk_wiz_0,,,,,,,,
-/home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_wiz_0_clk_wiz.v,1680200247,systemVerilog,,,,clk_wiz_0_clk_wiz,,,,,,,,
-/home/student/mslupski/Projekt/projekt_main/rtl/delay.v,1683055952,systemVerilog,,,,delay,,,,,,,,
-/home/student/mslupski/UEC2/lab1/Ok_Lab1/uec2_lab1_2023/rtl/font_rom.v,1683289122,systemVerilog,,,,font_rom,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_Projekt_65MHz.v,1692975541,systemVerilog,,,,clk_Projekt_65MHz,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_Projekt_65MHz_clk_wiz.v,1691857580,systemVerilog,,,,clk_Projekt_65MHz_clk_wiz,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_0.v,1690299852,systemVerilog,,,,clk_wiz_0,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_0_clk_wiz.v,1690299852,systemVerilog,,,,clk_wiz_0_clk_wiz,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_1.v,1692980324,systemVerilog,,,,clk_wiz_1,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_1_clk_wiz.v,1692980338,systemVerilog,,,,clk_wiz_1_clk_wiz,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_65MHz.v,1692976656,systemVerilog,,,,clk_wiz_65MHz,,,,,,,,
+/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_65MHz_clk_wiz.v,1692976663,systemVerilog,,,,clk_wiz_65MHz_clk_wiz,,,,,,,,

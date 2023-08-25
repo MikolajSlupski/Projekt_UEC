@@ -15,6 +15,7 @@
 `timescale 1 ns / 1 ps
 
 module top_vga_basys3 (
+
     input  wire clk,
     input  wire btnC,
 
@@ -58,40 +59,20 @@ assign JA1 = pclk_mirror;
 /**
  * FPGA submodules placement
  */
-clk_wiz_0_clk_wiz u_clk_wiz_0_clk_wiz (
 
-    .clk100MHz(clk100MHz),
-    .clk40MHz(clk40MHz),
-    .locked(),
+
+clk_wiz_1_clk_wiz u_clk_1 (
+    // Clock out ports  
+    .clk_100MHz(clk100MHz),
+    .clk_65MHz(clk65MHz),
+    .clk_40MHz(clk40MHz),
+    // Status and control signals               
+    .locked(locked),
+    // Clock in ports
     .clk(clk)
-
-);
-
-clk_Projekt_65MHz_clk_wiz u_clk_65MHz (
-
-.clk_in100MHz(clk),
-.clk_65MHz(clk65MHz),
-.locked()
-
-);
-/*
-clk_108MHz_clk_wiz u_clk_108MHz (
-
-.clk_in1(clk),
-.clk_108MHz(clk108MHz),
-.reset()
-
 );
 
 
-clk_130MHz_clk_wiz u_clk_130MHz (
-
-.clk_in1(clk),
-.clk_130MHz(clk130MHz),
-.locked()
-
-);
-*/
 
 // Mirror pclk on a pin for use by the testbench;
 // not functionally required for this design to work.

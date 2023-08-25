@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Wed Aug  2 15:26:55 2023
-| Host         : cadence28 running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date         : Fri Aug 25 18:27:46 2023
+| Host         : cadence36 running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_utilization -file top_vga_basys3_utilization_synth.rpt -pb top_vga_basys3_utilization_synth.pb
 | Design       : top_vga_basys3
 | Device       : xc7a35tcpg236-1
@@ -121,9 +121,9 @@ Table of Contents
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    5 |     0 |          0 |        32 | 15.63 |
+| BUFGCTRL   |    4 |     0 |          0 |        32 | 12.50 |
 | BUFIO      |    0 |     0 |          0 |        20 |  0.00 |
-| MMCME2_ADV |    2 |     0 |          0 |         5 | 40.00 |
+| MMCME2_ADV |    1 |     0 |          0 |         5 | 20.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         5 |  0.00 |
 | BUFMRCE    |    0 |     0 |          0 |        10 |  0.00 |
 | BUFHCE     |    3 |     0 |          0 |        72 |  4.17 |
@@ -173,10 +173,10 @@ Table of Contents
 | BUFGCTRL   |    3 |               Clock |
 | RAMB18E1   |    2 |        Block Memory |
 | OBUFT      |    2 |                  IO |
-| MMCME2_ADV |    2 |               Clock |
-| BUFG       |    2 |               Clock |
 | RAMB36E1   |    1 |        Block Memory |
 | ODDR       |    1 |                  IO |
+| MMCME2_ADV |    1 |               Clock |
+| BUFG       |    1 |               Clock |
 +------------+------+---------------------+
 
 

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/student/mslupski/Projekt/projekt_main/fpga/build/vga_project.runs/synth_1/top_vga_basys3.tcl"
+  variable script "/home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/build/vga_project.runs/synth_1/top_vga_basys3.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,37 +76,36 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/student/mslupski/Projekt/projekt_main/fpga/build/vga_project.cache/wt [current_project]
-set_property parent.project_path /home/student/mslupski/Projekt/projekt_main/fpga/build/vga_project.xpr [current_project]
+set_property webtalk.parent_dir /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/build/vga_project.cache/wt [current_project]
+set_property parent.project_path /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/build/vga_project.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem /home/student/mslupski/Projekt/projekt_main/rtl/picture/image_rom.data
+read_mem /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/picture/image_rom.data
 read_verilog -library xil_defaultlib -sv {
-  /home/student/mslupski/Projekt/projekt_main/rtl/vga_pkg.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/char_rom_16x16.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/draw_bg.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/draw_mouse.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/draw_rect.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/draw_rect_char.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/draw_rect_ctl.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/image_rom.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/top_vga.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/vga_if.sv
-  /home/student/mslupski/Projekt/projekt_main/rtl/vga_timing.sv
-  /home/student/mslupski/Projekt/projekt_main/fpga/rtl/top_vga_basys3.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_pkg.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/char_rom_16x16.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_bg.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_mouse.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_char.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/draw_rect_ctl.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/image_rom.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/top_vga.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_if.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/vga_timing.sv
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/top_vga_basys3.sv
 }
 read_verilog -library xil_defaultlib {
-  /home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_Projekt_65MHz_clk_wiz.v
-  /home/student/mslupski/Projekt/projekt_main/fpga/rtl/clk_wiz_0_clk_wiz.v
-  /home/student/mslupski/Projekt/projekt_main/rtl/font_rom.v
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/rtl/clk_wiz_1_clk_wiz.v
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/font_rom.v
 }
 read_vhdl -library xil_defaultlib {
-  /home/student/mslupski/Projekt/projekt_main/rtl/MouseCtl.vhd
-  /home/student/mslupski/Projekt/projekt_main/rtl/MouseDisplay.vhd
-  /home/student/mslupski/Projekt/projekt_main/rtl/Ps2Interface.vhd
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/MouseCtl.vhd
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/MouseDisplay.vhd
+  /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/rtl/Ps2Interface.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -117,20 +116,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/top_vga_basys3.xdc
-set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/top_vga_basys3.xdc]
+read_xdc /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/constraints/top_vga_basys3.xdc
+set_property used_in_implementation false [get_files /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/constraints/top_vga_basys3.xdc]
 
-read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0.xdc
-set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0.xdc]
+read_xdc /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/constraints/clk_wiz_1.xdc
+set_property used_in_implementation false [get_files /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/constraints/clk_wiz_1.xdc]
 
-read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0_late.xdc
-set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_wiz_0_late.xdc]
-
-read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz.xdc
-set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz.xdc]
-
-read_xdc /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz_late.xdc
-set_property used_in_implementation false [get_files /home/student/mslupski/Projekt/projekt_main/fpga/constraints/clk_Projekt_65MHz_late.xdc]
+read_xdc /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/constraints/clk_wiz_1_late.xdc
+set_property used_in_implementation false [get_files /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/constraints/clk_wiz_1_late.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

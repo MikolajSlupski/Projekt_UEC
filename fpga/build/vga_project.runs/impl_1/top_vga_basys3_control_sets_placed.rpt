@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Wed Aug  2 15:27:50 2023
-| Host         : cadence28 running 64-bit CentOS Linux release 7.9.2009 (Core)
+| Date         : Fri Aug 25 18:28:49 2023
+| Host         : cadence36 running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_control_sets -verbose -file top_vga_basys3_control_sets_placed.rpt
 | Design       : top_vga_basys3
 | Device       : xc7a35t
@@ -58,51 +58,51 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              79 |           32 |
-| No           | No                    | Yes                    |              59 |           16 |
-| No           | Yes                   | No                     |             355 |          101 |
-| Yes          | No                    | No                     |             104 |           39 |
+| No           | No                    | No                     |              79 |           26 |
+| No           | No                    | Yes                    |              59 |           17 |
+| No           | Yes                   | No                     |             355 |          104 |
+| Yes          | No                    | No                     |             104 |           42 |
 | Yes          | No                    | Yes                    |              21 |            9 |
-| Yes          | Yes                   | No                     |              67 |           20 |
+| Yes          | Yes                   | No                     |              67 |           21 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
-|                   Clock Signal                  |                            Enable Signal                            |                           Set/Reset Signal                          | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
-|  u_clk_65MHz/clk65MHz                           |                                                                     | u_top_vga/u_vga_timing/tim_if_out\\.hblnk_reg_1                     |                1 |              4 |         4.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/shift_frame                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/reset_bit_count              |                1 |              4 |         4.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/FSM_onehot_state_reg[0]_1    | btnC_IBUF                                                           |                3 |              5 |         1.67 |
-|  u_clk_65MHz/clk65MHz                           |                                                                     | u_top_vga/u_draw_rect/rect_if_out\\.hcount_reg[2]_0                 |                1 |              6 |         6.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_63clk_count[6]_i_2_n_0 | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_63clk_count[6]_i_1_n_0 |                2 |              7 |         3.50 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/btnC                         |                                                                     |                2 |              7 |         3.50 |
-|  u_clk_65MHz/clk_65MHz_clk_Projekt_65MHz_en_clk |                                                                     |                                                                     |                1 |              8 |         8.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/FSM_onehot_state_reg[0]_0[0] | btnC_IBUF                                                           |                3 |              8 |         2.67 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/E[0]                         | btnC_IBUF                                                           |                3 |              8 |         2.67 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/load_rx_data                 |                                                                     |                2 |              8 |         4.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/tx_data[7]_i_1_n_0                             |                                                                     |                2 |              8 |         4.00 |
-|  u_clk_wiz_0_clk_wiz/clk100MHz_clk_wiz_0_en_clk |                                                                     |                                                                     |                1 |              8 |         8.00 |
-|  u_clk_wiz_0_clk_wiz/clk40MHz_clk_wiz_0_en_clk  |                                                                     |                                                                     |                1 |              8 |         8.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/frame[9]_i_1_n_0             |                                                                     |                2 |             10 |         5.00 |
-|  u_clk_65MHz/clk65MHz                           | u_top_vga/u_vga_timing/vcount_nxt                                   | btnC_IBUF                                                           |                3 |             11 |         3.67 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_20us_count[10]_i_2_n_0 | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_20us_count[10]_i_1_n_0 |                4 |             11 |         2.75 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/y_new_reg_n_0                                  |                                                                     |                5 |             11 |         2.20 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/x_new_reg_n_0                                  |                                                                     |                4 |             12 |         3.00 |
-|  u_clk_65MHz/clk65MHz                           | u_top_vga/u_draw_rect_ctl/xpos_freaze                               |                                                                     |                6 |             12 |         2.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        |                                                                     | u_top_vga/u_MouseCtl/SS[0]                                          |                2 |             12 |         6.00 |
-|  u_clk_65MHz/clk65MHz                           | u_top_vga/u_draw_rect_ctl/fallingCtr[11]_i_1_n_0                    |                                                                     |                7 |             12 |         1.71 |
-|  u_clk_wiz_0_clk_wiz/CLK                        | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_100us_count[0]_i_2_n_0 | u_top_vga/u_MouseCtl/Inst_Ps2Interface/clear                        |                4 |             14 |         3.50 |
-|  u_clk_65MHz/clk65MHz                           |                                                                     |                                                                     |                6 |             15 |         2.50 |
-|  u_clk_65MHz/clk65MHz                           | u_top_vga/u_draw_rect_ctl/delay[19]_i_2_n_0                         | u_top_vga/u_draw_rect_ctl/delay[19]_i_1_n_0                         |                6 |             20 |         3.33 |
-|  u_clk_65MHz/clk65MHz                           | u_top_vga/u_draw_rect_ctl/xpos[11]_i_1_n_0                          |                                                                     |                9 |             24 |         2.67 |
-|  u_clk_wiz_0_clk_wiz/CLK                        |                                                                     | u_top_vga/u_MouseCtl/reset_timeout_cnt_reg_n_0                      |                6 |             24 |         4.00 |
-|  u_clk_wiz_0_clk_wiz/CLK                        |                                                                     | u_top_vga/u_MouseCtl/reset_periodic_check_cnt__0                    |                7 |             26 |         3.71 |
-|  u_clk_wiz_0_clk_wiz/CLK                        |                                                                     |                                                                     |               23 |             44 |         1.91 |
-|  u_clk_wiz_0_clk_wiz/CLK                        |                                                                     | btnC_IBUF                                                           |               33 |             96 |         2.91 |
-|  u_clk_65MHz/clk65MHz                           |                                                                     | btnC_IBUF                                                           |               67 |            246 |         3.67 |
-+-------------------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
++--------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
+|             Clock Signal             |                            Enable Signal                            |                           Set/Reset Signal                          | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
+|  u_clk_1/clk_65MHz                   |                                                                     | u_top_vga/u_vga_timing/tim_if_out\\.hblnk_reg_1                     |                2 |              4 |         2.00 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/shift_frame                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/reset_bit_count              |                1 |              4 |         4.00 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/FSM_onehot_state_reg[0]_1    | btnC_IBUF                                                           |                3 |              5 |         1.67 |
+|  u_clk_1/clk_65MHz                   |                                                                     | u_top_vga/u_draw_rect/rect_if_out\\.hcount_reg[2]_0                 |                2 |              6 |         3.00 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/btnC                         |                                                                     |                4 |              7 |         1.75 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_63clk_count[6]_i_2_n_0 | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_63clk_count[6]_i_1_n_0 |                2 |              7 |         3.50 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/FSM_onehot_state_reg[0]_0[0] | btnC_IBUF                                                           |                3 |              8 |         2.67 |
+|  u_clk_1/clk_40MHz_clk_wiz_1_en_clk  |                                                                     |                                                                     |                1 |              8 |         8.00 |
+|  u_clk_1/clk_100MHz_clk_wiz_1_en_clk |                                                                     |                                                                     |                1 |              8 |         8.00 |
+|  u_clk_1/clk_65MHz_clk_wiz_1_en_clk  |                                                                     |                                                                     |                1 |              8 |         8.00 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/tx_data[7]_i_1_n_0                             |                                                                     |                2 |              8 |         4.00 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/E[0]                         | btnC_IBUF                                                           |                3 |              8 |         2.67 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/load_rx_data                 |                                                                     |                3 |              8 |         2.67 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/frame[9]_i_1_n_0             |                                                                     |                2 |             10 |         5.00 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_20us_count[10]_i_2_n_0 | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_20us_count[10]_i_1_n_0 |                3 |             11 |         3.67 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/y_new_reg_n_0                                  |                                                                     |                4 |             11 |         2.75 |
+|  u_clk_1/clk_65MHz                   | u_top_vga/u_vga_timing/vcount_nxt                                   | btnC_IBUF                                                           |                5 |             11 |         2.20 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/x_new_reg_n_0                                  |                                                                     |                4 |             12 |         3.00 |
+|  u_clk_1/clk_100MHz                  |                                                                     | u_top_vga/u_MouseCtl/SS[0]                                          |                2 |             12 |         6.00 |
+|  u_clk_1/clk_65MHz                   | u_top_vga/u_draw_rect_ctl/fallingCtr[11]_i_1_n_0                    |                                                                     |                4 |             12 |         3.00 |
+|  u_clk_1/clk_65MHz                   | u_top_vga/u_draw_rect_ctl/xpos_freaze                               |                                                                     |                7 |             12 |         1.71 |
+|  u_clk_1/clk_100MHz                  | u_top_vga/u_MouseCtl/Inst_Ps2Interface/delay_100us_count[0]_i_2_n_0 | u_top_vga/u_MouseCtl/Inst_Ps2Interface/clear                        |                4 |             14 |         3.50 |
+|  u_clk_1/clk_65MHz                   |                                                                     |                                                                     |                6 |             15 |         2.50 |
+|  u_clk_1/clk_65MHz                   | u_top_vga/u_draw_rect_ctl/delay[19]_i_2_n_0                         | u_top_vga/u_draw_rect_ctl/delay[19]_i_1_n_0                         |                6 |             20 |         3.33 |
+|  u_clk_1/clk_100MHz                  |                                                                     | u_top_vga/u_MouseCtl/reset_timeout_cnt_reg_n_0                      |                5 |             24 |         4.80 |
+|  u_clk_1/clk_65MHz                   | u_top_vga/u_draw_rect_ctl/xpos[11]_i_1_n_0                          |                                                                     |               12 |             24 |         2.00 |
+|  u_clk_1/clk_100MHz                  |                                                                     | u_top_vga/u_MouseCtl/reset_periodic_check_cnt__0                    |                6 |             26 |         4.33 |
+|  u_clk_1/clk_100MHz                  |                                                                     |                                                                     |               17 |             44 |         2.59 |
+|  u_clk_1/clk_100MHz                  |                                                                     | btnC_IBUF                                                           |               33 |             96 |         2.91 |
+|  u_clk_1/clk_65MHz                   |                                                                     | btnC_IBUF                                                           |               71 |            246 |         3.46 |
++--------------------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
 
 

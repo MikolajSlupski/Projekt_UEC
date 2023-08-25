@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Wed Aug  2 15:27:08 2023
-# Process ID: 21667
-# Current directory: /home/student/mslupski/Projekt/projekt_main/fpga/build/vga_project.runs/impl_1
+# Start of session at: Fri Aug 25 18:27:59 2023
+# Process ID: 20562
+# Current directory: /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/build/vga_project.runs/impl_1
 # Command line: vivado -log top_vga_basys3.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_vga_basys3.tcl -notrace
-# Log file: /home/student/mslupski/Projekt/projekt_main/fpga/build/vga_project.runs/impl_1/top_vga_basys3.vdi
-# Journal file: /home/student/mslupski/Projekt/projekt_main/fpga/build/vga_project.runs/impl_1/vivado.jou
-# Running On: cadence28, OS: Linux, CPU Frequency: 3308.789 MHz, CPU Physical cores: 4, Host memory: 16720 MB
+# Log file: /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/build/vga_project.runs/impl_1/top_vga_basys3.vdi
+# Journal file: /home/student/wszczepka/UEC2/PROJECT/Projekt_UEC/fpga/build/vga_project.runs/impl_1/vivado.jou
+# Running On: cadence36, OS: Linux, CPU Frequency: 3785.351 MHz, CPU Physical cores: 4, Host memory: 16720 MB
 #-----------------------------------------------------------
 source top_vga_basys3.tcl -notrace
