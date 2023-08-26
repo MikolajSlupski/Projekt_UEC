@@ -4,7 +4,7 @@
  * Author: Mikołaj Słupski
  *
  * Description:
- * Package with vga related constants.
+ * Main State Machine to control whole game
  */
 
 `timescale 1 ns / 1 ps
@@ -26,6 +26,7 @@
 
  import vga_pkg::*;
 
+ // Definicja stanow
  enum logic[5:0]{
 
     EkranStartowy = 6'b00001,
@@ -37,7 +38,7 @@
 
  }state;
 
-
+// Logika 
  always_ff@(posedge clk) begin
     if(rst)begin
         state <= EkranStartowy;

@@ -1,4 +1,11 @@
-
+/**
+ * Copyright (C) 2023  AGH University of Science and Technology
+ * MTM UEC2
+ * Author: Mikołaj Słupski  
+ *
+ * Description:
+ * Interface with RGB signal 
+ */
 interface vga_if;
 
     reg [10:0] vcount;

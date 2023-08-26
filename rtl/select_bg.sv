@@ -4,7 +4,7 @@
  * Author: Mikołaj Słupski
  *
  * Description:
- * Package with vga related constants.
+ * Top module to switch backgrounds
  */
 
  `timescale 1 ns / 1 ps

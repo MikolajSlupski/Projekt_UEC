@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Draw image
+ * Draw images
  */
 
 
@@ -173,10 +173,10 @@ always_comb begin
             rgb_nxt = rgb_person;
             addry = in.vcount - Y_4_DIM;
             addrx = in.hcount - X_4_DIM;
-            pixel_addr_nxt = addry*128 + addrx; 
+            pixel_addr_nxt = addry*128 + addrx;
         end
         else begin                                 
-            rgb_nxt = rgb2;  
+            rgb_nxt = rgb2;
         end       
 end
 

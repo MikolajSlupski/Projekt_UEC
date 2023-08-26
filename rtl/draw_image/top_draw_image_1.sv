@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Top module to draw image
+ * Top module to draw images, revers them and code what person was chosen
  */
 
 

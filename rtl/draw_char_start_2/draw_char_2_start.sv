@@ -1,3 +1,11 @@
+/**
+ * Copyright (C) 2023  AGH University of Science and Technology
+ * MTM UEC2
+ * Author: Wojciech Szczepka
+ *
+ * Description:
+ * Top module to draw char in state EkranKoncowy
+ */
 `timescale 1 ns / 1 ps
 
 module draw_char_2_start (
@@ -24,7 +32,7 @@ draw_rect_char_2_start u_draw_rect_char_2_start(
     .char_line
 );
 
-font_rom_2_start u_font_rom_2_start(
+font_rom u_font_rom_2_start(
     .clk(clk),
     .addr({char_code,char_line}),
     .char_line_pixels(char_line_pixels)

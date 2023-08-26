@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * logic to cover pictures
+ * logic to reverse pictures
  */
 
 

@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * logic to chose person
+ * logic to code what person was chosen
  */
 
 

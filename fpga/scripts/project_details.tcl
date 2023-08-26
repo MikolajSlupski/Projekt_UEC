@@ -91,10 +91,7 @@ set sv_files {
  set verilog_files {
     ../fpga/rtl/clk_wiz_1_clk_wiz.v
     ../fpga/rtl/clk_wiz_1.v 
-    ../rtl/draw_char_gra/font_rom.v     
-    ../rtl/draw_char_koniec/font_rom_koniec.v 
-    ../rtl/draw_char_2_koniec/font_rom_2_koniec.v 
-    ../rtl/draw_char_start/font_rom_start.v 
+    ../rtl/draw_char_gra/font_rom.v
      
  }
 

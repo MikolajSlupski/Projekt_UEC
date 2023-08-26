@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Top module to draw bagground
+ * Top module to draw bagground in state Gra
  */
 
 

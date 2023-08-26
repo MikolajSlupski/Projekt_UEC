@@ -6,7 +6,7 @@
  * Modified by:
  * 2023  AGH University of Science and Technology
  * MTM UEC2
- * Piotr Kaczmarczyk
+ * Piotr Kaczmarczyk, Mikołaj Słupski, Wojciech Szczepka 
  *
  * Description:
  * The project top module.
@@ -160,7 +160,7 @@ top_draw_image_1 u_top_draw_image_1(
 
 game_logic u_game_logic(
     .clk(clk65MHz),
-    .rst,
+    .rst(Rst),
     .MouseRight(MouseRight),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos),
@@ -171,7 +171,6 @@ game_logic u_game_logic(
     .leftDOWN_Pmod(leftDOWN_Pmod),
     .rightDOWN_Pmod(rightDOWN_Pmod),
     .resoult(resoult),
-    .rst_sys(Rst),
     .reset(reset)
 );
 

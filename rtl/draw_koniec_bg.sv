@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Draw background in start game
+ * Draw background in state EkranStartowy and EkranKoncowy
  */
 
 

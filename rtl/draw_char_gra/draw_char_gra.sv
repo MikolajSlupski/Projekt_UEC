@@ -1,5 +1,12 @@
+/**
+ * Copyright (C) 2023  AGH University of Science and Technology
+ * MTM UEC2
+ * Author: Wojciech Szczepka
+ *
+ * Description:
+ * Top module to draw char in state Gra
+ */
 `timescale 1 ns / 1 ps
-
 
 module draw_char_gra (
 

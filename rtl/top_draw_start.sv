@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Draw background in start game
+ * Top module to draw background in state EkranStartowy
  */
 
 

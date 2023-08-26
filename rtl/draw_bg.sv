@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Draw background in game
+ * Draw background in state Gra
  */
 
 

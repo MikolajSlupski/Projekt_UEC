@@ -1,3 +1,11 @@
+/**
+ * Copyright (C) 2023  AGH University of Science and Technology
+ * MTM UEC2
+ * Author: Wojciech Szczepka
+ *
+ * Description:
+ * Interface without RGB signal 
+ */
 
 interface vga_if_tim;
 

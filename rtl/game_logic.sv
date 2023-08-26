@@ -4,7 +4,7 @@
  * Author: Mikołaj Słupski
  *
  * Description:
- * Package with vga related constants.
+ * Module with logic to comunicate betwen boards
  */
 
  `timescale 1 ns / 1 ps
@@ -13,7 +13,6 @@
 
     input logic clk,
     input logic rst,
-    input logic rst_sys,
     input logic [5:0] state_bin,    //jest
     input logic [3:0] your_person,  //jest
     input logic [11:0] xpos,
@@ -39,10 +38,8 @@
  //przypisanie portow wyjsciowych zawierajacych informacje o wybranej/ktora zgadujesz ocsobie i wyniku/czy wygrales czy przegrales
  assign rightUP_Pmod[7:4]=Pmod_OUT_nxt[3:0];
  assign leftDOWN_Pmod[7:4]=Pmod_OUT_nxt[3:0];
- assign rightUP_Pmod[3]=resoult[0];
- assign rightUP_Pmod[2]=resoult[1];
- assign leftDOWN_Pmod[1]=resoult[0];
- assign leftDOWN_Pmod[0]=resoult[1];
+ assign rightUP_Pmod[3:2]=resoult[1:0];
+ assign leftDOWN_Pmod[1:0]=resoult[1:0];
 
  //wystawieni stalej 1 na 7 port, aby wiedziec z ktorej strony jest plytka podpieta
  assign leftDOWN_Pmod[3] =0;
@@ -51,7 +48,7 @@
 
 //przesylanie wyniku zgadywania do wewnatrz programu
  always_ff@(posedge clk)begin
-    if(rst || rst_sys) begin
+    if(rst) begin
         reset <= 'b0;
         resoult <= 2'b00;
         selected_person <= 4'b0000; 
@@ -64,8 +61,13 @@
 
 //przesłanie resetu do drugiej płytki
 always_comb begin
-    rightUP_Pmod[1]= rst_sys;
-    leftDOWN_Pmod[2] = rst_sys;
+    if(rst) begin
+        rightUP_Pmod[1]= 1;
+        leftDOWN_Pmod[2]=1;
+    end else begin
+        rightUP_Pmod[1]= 0;
+        leftDOWN_Pmod[2]=0;
+    end
 end
 
  //przypisywanie twojej osoby do zmiennej wewn
@@ -129,10 +131,12 @@ end
 
  // logika do resetowania modułów obu płytek naraz  
  always_comb begin
-    if(leftUP_Pmod[3]==0) begin
-        reset_nxt = leftUP_Pmod[2];
-    end else if (rightDOWN_Pmod[0]==0) begin
-        reset_nxt = rightDOWN_Pmod[1];
+    if(leftUP_Pmod[3]==0 & leftUP_Pmod[2]==1) begin
+        reset_nxt = 1;
+    end else if(rightDOWN_Pmod[0]==0 & rightDOWN_Pmod[1]==1) begin
+        reset_nxt = 1;
+    end else begin
+        reset_nxt =0;
     end
 end
 

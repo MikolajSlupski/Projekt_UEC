@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Top module to draw bg
+ * Top module to draw background in state EkranKoncowy
  */
 
 

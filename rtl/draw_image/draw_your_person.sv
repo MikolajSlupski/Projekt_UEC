@@ -4,7 +4,7 @@
  * Author: Wojciech Szczepka
  *
  * Description:
- * Draw image
+ * Draw Module to rewerse images
  */
 
 
