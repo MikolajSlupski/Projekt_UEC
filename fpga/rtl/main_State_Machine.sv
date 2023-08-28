@@ -43,6 +43,7 @@
     if(rst)begin
         state <= EkranStartowy;
         state_bin <= state;
+        rst_sys <= 1'b0;
     end else begin
 
         case(state)
@@ -68,19 +69,20 @@
             end
             EkranKoncowy: begin
                 if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin
-                    state <= EkranWyboru;
+                    state <= Step;
                     state_bin <= state;
                     rst_sys <= 1'b1;
                 end else if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)&& MouseLeft==1) begin
                     state <= Step;
                     state_bin <= state;
+                    rst_sys <= 1'b1;
                 end else begin
                     state <= EkranKoncowy;
                     state_bin <= state;
                 end
             end
             Step: begin
-                if(MouseLeft ==0) begin
+                if(MouseLeft==0) begin
                     state <= EkranStartowy;
                     state_bin <= state;
                 end

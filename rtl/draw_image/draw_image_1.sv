@@ -39,8 +39,8 @@ import vga_pkg::*;
  */
 logic [13:0] pixel_addr_nxt;
 logic [11:0] rgb_nxt, rgb, rgb2;
-logic [7:0] addrx;
-logic [7:0] addry;
+logic [6:0] addrx;
+logic [6:0] addry;
 logic [10:0] hcount, vcount;
 logic hsync, hblnk, vsync, vblnk;
 
@@ -177,6 +177,9 @@ always_comb begin
         end
         else begin                                 
             rgb_nxt = rgb2;
+            addry = in.vcount - Y_4_DIM;
+            addrx = in.hcount - X_4_DIM;
+            pixel_addr_nxt = addry*128 + addrx;
         end       
 end
 

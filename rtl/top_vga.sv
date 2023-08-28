@@ -54,10 +54,9 @@ wire [11:0] mouse_ypos;
 logic MouseLeft, MouseRight;
 logic [5:0] state_bin;
 logic rst_sys;
-logic Rst;
+logic Rst, RST, reset;
 logic [3:0] your_person;
 logic [1:0] resoult;
-logic reset;
 
 /**
  * Signals assignments
@@ -72,13 +71,19 @@ assign led[3:2] = rightDOWN_Pmod[3:2];
 assign led[4] = leftUP_Pmod[3];
 assign led[5] = leftUP_Pmod[2];
 assign led[7:6] = leftUP_Pmod[1:0];
-assign led[14:8]= 0;
+assign led[8] = Rst;
+assign led[9] = RST;
+assign led[11:10]= rightUP_Pmod[3:2];
+assign led[13:12]= leftDOWN_Pmod[1:0];
+assign led[14]= 0;
 
-
-//assign addr = (u_char_rom_16x16.char_code << 4 | u_draw_rect_char.char_line);
 
 always_comb begin
     Rst = rst || rst_sys || reset;
+end
+
+always_comb begin
+    RST = rst || rst_sys;
 end
 
 
@@ -116,10 +121,8 @@ draw_mouse u_draw_mouse(
     .clk(clk100MHz),
     .rst(rst),
     .xpos(mouse_xpos),
-    .ypos(mouse_ypos),
-    
+    .ypos(mouse_ypos), 
     .dmouse_if_in(top_draw_image),
-
     .dmouse_if_out(top_out)
 );
 
@@ -171,7 +174,8 @@ game_logic u_game_logic(
     .leftDOWN_Pmod(leftDOWN_Pmod),
     .rightDOWN_Pmod(rightDOWN_Pmod),
     .resoult(resoult),
-    .reset(reset)
+    .reset(reset),
+    .rst_sys(RST)
 );
 
 endmodule

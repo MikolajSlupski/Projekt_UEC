@@ -39,13 +39,15 @@ set sv_files {
     ../rtl/vga_if.sv
     ../rtl/vga_if_tim.sv
     ../rtl/top_vga.sv
-    ../rtl/draw_bg.sv
-    ../rtl/top_draw_gra.sv
-    ../rtl/top_draw_start.sv
+    ../rtl/select_bg.sv
+    ../rtl/game_logic.sv
+    ../rtl/draw_bg/draw_bg.sv
+    ../rtl/draw_bg/top_draw_gra.sv
+    ../rtl/draw_bg/top_draw_start.sv
+    ../rtl/draw_bg/draw_gra_bg.sv
+    ../rtl/draw_bg/top_draw_koniec.sv
+    ../rtl/mouse/draw_mouse.sv
     ../rtl/draw_char_start/draw_char_start.sv
-    ../rtl/draw_koniec_bg.sv
-    ../rtl/top_draw_koniec.sv
-    ../rtl/draw_mouse.sv
     ../rtl/draw_char_gra/draw_char_gra.sv
     ../rtl/draw_char_gra/draw_rect_char_gra.sv
     ../rtl/draw_char_gra/char_rom_16x16_gra.sv
@@ -57,8 +59,6 @@ set sv_files {
     ../rtl/draw_char_koniec/char_rom_16x16_koniec.sv
     ../rtl/draw_char_2_koniec/draw_rect_char2_koniec.sv
     ../rtl/draw_char_2_koniec/char_rom_16x16_2_koniec.sv
-    ../fpga/rtl/main_State_Machine.sv
-    ../rtl/select_bg.sv
     ../rtl/draw_image/draw_image_1.sv
     ../rtl/draw_image/top_draw_image_1.sv
     ../rtl/draw_image/image_rom_1.sv
@@ -82,7 +82,7 @@ set sv_files {
     ../rtl/draw_image/picture_logic9.sv
     ../rtl/draw_image/your_person.sv
     ../rtl/draw_image/draw_your_person.sv
-    ../rtl/game_logic.sv
+    ../fpga/rtl/main_State_Machine.sv
 
     rtl/top_vga_basys3.sv
 }
@@ -97,10 +97,9 @@ set sv_files {
 
 # Specify VHDL design files location            -- EDIT
  set vhdl_files {
-    ../rtl/MouseCtl.vhd
-    ../rtl/Ps2Interface.vhd
-    ../rtl/MouseDisplay.vhd
-    rtl/top_vga_basys3.sv
+    ../rtl/mouse/MouseCtl.vhd
+    ../rtl/mouse/Ps2Interface.vhd
+    ../rtl/mouse/MouseDisplay.vhd
     
  }
 
