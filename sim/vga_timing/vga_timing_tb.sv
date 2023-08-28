@@ -16,7 +16,7 @@ module vga_timing_tb(
 
 import vga_pkg::*;
 
-vga_if timing_if_in();
+vga_if_tim top_timing_tb();
 
 /**
  *  Local parameters
