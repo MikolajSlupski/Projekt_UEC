@@ -14,16 +14,16 @@
 
 `timescale 1 ns / 1 ps
 
-module top_vga_basys3 (
+module top_project_basys3 (
     input  wire clk,
     input  wire btnC,
-    output  logic [14:0] led,
 
     inout wire PS2Clk,
     inout wire PS2Data,
+
     input logic [7:0] JA,
-    output logic [7:0] JB,
     input logic [7:0] JC,
+    output logic [7:0] JB,
     output logic [7:0] JXADC,
 
     output wire Vsync,
@@ -39,9 +39,7 @@ module top_vga_basys3 (
  */
 
 wire locked;
-wire pclk_mirror;
-wire clk100MHz, clk65MHz;
-wire clk40MHz;
+wire clk130MHz, clk65MHz;
 
 (* KEEP = "TRUE" *)
 (* ASYNC_REG = "TRUE" *)
@@ -59,7 +57,7 @@ logic [7:0] safe_start = 0;
  * FPGA submodules placement
  */
 clk_wiz_1_clk_wiz u_clk_wiz_1 (
-    .clk_130MHz(clk100MHz),
+    .clk_130MHz(clk130MHz),
     .clk_65MHz(clk65MHz),           
     .locked(locked),
     .clk(clk)
@@ -69,7 +67,7 @@ clk_wiz_1_clk_wiz u_clk_wiz_1 (
  *  Project functional top module
  */
 
-top_vga u_top_vga (
+top_project u_top_project (
     .rst(btnC),
     .r(vgaRed),
     .g(vgaGreen),
@@ -78,13 +76,12 @@ top_vga u_top_vga (
     .vs(Vsync),
     .ps2_clk(PS2Clk),
     .ps2_data(PS2Data),
-    .clk100MHz(clk100MHz),
+    .clk130MHz(clk130MHz),
     .clk65MHz(clk65MHz),
     .leftUP_Pmod(JA),
     .rightUP_Pmod(JB),
     .leftDOWN_Pmod(JXADC),
-    .rightDOWN_Pmod(JC),
-    .led(led)
+    .rightDOWN_Pmod(JC)
 ); 
 
 endmodule

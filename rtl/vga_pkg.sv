@@ -11,23 +11,23 @@ package vga_pkg;
 
 // Parameters for VGA Display 1280 x 720 @ using a 65 MHz clock;
 // Remember, Counting form zero !!!
-localparam HOR_PIXELS = 1280;//1024;//1280, 800;
-localparam VER_PIXELS = 720;//768;//720, 600;
+localparam HOR_PIXELS = 1280;
+localparam VER_PIXELS = 720;
 //total_time
-localparam HOR_TOTAL_TIME = 1650;//1344;//1650, 1055;
-localparam VER_TOTAL_TIME = 750;//806;//750, 627;
+localparam HOR_TOTAL_TIME = 1650;
+localparam VER_TOTAL_TIME = 750;
     
-localparam HOR_SYNC_START = 1390;//1048;//1390, 840;
-localparam VER_SYNC_START = 725;//771;//725, 601;
+localparam HOR_SYNC_START = 1390;
+localparam VER_SYNC_START = 725;
     
-localparam HOR_SYNC_TIME = 41;//136;//41, 128;
-localparam VER_SYNC_TIME = 6;//7;//6, 4;
+localparam HOR_SYNC_TIME = 41;
+localparam VER_SYNC_TIME = 6;
     
 localparam HOR_SYNC_END = HOR_SYNC_START + HOR_SYNC_TIME;
 localparam VER_SYNC_END = VER_SYNC_START + VER_SYNC_TIME;
     
-localparam HOR_BLANK_START = 1279;//1023;//1279, 799;
-localparam VER_BLANK_START = 719;//767;//719, 599;
+localparam HOR_BLANK_START = 1279;
+localparam VER_BLANK_START = 719;
 
 
 

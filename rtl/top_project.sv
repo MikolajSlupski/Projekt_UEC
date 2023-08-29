@@ -14,21 +14,16 @@
 
 `timescale 1 ns / 1 ps
 
-module top_vga (
+module top_project (
     input  logic rst,
-    input  logic clk100MHz,
+    input  logic clk130MHz,
     input  logic clk65MHz,
-    output logic [14:0] led,
-
     inout  logic ps2_clk,
     inout  logic ps2_data,
     input  logic [7:0] leftUP_Pmod,
+    input  logic [7:0] rightDOWN_Pmod,
     output  logic [7:0] rightUP_Pmod,
     output  logic [7:0] leftDOWN_Pmod,
-    input  logic [7:0] rightDOWN_Pmod,
-
-
-
     output logic vs,
     output logic hs,
     output logic [3:0] r,
@@ -65,18 +60,6 @@ logic [1:0] resoult;
 assign vs = top_out.vsync;
 assign hs = top_out.hsync;
 assign {r,g,b} = top_out.rgb;
-assign led [0] =rightDOWN_Pmod[0];
-assign led[1] = rightDOWN_Pmod[1];
-assign led[3:2] = rightDOWN_Pmod[3:2];
-assign led[4] = leftUP_Pmod[3];
-assign led[5] = leftUP_Pmod[2];
-assign led[7:6] = leftUP_Pmod[1:0];
-assign led[8] = Rst;
-assign led[9] = RST;
-assign led[11:10]= rightUP_Pmod[3:2];
-assign led[13:12]= leftDOWN_Pmod[1:0];
-assign led[14]= 0;
-
 
 always_comb begin
     Rst = rst || rst_sys || reset || rst_koniec;
@@ -101,7 +84,7 @@ vga_timing u_vga_timing (
 );
 
 MouseCtl u_MouseCtl (
-    .clk(clk100MHz),
+    .clk(clk130MHz),
     .rst(rst),
     .ps2_clk(ps2_clk),
     .ps2_data(ps2_data),
@@ -121,7 +104,7 @@ MouseCtl u_MouseCtl (
 );
 
 draw_mouse u_draw_mouse(
-    .clk(clk100MHz),
+    .clk(clk130MHz),
     .rst(rst),
     .xpos(mouse_xpos),
     .ypos(mouse_ypos), 
@@ -140,7 +123,7 @@ select_bg u_select_bg(
 );
 
 main_State_Machine u_main_State_Machine(
-    .clk(clk100MHz),
+    .clk(clk130MHz),
     .rst(Rst),
     .MouseLeft(MouseLeft),
     .MouseRight(MouseRight),

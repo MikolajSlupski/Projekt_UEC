@@ -13,10 +13,10 @@
 #                   Project details                   #
 #-----------------------------------------------------#
 # Project name                                  -- EDIT
-set project_name vga_project
+set project_name Zgadnij_Kto_To
 
 # Top module name                               -- EDIT
-set top_module top_vga_basys3
+set top_module top_project_basys3
 
 # FPGA device
 set target xc7a35tcpg236-1
@@ -38,7 +38,7 @@ set sv_files {
     ../rtl/vga_timing.sv
     ../rtl/vga_if.sv
     ../rtl/vga_if_tim.sv
-    ../rtl/top_vga.sv
+    ../rtl/top_project.sv
     ../rtl/select_bg.sv
     ../rtl/game_logic.sv
     ../rtl/draw_bg/draw_bg.sv
@@ -82,9 +82,9 @@ set sv_files {
     ../rtl/draw_image/picture_logic9.sv
     ../rtl/draw_image/your_person.sv
     ../rtl/draw_image/draw_your_person.sv
-    ../fpga/rtl/main_State_Machine.sv
+    ../rtl/main_State_Machine.sv
 
-    rtl/top_vga_basys3.sv
+    rtl/top_project_basys3.sv
 }
 
 # Specify Verilog design files location         -- EDIT
