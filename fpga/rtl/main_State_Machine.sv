@@ -20,7 +20,8 @@
     input logic [1:0] resoult,
 
     output logic [5:0] state_bin,
-    output logic rst_sys
+    output logic rst_sys,
+    output logic rst_koniec
 
  );
 
@@ -48,7 +49,7 @@
 
         case(state)
             EkranStartowy: begin
-                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y) && MouseLeft==1)begin
+                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_3 && ypos>=RECT_Y_3) && MouseLeft==1)begin
                     state <= EkranWyboru;
                     state_bin <= state;
                 end else begin
@@ -68,14 +69,14 @@
                 end
             end
             EkranKoncowy: begin
-                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin
+                if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y && ypos>=RECT_Y)&& MouseLeft==1) begin  // Zagraj Ponownie
                     state <= Step;
                     state_bin <= state;
                     rst_sys <= 1'b1;
-                end else if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)&& MouseLeft==1) begin
-                    state <= Step;
+                end else if((xpos<=RECT_CHAR_X + RECT_X_MIDDLE && xpos>=RECT_X_MIDDLE && ypos<=RECT_CHAR_Y + RECT_Y_2 && ypos>=RECT_Y_2)&& MouseLeft==1) begin // Koniec
+                    state <= EkranKoncowy;
                     state_bin <= state;
-                    rst_sys <= 1'b1;
+                    rst_koniec <= 1'b1;
                 end else begin
                     state <= EkranKoncowy;
                     state_bin <= state;

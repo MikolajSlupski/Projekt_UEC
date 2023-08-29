@@ -55,32 +55,15 @@ logic [7:0] safe_start = 0;
  */
 
 
-
-
 /**
  * FPGA submodules placement
  */
 clk_wiz_1_clk_wiz u_clk_wiz_1 (
-    .clk_100MHz(clk100MHz),
-    .clk_65MHz(clk65MHz),
-    .clk_40MHz(clk40MHz),             
+    .clk_130MHz(clk100MHz),
+    .clk_65MHz(clk65MHz),           
     .locked(locked),
     .clk(clk)
 );
-
-// Mirror pclk on a pin for use by the testbench;
-// not functionally required for this design to work.
-
-ODDR pclk_oddr (
-    .Q(pclk_mirror),
-    .C(clk40MHz),
-    .CE(1'b1),
-    .D1(1'b1),
-    .D2(1'b0),
-    .R(1'b0),
-    .S(1'b0)
-);
-
 
 /**
  *  Project functional top module

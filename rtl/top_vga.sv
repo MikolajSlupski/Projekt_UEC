@@ -53,8 +53,8 @@ wire [11:0] mouse_ypos;
 
 logic MouseLeft, MouseRight;
 logic [5:0] state_bin;
-logic rst_sys;
-logic Rst, RST, reset;
+logic rst_sys, rst_koniec;
+logic Rst, RST, reset, RsT;
 logic [3:0] your_person;
 logic [1:0] resoult;
 
@@ -79,11 +79,14 @@ assign led[14]= 0;
 
 
 always_comb begin
-    Rst = rst || rst_sys || reset;
+    Rst = rst || rst_sys || reset || rst_koniec;
 end
 
 always_comb begin
-    RST = rst || rst_sys;
+    RST = rst || rst_sys || rst_koniec;
+end
+always_comb begin
+    RsT = rst_koniec || rst;
 end
 
 
@@ -93,7 +96,7 @@ end
 
 vga_timing u_vga_timing (
     .clk(clk65MHz),
-    .rst,
+    .rst(RsT),
     .tim_if_out(top_bg_in)
 );
 
@@ -131,7 +134,7 @@ select_bg u_select_bg(
     .bg_if_in(top_bg_in),
     .bg_if_out(top_bg_out),
     .clk(clk65MHz),
-    .rst(rst),
+    .rst(RsT),
     .state_bin(state_bin),
     .resoult(resoult)
 );
@@ -145,7 +148,8 @@ main_State_Machine u_main_State_Machine(
     .ypos(mouse_ypos),
     .state_bin(state_bin),
     .resoult(resoult),
-    .rst_sys(rst_sys)
+    .rst_sys(rst_sys),
+    .rst_koniec(rst_koniec)
 );
 
 top_draw_image_1 u_top_draw_image_1(
